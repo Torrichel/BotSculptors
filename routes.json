@@ -1,0 +1,5 @@
+{
+    "/api/users\\?searchTerm=": "/users?_page=1&_limit=50",
+    "/api/users\\?searchTerm=:id": "/users?q=:id&_limit=50",
+    "/api/users\\?searchTerm=:id&_page=:page": "/users?q=:id&_page=:page&_limit=50"
+}

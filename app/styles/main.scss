@@ -1,0 +1,61 @@
+*{
+  box-sizing: border-box;
+
+}
+
+
+html, body{
+  overflow-x: hidden;
+}
+
+header{
+
+
+}
+
+
+.mainContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+
+  form{
+    display: block;
+    width: 100%;
+
+    .input-group{
+      display: block!important;
+    }
+  }
+
+  .botUsersList{
+    margin-top: 15px;
+  }
+
+  .previousNext {
+    display: flex;
+    width: 100%;
+
+    .pager li {
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+  }
+
+  .media {
+    img{
+      border-radius: 50%;
+    }
+    .media-heading{
+      margin-top: 15px;
+    }
+  }
+
+
+}
