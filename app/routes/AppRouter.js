@@ -1,10 +1,20 @@
 import React from 'react'
 import { Redirect, Switch, Route } from 'react-router-dom'
 import { Provider, connect } from 'react-redux'
+
 import { Header } from '../components/Common/Header'
+import { Footer } from '../components/Common/Footer'
+
+
 import { ConnectedRouter } from 'react-router-redux'
 
-import App from '../components/App'
+import Home from '../components/Pages/Home'
+
+import Portfolio from '../components/Pages/Portfolio'
+import Team from '../components/Pages/Team'
+import About from '../components/Pages/About'
+
+
 
 import createBrowserHistory from 'history/createBrowserHistory';
 export const history = createBrowserHistory();
@@ -28,11 +38,25 @@ export class AppRouter extends React.Component{
                     <div id="main">
                         <Header />
 
-                        <Switch>
-                            <Route exact path='/' render={() => <App />} />
+                        <main>
 
-                            <Redirect to='/' />
-                        </Switch>
+                            <div className="mainIn">
+                                <Switch>
+                                    <Route exact path='/' render={() => <Home />} />
+                                    <Route exact path='/portfolio' render={() => <Portfolio />} />
+                                    <Route exact path='/tours/:tourID' render={(props) => <Tour props={props} />} />
+                                    <Route exact path='/team' render={() => <Team />} />
+                                    <Route exact path='/about' render={() => <About />} />
+
+                                    <Redirect to='/' />
+                                </Switch>
+                            </div>
+
+
+                        </main>
+
+
+                        <Footer />
 
                     </div>
                 </ConnectedRouter>
