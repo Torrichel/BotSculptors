@@ -2,6 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
+// Import Helmet to take care about page head section
+import {Helmet} from 'react-helmet'
+
 
 import logo from '../../static/images/logo.png'
 
@@ -17,6 +20,12 @@ export class Header extends React.Component{
         return (
 
             <header>
+
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>My Custom title</title>
+
+                </Helmet>
 
                 <div className="headerIn">
 
