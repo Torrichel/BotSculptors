@@ -13,10 +13,11 @@ import Home from '../components/Pages/Home'
 import Portfolio from '../components/Pages/Portfolio'
 import Team from '../components/Pages/Team'
 import About from '../components/Pages/About'
-
+import HowItWorks from "../components/Pages/HowItWorks";
 
 
 import createBrowserHistory from 'history/createBrowserHistory';
+
 export const history = createBrowserHistory();
 
 
@@ -43,6 +44,7 @@ export class AppRouter extends React.Component{
                             <div className="mainIn">
                                 <Switch>
                                     <Route exact path='/' render={() => <Home />} />
+                                    <Route exact path='/how-it-works' render={() => <HowItWorks />} />
                                     <Route exact path='/portfolio' render={() => <Portfolio />} />
                                     <Route exact path='/tours/:tourID' render={(props) => <Tour props={props} />} />
                                     <Route exact path='/team' render={() => <Team />} />
