@@ -147,18 +147,17 @@ main{
   .mainIn{
     width: 90%;
 
-    .titleSection{
+    h1, h2, h3, h4, h5, h6{
+      font-size: 30px;
+      font-weight: lighter;
+      color: #333;
+      text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.24);
+      font-family: MainFontThin;
 
-      h1{
+    }
 
-        font-size: 20pt;
-        float: left;
-        font-weight: lighter;
-        color: #333;
-        text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.24);
-        font-family: MainFontThin;
-
-      }
+    p{
+      font-size: 17px;
     }
   }
 
