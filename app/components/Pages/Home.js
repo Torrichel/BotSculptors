@@ -16,10 +16,6 @@ export class Home extends React.Component {
         return (
             <div>
 
-                <h1>We work with:</h1>
-                ....... Logos ........
-
-
 
             </div>
 

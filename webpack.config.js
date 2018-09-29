@@ -9,7 +9,7 @@ let HTMLWebpackPlugin = require('html-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: [__dirname + '/app/store.js', __dirname + '/app/styles/main.scss'],
+    entry: [__dirname + '/app/store.js', __dirname + '/app/styles/index.scss'],
     module: {
         loaders: [
             {
@@ -45,7 +45,7 @@ module.exports = {
         publicPath: '/'
     },
     plugins: [
-        HTMLWebpackPluginConfig, new ExtractTextPlugin('styles/main.css', {
+        HTMLWebpackPluginConfig, new ExtractTextPlugin('styles/styles.css', {
             allChunks: true
         })
     ],

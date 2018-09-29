@@ -49,8 +49,6 @@ export class AppRouter extends React.Component{
                                     <Route exact path='/tours/:tourID' render={(props) => <Tour props={props} />} />
                                     <Route exact path='/team' render={() => <Team />} />
                                     <Route exact path='/about' render={() => <About />} />
-
-                                    <Redirect to='/' />
                                 </Switch>
                             </div>
 

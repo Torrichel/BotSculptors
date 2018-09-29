@@ -30,28 +30,56 @@ export class Header extends React.Component{
 
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>My Custom title</title>
+                    <title>Bot Development & Design</title>
                     <meta name="description" content="" />
 
                 </Helmet>
 
-                <div className="headerIn">
+                <div className="header_first_line">
 
-                    <NavLink className="logo" to="/">
-
-                        <img src={logo} alt="Bot Sculptors" />
-
-                    </NavLink>
 
                     <nav className="navBlock">
 
-                        <NavLink to="/how-it-works">How it works?</NavLink>
-                        <NavLink to="/team">Team</NavLink>
-                        <NavLink to="/portfolio">Portfolio</NavLink>
-                        <NavLink to="/about">About</NavLink>
+                        <NavLink to="/how-it-works">Как это работает?</NavLink>
+                        <NavLink to="/team">Услуги</NavLink>
+                        <NavLink to="/portfolio">Блог</NavLink>
+                        <NavLink to="/about">О нас</NavLink>
+                        <NavLink to="/about">Портфолио</NavLink>
+                        <NavLink to="/about">Обзоры</NavLink>
+                        <NavLink to="/about">Контакты</NavLink>
 
                     </nav>
-                    <button onClick={this.hireUs.bind(this)} className="contactUs">Hire Us!</button>
+
+                </div>
+
+                <div className="header_second_line">
+
+                    <div className="logo_section">
+                        <div className="sub_section_1">
+                            <NavLink className="logo" to="/">
+                                <img src={logo} alt="Bot Sculptors" />
+                            </NavLink>
+                        </div>
+                        <div className="sub_section_2">
+                            <div className="title">Bot <b>Sculptors</b></div>
+                            <div className="slogan">Bot Development and Design</div>
+                        </div>
+                    </div>
+
+
+
+                    <div className="navBlock">
+
+                        <div className="fill_brief">Заполнить бриф</div>
+                        <div className="get_quote">Расчет стоимости</div>
+
+                        <div className="phone">8(900) <b>333-22-11</b></div>
+                        <div className="language">
+                            <span>ENG</span>
+                            <span className="active">РУС</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
