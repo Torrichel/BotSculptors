@@ -4,7 +4,8 @@ main{
 
 
   .mainIn{
-    width: 90%;
+    width: 100%;
+
 
     h1, h2, h3, h4, h5, h6{
       font-size: 30px;
@@ -19,6 +20,28 @@ main{
       font-size: 17px;
     }
 
+
+    // Home Page Start
+
+    .slider{
+
+      display: flex;
+      align-items: center;
+      padding-left: 7%;
+      height: 656px;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      .info{
+        border: 2px solid #fff;
+        color: #fff;
+      }
+
+
+
+    }
+
+    // Home Page End
 
     .team{
       border: $border2;
