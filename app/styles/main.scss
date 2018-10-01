@@ -41,6 +41,62 @@ main{
 
     }
 
+    .our_services{
+
+      padding: 90px 24%;
+
+
+
+      > .title{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid red;
+        margin-bottom: 45px;
+
+        .back_text{
+          font-size: 32px;
+          opacity: .1;
+          position: absolute;
+        }
+        .front_text{}
+
+      }
+
+      .services{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .service{
+          flex-shrink: 0;
+          width: 30%;
+          height: 265px;
+          border: 0px solid #ccc;
+          margin-bottom: 5%;
+          background: $our_services_bg;
+          border-radius: 5px;
+
+
+          background-repeat: no-repeat;
+          background-size: 200px;
+          background-position-x: right;
+          background-position-y: bottom;
+
+
+          .title{
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 20px;
+
+          }
+
+        }
+      }
+
+    }
+
     // Home Page End
 
     .team{
