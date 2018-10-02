@@ -1,0 +1,150 @@
+header{
+
+  border: $border1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background: $color1;
+
+  .header_first_line{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+    height: 40px;
+    border: $border2;
+    background: $header_first_line_color;
+
+
+    .navBlock{
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      a{
+        color: #000;
+        font-family: MainFontThin;
+        font-size: 11.5pt;
+        font-weight: lighter;
+        margin: 0 30px;
+      }
+
+      a:last-child{
+        margin-right: 0;
+      }
+    }
+
+
+
+
+
+  }
+
+  .header_second_line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+    height: 90px;
+    border: $border2;
+    background: $header_second_line_color;
+    border-bottom: 0px solid #ccc;
+
+    .logo_section{
+      display: flex;
+      height: 100%;
+
+      .sub_section_1{
+
+        .logo{
+          display: flex;
+          height: $logo_height;
+          margin-top: -30px;
+
+          img{
+            height: 100%;
+          }
+
+        }
+
+      }
+      .sub_section_2{
+
+        padding-left: 30px;
+        padding-top: 12px;
+
+        .title{
+          font-size: 28px;
+          color: $title_color;
+        }
+        .slogan{
+          font-size: 14px;
+          color: $slogan_color;
+        }
+      }
+
+    }
+
+
+
+    .navBlock{
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .fill_brief, .get_quote{
+        width: 165px;
+        height: 45px;
+        border: 2px solid $slogan_color;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $title_color;
+        cursor: pointer;
+      }
+
+      .get_quote{
+        border-color: $title_color;
+        color: #fff;
+        background: $title_color;
+        margin-left: 18px;
+      }
+
+      .phone{
+        margin: 0 60px;
+      }
+
+      .language{
+        display: flex;
+
+        span{
+          padding: 3px 6px;
+          cursor: pointer;
+          color: $slogan_color;
+        }
+
+        .active{
+          background: $title_color;
+          color: #fff;
+          display: flex;
+        }
+      }
+
+
+    }
+
+
+
+
+
+  }
+
+
+}

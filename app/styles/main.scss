@@ -41,6 +41,7 @@ main{
 
     }
 
+
     .our_services{
 
       padding: 90px 24%;
@@ -75,6 +76,313 @@ main{
           height: 265px;
           border: 0px solid #ccc;
           margin-bottom: 5%;
+          background: $our_services_bg;
+          border-radius: 5px;
+
+
+          background-repeat: no-repeat;
+          background-size: 200px;
+          background-position-x: right;
+          background-position-y: bottom;
+
+
+          .title{
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 20px;
+
+          }
+
+        }
+      }
+
+    }
+
+
+    .techs{
+      background: $slogan_color;
+      padding: 90px 24%;
+
+      > .title{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid red;
+        margin-bottom: 45px;
+
+        .back_text{
+          color: #fff;
+          font-size: 32px;
+          opacity: .1;
+          position: absolute;
+        }
+        .front_text{}
+
+      }
+
+      > .slogan{
+
+      }
+
+      .technologies{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+
+        .technology{
+          flex-shrink: 0;
+          width: 90px;
+          height: 90px;
+          border: 0px solid #ccc;
+          margin-bottom:10px;
+          background: $our_services_bg;
+
+          background-repeat: no-repeat;
+          background-size: contain;
+
+
+          .title{
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 20px;
+
+          }
+
+        }
+      }
+
+
+    }
+
+
+    .our_portfolio{
+
+      padding: 90px 24%;
+
+
+
+      > .title{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid red;
+        margin-bottom: 45px;
+
+        .back_text{
+          font-size: 32px;
+          opacity: .1;
+          position: absolute;
+        }
+        .front_text{}
+
+      }
+
+      .menu{
+        display: flex;
+
+        .item{
+
+        }
+      }
+
+      .projects{
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+
+        .project{
+          flex-shrink: 0;
+          flex-grow: 1;
+          height: 265px;
+          border: 0px solid #ccc;
+          margin-bottom: 10px;
+          background: $our_services_bg;
+          border-radius: 5px;
+
+
+          background-repeat: no-repeat;
+          background-size: 200px;
+          background-position-x: right;
+          background-position-y: bottom;
+
+          .category{
+            border: 2px solid $slogan_color;
+            color: #fff;
+          }
+
+          .title{
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 20px;
+
+          }
+
+        }
+
+        .more_projects{
+          border-radius: 5px;
+          background: $title_color;
+          color: #fff;
+          display: flex;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+
+    .we_are_trusted_by{
+
+      padding: 90px 24%;
+
+
+
+      > .title{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid red;
+        margin-bottom: 45px;
+
+        .back_text{
+          font-size: 32px;
+          opacity: .1;
+          position: absolute;
+        }
+        .front_text{}
+
+      }
+
+      .companies{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .company{
+          flex-grow: 1;
+          width: 100px;
+          height: 265px;
+          border: 0px solid #ccc;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          background: $our_services_bg;
+          border-radius: 5px;
+
+
+          background-repeat: no-repeat;
+          background-size: 200px;
+          background-position-x: right;
+          background-position-y: bottom;
+
+
+          .title{
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 20px;
+
+          }
+
+        }
+      }
+
+    }
+
+    .we_are_featured_by{
+
+      padding: 90px 24%;
+
+
+
+      > .title{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid red;
+        margin-bottom: 45px;
+
+        .back_text{
+          font-size: 32px;
+          opacity: .1;
+          position: absolute;
+        }
+        .front_text{}
+
+      }
+
+      .persons{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .person{
+          flex-grow: 1;
+          width: 100px;
+          height: 265px;
+          border: 0px solid #ccc;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          background: $our_services_bg;
+          border-radius: 5px;
+
+
+          background-repeat: no-repeat;
+          background-size: 200px;
+          background-position-x: right;
+          background-position-y: bottom;
+
+
+          .title{
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 20px;
+
+          }
+
+        }
+      }
+
+    }
+
+    .subscription{
+
+      padding: 90px 24%;
+
+
+
+      > .title{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid red;
+        margin-bottom: 45px;
+
+        .back_text{
+          font-size: 32px;
+          opacity: .1;
+          position: absolute;
+        }
+        .front_text{}
+
+      }
+
+      .persons{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .person{
+          flex-grow: 1;
+          width: 100px;
+          height: 265px;
+          border: 0px solid #ccc;
+          margin-right: 5px;
+          margin-bottom: 5px;
           background: $our_services_bg;
           border-radius: 5px;
 

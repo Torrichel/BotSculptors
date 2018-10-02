@@ -1,0 +1,25 @@
+$border1: 0 solid #fff;
+$border2: 0 solid blue;
+$border2: 0 solid #ff4000;
+
+
+$color1: #333;
+$title_color: #1f4c9d;
+$slogan_color: #8a8f96;
+
+$header_first_line_color: #eef1f5;
+$header_second_line_color: #fff;
+
+
+$logo_height: 110px;
+
+$our_services_bg: #d5d9de;
+
+
+
+// Converts pt to px
+@function pt-to-px($size-in-points){
+  @return #{ round($size-in-points * 1.333333) }px;
+}
+
+

@@ -1,0 +1,170 @@
+footer{
+
+  border: $border1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background: $color1;
+
+  .footer_first_line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+    height: 198px;
+    border: $border2;
+    background: $header_first_line_color;
+    border-bottom: 2px solid #eceff1;
+
+
+    .logo_section{
+      display: flex;
+
+      .sub_section_1{
+
+        .logo{
+          display: flex;
+
+          img{
+            height: 75px;
+          }
+
+        }
+
+      }
+      .sub_section_2{
+        flex-shrink: 0;
+        padding-left: 22px;
+        padding-top: 12px;
+
+        .title{
+          margin-top: -17px;
+          height: 45px;
+          font-size: pt-to-px(30);
+          color: $title_color;
+          font-family: MainFontThin;
+
+          span{
+            margin-left: -2px;
+          }
+        }
+        .slogan{
+          font-size: pt-to-px(14);
+          font-family: MainFontThin;
+          color: $slogan_color;
+        }
+      }
+
+    }
+
+
+
+    .navBlock{
+
+      .nav_menu_top{
+
+
+
+      }
+
+      .nav_menu_bottom{
+
+        .fill_brief, .get_quote{
+          width: 165px;
+          height: 45px;
+          border: 2px solid $slogan_color;
+          border-radius: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $title_color;
+          cursor: pointer;
+        }
+
+        .get_quote{
+          border-color: $title_color;
+          color: #fff;
+          background: $title_color;
+          margin-left: 18px;
+        }
+
+        .phone{
+          margin: 0 60px;
+        }
+
+        .language{
+          display: flex;
+
+          span{
+            padding: 3px 6px;
+            cursor: pointer;
+            color: $slogan_color;
+          }
+
+          .active{
+            background: $title_color;
+            color: #fff;
+            display: flex;
+          }
+        }
+
+      }
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      a{
+        color: #000;
+        font-family: MainFontThin;
+        font-size: 11.5pt;
+        font-weight: lighter;
+        margin: 0 30px;
+      }
+
+      a:last-child{
+        margin-right: 0;
+      }
+    }
+
+
+
+
+
+  }
+
+  .footer_second_line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+    height: 90px;
+    border: $border2;
+    background: $header_second_line_color;
+    border-bottom: 0px solid #ccc;
+
+
+
+    .navBlock{
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+
+
+
+    }
+
+
+
+
+
+  }
+
+
+}
