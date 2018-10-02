@@ -35,22 +35,31 @@ export class Footer extends React.Component{
 
                     <nav className="navBlock">
 
-                        {/*<div className="nav_menu_top">*/}
-                            {/*<Link to="/how-it-works">Как это работает?</Link>*/}
-                            {/*<Link to="/team">Услуги</Link>*/}
-                            {/*<Link to="/portfolio">Блог</Link>*/}
-                            {/*<Link to="/about">О нас</Link>*/}
-                            {/*<Link to="/about">Портфолио</Link>*/}
-                            {/*<Link to="/about">Обзоры</Link>*/}
-                            {/*<Link to="/about">Контакты</Link>*/}
-                        {/*</div>*/}
+                        <div className="nav_menu_top">
+                            <Link to="/how-it-works">Как это работает?</Link>
+                            <Link to="/team">Услуги</Link>
+                            <Link to="/portfolio">Блог</Link>
+                            <Link to="/about">О нас</Link>
+                            <Link to="/about">Портфолио</Link>
+                            <Link to="/about">Обзоры</Link>
+                            <Link to="/about">Контакты</Link>
+                        </div>
 
-                        {/*<div className="nav_menu_bottom">*/}
+                        <div className="nav_menu_bottom">
 
-                            {/*<div className="fill_brief">Заполнить бриф</div>*/}
-                            {/*<div className="get_quote">Расчет стоимости</div>*/}
+                            <div className="sub_menu_1">
+                                <div className="fill_brief">Заполнить бриф</div>
+                                <div className="get_quote">Расчет стоимости</div>
+                            </div>
+                            <div className="sub_menu_2">
 
-                        {/*</div>*/}
+                                <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/GIT.png)` } }></div>
+                                <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/FB.png)` } }></div>
+                                <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/LINKEDIN.png)` } }></div>
+
+                            </div>
+
+                        </div>
 
                     </nav>
 

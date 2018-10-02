@@ -18,7 +18,7 @@ header{
     background: $header_first_line_color;
 
 
-    .navBlock{
+    > .navBlock{
 
       display: flex;
       justify-content: space-around;
@@ -27,7 +27,7 @@ header{
       a{
         color: #000;
         font-family: MainFontThin;
-        font-size: 11.5pt;
+        font-size: pt-to-px(14);
         font-weight: lighter;
         margin: 0 30px;
       }
@@ -92,15 +92,14 @@ header{
 
 
 
-    .navBlock{
+    > .navBlock{
 
       display: flex;
       justify-content: space-around;
       align-items: center;
 
       .fill_brief, .get_quote{
-        width: 165px;
-        height: 45px;
+        padding: 7px 17px;
         border: 2px solid $slogan_color;
         border-radius: 25px;
         display: flex;
@@ -108,6 +107,7 @@ header{
         align-items: center;
         color: $title_color;
         cursor: pointer;
+        font-size: pt-to-px(14);
       }
 
       .get_quote{

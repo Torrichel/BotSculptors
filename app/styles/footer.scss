@@ -62,8 +62,28 @@ footer{
 
 
     .navBlock{
+      flex-flow: column nowrap;
+      border: 0;
+      flex-grow: 1;
+      margin-left: 140px;
 
       .nav_menu_top{
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        flex-flow: row wrap;
+
+        a{
+          color: #000;
+          font-family: MainFontThin;
+          font-size: pt-to-px(14);
+          font-weight: lighter;
+          margin-right: 20px;
+        }
+
+        a:last-child{
+          margin-right: 0;
+        }
 
 
 
@@ -71,62 +91,56 @@ footer{
 
       .nav_menu_bottom{
 
-        .fill_brief, .get_quote{
-          width: 165px;
-          height: 45px;
-          border: 2px solid $slogan_color;
-          border-radius: 25px;
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+
+        .sub_menu_1{
+
           display: flex;
-          justify-content: center;
-          align-items: center;
-          color: $title_color;
-          cursor: pointer;
-        }
+          margin-top: 10px;
 
-        .get_quote{
-          border-color: $title_color;
-          color: #fff;
-          background: $title_color;
-          margin-left: 18px;
-        }
-
-        .phone{
-          margin: 0 60px;
-        }
-
-        .language{
-          display: flex;
-
-          span{
-            padding: 3px 6px;
-            cursor: pointer;
-            color: $slogan_color;
-          }
-
-          .active{
-            background: $title_color;
-            color: #fff;
+          .fill_brief, .get_quote{
+            padding: 7px 17px;
+            border: 2px solid #d5d9de;
+            border-radius: 25px;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2659b5;
+            cursor: pointer;
+            font-size: pt-to-px(14);
           }
+
+          .fill_brief{
+            margin-right: 10px;
+          }
+
+        }
+        .sub_menu_2{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+
+          .circle{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #d5d9de;
+            margin-left: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+
         }
 
+
+
       }
 
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
 
-      a{
-        color: #000;
-        font-family: MainFontThin;
-        font-size: 11.5pt;
-        font-weight: lighter;
-        margin: 0 30px;
-      }
-
-      a:last-child{
-        margin-right: 0;
-      }
     }
 
 
@@ -149,7 +163,7 @@ footer{
 
 
 
-    .navBlock{
+    > .navBlock{
 
       display: flex;
       justify-content: space-around;
