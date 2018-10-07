@@ -53,7 +53,7 @@ export class Footer extends React.Component{
                             </div>
                             <div className="sub_menu_2">
 
-                                <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/GIT.png)` } }></div>
+                                <Link to="https://github.com/BotSculptors" className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/GIT.png)` } }></Link>
                                 <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/FB.png)` } }></div>
                                 <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/LINKEDIN.png)` } }></div>
 
@@ -67,7 +67,25 @@ export class Footer extends React.Component{
 
                 <div className="footer_second_line">
 
+                    <div className="sub_block_1">
+                        <Link to="/privacy-policy">Политика Конфиденциальности</Link>
+                    </div>
+                    <div className="sub_block_2">
 
+                        <div className="phone">
+                            <i className="material-icons">call</i><span>8(900) 333-22-11</span>
+                        </div>
+
+                        <div className="email">
+                            <i className="material-icons">mail_outline</i><span>info@botsculptors.com</span>
+                        </div>
+
+                    </div>
+
+
+                    <div className="sub_block_3">
+                        BotSculptors © 2018
+                    </div>
 
                 </div>
 

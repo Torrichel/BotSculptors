@@ -160,19 +160,34 @@ footer{
     border: $border2;
     background: $header_second_line_color;
     border-bottom: 0px solid #ccc;
+    font-size: pt-to-px(14);
 
 
 
-    > .navBlock{
-
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-
-
-
+    .sub_block_1{
 
     }
+
+    .sub_block_2{
+      display: flex;
+
+      .phone{
+        margin-right: 45px;
+      }
+
+      .phone, .email{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i{
+          margin-right: 5px;
+          opacity: .3;
+        }
+      }
+
+    }
+    .sub_block_3{}
 
 
 
