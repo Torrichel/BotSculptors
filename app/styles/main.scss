@@ -306,13 +306,19 @@ main{
         margin-bottom: 45px;
 
         .back_text{
-          font-size: 32px;
+          font-size: 30px;
           opacity: .1;
           position: absolute;
         }
-        .front_text{}
+        .front_text{
+          font-size: 25px;
+        }
 
       }
+
+
+
+
 
       .persons{
         display: flex;
@@ -321,7 +327,6 @@ main{
 
         .person{
           flex-grow: 1;
-          width: 100px;
           height: 265px;
           border: 0px solid #ccc;
           margin-right: 5px;
@@ -334,6 +339,7 @@ main{
           background-size: 200px;
           background-position-x: right;
           background-position-y: bottom;
+
 
 
           .title{
@@ -349,58 +355,67 @@ main{
     }
 
     .subscription{
-
-      padding: 90px 24%;
-
-
+      padding: 60px 55px;
+      border: 7px solid #f2f4f5;
+      margin: 85px 7%;
+      border-radius: 10px;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 300px;
 
       > .title{
         display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
+        flex-flow: column;
+        align-items: flex-start;
         border: 0px solid red;
         margin-bottom: 45px;
+        font-size: 26px;
 
-        .back_text{
-          font-size: 32px;
-          opacity: .1;
-          position: absolute;
+        b{
+
         }
-        .front_text{}
+        i{
+          font-style: normal;
+        }
 
       }
 
-      .persons{
+      > .form form{
         display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
 
-        .person{
-          flex-grow: 1;
-          width: 100px;
-          height: 265px;
-          border: 0px solid #ccc;
-          margin-right: 5px;
-          margin-bottom: 5px;
-          background: $our_services_bg;
-          border-radius: 5px;
-
-
-          background-repeat: no-repeat;
-          background-size: 200px;
-          background-position-x: right;
-          background-position-y: bottom;
-
-
-          .title{
-            margin-top: 45px;
-            margin-left: 45px;
-            font-size: 20px;
-
-          }
+        input{
+          font-size: 14px;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          outline: none;
+          height: 45px;
+          border: 1px solid #d5d9de;
+          border-right: 0;
+          border-top-left-radius: 30px;
+          border-bottom-left-radius: 30px;
+          padding-left: 25px;
+          padding-right: 25px;
+          width: 240px;
 
         }
+        button{
+          height: 45px;
+          background-image: -moz-linear-gradient( -11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          background-image: -webkit-linear-gradient( -11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          background-image: -ms-linear-gradient( -11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          color: #fff;
+          font-size: 14px;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          outline: none;
+          padding: 0 25px;
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+          border: none;
+        }
+
       }
 
     }

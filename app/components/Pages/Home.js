@@ -3,6 +3,12 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
+import Slider from "react-slick";
+
+
+// Importing images
+import Subscription from '../../static/images/pages/home/subscription.png'
+
 
 export class Home extends React.Component {
 
@@ -13,6 +19,14 @@ export class Home extends React.Component {
 
 
     render() {
+
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
 
 
 
@@ -214,32 +228,36 @@ export class Home extends React.Component {
                 <div className="we_are_featured_by">
 
                     <div className="title">
-                        <span className="back_text">НАМ ДОВЕРЯЮТ</span>
-                        <span className="front_text">НАМ ДОВЕРЯЮТ</span>
+                        <span className="back_text">О НАС ГОВОРЯТ</span>
+                        <span className="front_text">О НАС ГОВОРЯТ</span>
                     </div>
 
+                    <Slider {...settings} >
+                        <div className="persons">
 
-                    <div className="persons">
+                            <div className="person" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
 
-                        <div className="person" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
+                            <div className="person" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
 
-                        <div className="person" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
+                        </div>
+                        <div>
+                            4
+                        </div>
 
-
-                    </div>
+                    </Slider>
 
 
                 </div>
 
                 {/* Subscribe */}
-                <div className="subscription">
+                <div className="subscription" style={{backgroundImage: "url(" + Subscription + ")"}}>
 
                     <div className="title">
-                        Появились вопросы? <br/>
-                        С удовольствием ответим на них!
+                        <b>Появились вопросы?</b>
+                        <i>С удовольствием ответим на них!</i>
                     </div>
                     <div className="form">
-                        <form className="form" action="" method="POST">
+                        <form action="" method="POST">
                             <input type="text" placeholder="Ваш E-mail"/>
                             <button>Свяжитесь со мной</button>
                         </form>
