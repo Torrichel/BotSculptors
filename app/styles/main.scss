@@ -53,7 +53,9 @@ main {
           position: absolute;
         }
 
-        .front_text {}
+        .front_text {
+          font-size: 20px;
+        }
       }
 
       .services {
@@ -102,7 +104,9 @@ main {
           position: absolute;
         }
 
-        .front_text {}
+        .front_text {
+          font-size: 20px;
+        }
       }
 
       > .slogan {}
@@ -148,7 +152,9 @@ main {
           position: absolute;
         }
 
-        .front_text {}
+        .front_text {
+          font-size: 20px;
+        }
       }
 
       .menu {
@@ -214,17 +220,33 @@ main {
           position: absolute;
         }
 
-        .front_text {}
+        .front_text {
+          font-size: 20px;
+        }
       }
 
       .companies {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-
         .company {
-
-
+          border: 2px solid #F2F4F5;
+          height: 150px;
+          width: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          img{
+            width: 100px;
+            padding-top: 20px;
+          }
+          span{
+            padding-top: 20px;
+            font-size: 14px;
+            height: 20px;
+            color: #929AA5;
+          }
           .title {
             margin-top: 45px;
             margin-left: 45px;
@@ -450,13 +472,6 @@ main {
           color: #7D8794;
           font-size: 12px;
         }
-      }
-    }
-    //we_are_trusted_by
-
-    .company{
-      img{
-        width: 100px;
       }
     }
 
