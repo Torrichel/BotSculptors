@@ -11,6 +11,7 @@ import Subscription from '../../static/images/pages/home/subscription.png'
 import Person from '../../static/images/pages/home/person.png'
 import Person1 from '../../static/images/pages/home/person1.png'
 import Company from '../../static/images/pages/home/CompanyLogopng.png'
+import Technologies from '../../static/images/pages/home/technologies.png'
 
 export class Home extends React.Component {
 
@@ -23,7 +24,6 @@ export class Home extends React.Component {
     render() {
 
         const settingsForReviewsSlider = {
-            dots: true,
             infinite: true,
             speed: 500,
             slidesToShow: 2,
@@ -35,6 +35,13 @@ export class Home extends React.Component {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 4
+        };
+        const settingsForTechnologiesSlider = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 6,
+            slidesToScroll: 6
         };
 
 
@@ -105,46 +112,85 @@ export class Home extends React.Component {
                     </div>
 
                     <div className="slogan">
-                        Мы используем только самые последние технологии современного рынка
+                        Мы используем только самые последние<br/> технологии современного рынка
                     </div>
+                    <Slider {...settingsForTechnologiesSlider} >
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
 
-                    <div className="technologies">
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={Technologies} alt="company"></img>
+                          </div>
+                      </div>
 
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
 
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                        <div className="technology" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-
-
-                    </div>
+                      </Slider>
 
 
                 </div>

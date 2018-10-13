@@ -87,7 +87,7 @@ main {
 
     .techs {
       background: $slogan_color;
-      padding: 90px 24%;
+      padding: 70px 24%;
 
       > .title {
         display: flex;
@@ -95,7 +95,7 @@ main {
         justify-content: center;
         align-items: center;
         border: 0 solid red;
-        margin-bottom: 45px;
+        margin-bottom: 15px;
 
         .back_text {
           color: #fff;
@@ -109,23 +109,19 @@ main {
         }
       }
 
-      > .slogan {}
+      > .slogan {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 30px;
+      }
 
       .technologies {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-
         .technology {
-          flex-shrink: 0;
-          width: 90px;
-          height: 90px;
-          border: 0 solid #ccc;
-          margin-bottom: 10px;
-          background: $our_services_bg;
-          background-repeat: no-repeat;
-          background-size: contain;
-
+          img{
+            width: 122px;
+          }
           .title {
             margin-top: 45px;
             margin-left: 45px;
@@ -451,11 +447,7 @@ main {
         }
       }
     }
-    .we_are_featured_by{
-      .slick-dots{
-        display: none !important;
-      }
-    }
+
     .person{
       display: flex;
       flex-direction: column;
