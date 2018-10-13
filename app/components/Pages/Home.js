@@ -8,7 +8,9 @@ import Slider from "react-slick";
 
 // Importing images
 import Subscription from '../../static/images/pages/home/subscription.png'
-
+import Person from '../../static/images/pages/home/person.png'
+import Person1 from '../../static/images/pages/home/person1.png'
+import Company from '../../static/images/pages/home/CompanyLogopng.png'
 
 export class Home extends React.Component {
 
@@ -20,14 +22,20 @@ export class Home extends React.Component {
 
     render() {
 
-        const settings = {
+        const settingsForReviewsSlider = {
             dots: true,
             infinite: true,
             speed: 500,
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1
         };
-
+        const settingsForTrustSlider = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1
+        };
 
 
         return (
@@ -207,19 +215,75 @@ export class Home extends React.Component {
                         <span className="front_text">НАМ ДОВЕРЯЮТ</span>
                     </div>
 
+                    <Slider {...settingsForTrustSlider} >
+                      <div className="companies">
 
-                    <div className="companies">
+                        <div className="company" >
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
 
-                        <div className="company" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
+                      </div>
+                      <div className="companies">
 
-                        <div className="company" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
+                        <div className="company" >
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
 
-                        <div className="company" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
+                      </div>
+                      <div className="companies">
 
-                        <div className="company" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
+                        <div className="company">
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
+
+                      </div>
+                      <div className="companies">
+
+                        <div className="company">
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
+
+                      </div>
+                      <div className="companies">
+
+                        <div className="company" >
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
+
+                      </div>
+                      <div className="companies">
+
+                        <div className="company" >
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
+
+                      </div>
+                      <div className="companies">
+
+                        <div className="company" >
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
+
+                      </div>
+                      <div className="companies">
+
+                        <div className="company" >
+                          <img src={Company} alt="company"></img>
+                          <span>Ebay</span>
+                        </div>
+
+                      </div>
 
 
-                    </div>
+                    </Slider>
+
 
 
                 </div>
@@ -232,16 +296,70 @@ export class Home extends React.Component {
                         <span className="front_text">О НАС ГОВОРЯТ</span>
                     </div>
 
-                    <Slider {...settings} >
+                    <Slider {...settingsForReviewsSlider} >
                         <div className="persons">
 
-                            <div className="person" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
-                            <div className="person" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }></div>
-
+                          <div className="person">
+                                <div className="personInfo">
+                                  <img src={Person} alt="person" ></img>
+                                  <div>
+                                    <span className="personName">Литвинов Евгений<br/></span>
+                                    <span className="personPosition">Арт-директор компании<br/></span>
+                                    <span className="personCompany">P&B</span>
+                                  </div>
+                                </div>
+                                <div className="personReview">
+                                  <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                </div>
+                              </div>
                         </div>
-                        <div>
-                            4
+                        <div className="persons">
+
+                          <div className="person">
+                                <div className="personInfo">
+                                  <img src={Person} alt="person" ></img>
+                                  <div>
+                                    <span className="personName">Литвинов Евгений<br/></span>
+                                    <span className="personPosition">Арт-директор компании<br/></span>
+                                    <span className="personCompany">P&B</span>
+                                  </div>
+                                </div>
+                                <div className="personReview">
+                                  <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div className="persons">
+
+                          <div className="person">
+                                <div className="personInfo">
+                                  <img src={Person1} alt="person" ></img>
+                                  <div>
+                                    <span className="personName">Абдурахман Абдурахманович<br/></span>
+                                    <span className="personPosition">Арт-директор компании<br/></span>
+                                    <span className="personCompany">P&B</span>
+                                  </div>
+                                </div>
+                                <div className="personReview">
+                                  <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div className="persons">
+
+                          <div className="person">
+                                <div className="personInfo">
+                                  <img src={Person} alt="person" ></img>
+                                  <div>
+                                    <span className="personName">Литвинов Евгений<br/></span>
+                                    <span className="personPosition">Арт-директор компании<br/></span>
+                                    <span className="personCompany">P&B</span>
+                                  </div>
+                                </div>
+                                <div className="personReview">
+                                  <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                </div>
+                              </div>
                         </div>
 
                     </Slider>

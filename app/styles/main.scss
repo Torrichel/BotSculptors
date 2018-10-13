@@ -1,30 +1,28 @@
-main{
+main {
   display: flex;
   justify-content: center;
 
-
-  .mainIn{
+  .mainIn {
     width: 100%;
 
-
-    h1, h2, h3, h4, h5, h6{
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-size: 30px;
       font-weight: lighter;
       color: #333;
       text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.24);
       font-family: MainFontThin;
-
     }
 
-    p{
+    p {
       font-size: 17px;
     }
-
-
     // Home Page Start
-
-    .slider{
-
+    .slider {
       display: flex;
       align-items: center;
       padding-left: 7%;
@@ -32,197 +30,164 @@ main{
       background-size: cover;
       background-repeat: no-repeat;
 
-      .info{
+      .info {
         border: 2px solid #fff;
         color: #fff;
       }
-
-
-
     }
 
-
-    .our_services{
-
+    .our_services {
       padding: 90px 24%;
 
-
-
-      > .title{
+      > .title {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0px solid red;
+        border: 0 solid red;
         margin-bottom: 45px;
 
-        .back_text{
+        .back_text {
           font-size: 32px;
-          opacity: .1;
+          opacity: 0.1;
           position: absolute;
         }
-        .front_text{}
 
+        .front_text {}
       }
 
-      .services{
+      .services {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
 
-        .service{
+        .service {
           flex-shrink: 0;
           width: 30%;
           height: 265px;
-          border: 0px solid #ccc;
+          border: 0 solid #ccc;
           margin-bottom: 5%;
           background: $our_services_bg;
           border-radius: 5px;
-
-
           background-repeat: no-repeat;
           background-size: 200px;
           background-position-x: right;
           background-position-y: bottom;
 
-
-          .title{
+          .title {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
-
           }
-
         }
       }
-
     }
 
-
-    .techs{
+    .techs {
       background: $slogan_color;
       padding: 90px 24%;
 
-      > .title{
+      > .title {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0px solid red;
+        border: 0 solid red;
         margin-bottom: 45px;
 
-        .back_text{
+        .back_text {
           color: #fff;
           font-size: 32px;
-          opacity: .1;
+          opacity: 0.1;
           position: absolute;
         }
-        .front_text{}
 
+        .front_text {}
       }
 
-      > .slogan{
+      > .slogan {}
 
-      }
-
-      .technologies{
+      .technologies {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
 
-
-        .technology{
+        .technology {
           flex-shrink: 0;
           width: 90px;
           height: 90px;
-          border: 0px solid #ccc;
-          margin-bottom:10px;
+          border: 0 solid #ccc;
+          margin-bottom: 10px;
           background: $our_services_bg;
-
           background-repeat: no-repeat;
           background-size: contain;
 
-
-          .title{
+          .title {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
-
           }
-
         }
       }
-
-
     }
 
-
-    .our_portfolio{
-
+    .our_portfolio {
       padding: 90px 24%;
 
-
-
-      > .title{
+      > .title {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0px solid red;
+        border: 0 solid red;
         margin-bottom: 45px;
 
-        .back_text{
+        .back_text {
           font-size: 32px;
-          opacity: .1;
+          opacity: 0.1;
           position: absolute;
         }
-        .front_text{}
 
+        .front_text {}
       }
 
-      .menu{
+      .menu {
         display: flex;
 
-        .item{
-
-        }
+        .item {}
       }
 
-      .projects{
+      .projects {
         display: flex;
         flex-flow: column;
         justify-content: space-between;
 
-        .project{
+        .project {
           flex-shrink: 0;
           flex-grow: 1;
           height: 265px;
-          border: 0px solid #ccc;
+          border: 0 solid #ccc;
           margin-bottom: 10px;
           background: $our_services_bg;
           border-radius: 5px;
-
-
           background-repeat: no-repeat;
           background-size: 200px;
           background-position-x: right;
           background-position-y: bottom;
 
-          .category{
+          .category {
             border: 2px solid $slogan_color;
             color: #fff;
           }
 
-          .title{
+          .title {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
-
           }
-
         }
 
-        .more_projects{
+        .more_projects {
           border-radius: 5px;
           background: $title_color;
           color: #fff;
@@ -230,131 +195,95 @@ main{
           cursor: pointer;
         }
       }
-
     }
 
-
-    .we_are_trusted_by{
-
+    .we_are_trusted_by {
       padding: 90px 24%;
 
-
-
-      > .title{
+      > .title {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0px solid red;
+        border: 0 solid red;
         margin-bottom: 45px;
 
-        .back_text{
+        .back_text {
           font-size: 32px;
-          opacity: .1;
+          opacity: 0.1;
           position: absolute;
         }
-        .front_text{}
 
+        .front_text {}
       }
 
-      .companies{
+      .companies {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
 
-        .company{
-          flex-grow: 1;
-          width: 100px;
-          height: 265px;
-          border: 0px solid #ccc;
-          margin-right: 5px;
-          margin-bottom: 5px;
-          background: $our_services_bg;
-          border-radius: 5px;
+        .company {
 
 
-          background-repeat: no-repeat;
-          background-size: 200px;
-          background-position-x: right;
-          background-position-y: bottom;
-
-
-          .title{
+          .title {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
-
           }
-
         }
       }
-
     }
 
-    .we_are_featured_by{
-
+    .we_are_featured_by {
       padding: 90px 24%;
 
-
-
-      > .title{
+      > .title {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0px solid red;
+        border: 0 solid red;
         margin-bottom: 45px;
 
-        .back_text{
+        .back_text {
           font-size: 30px;
-          opacity: .1;
+          opacity: 0.1;
           position: absolute;
         }
-        .front_text{
+
+        .front_text {
           font-size: 25px;
         }
-
       }
 
-
-
-
-
-      .persons{
+      .persons {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
 
-        .person{
+        .person {
           flex-grow: 1;
           height: 265px;
-          border: 0px solid #ccc;
+          border: 0 solid #ccc;
           margin-right: 5px;
           margin-bottom: 5px;
           background: $our_services_bg;
           border-radius: 5px;
-
-
           background-repeat: no-repeat;
           background-size: 200px;
           background-position-x: right;
           background-position-y: bottom;
 
-
-
-          .title{
+          .title {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
-
           }
-
         }
       }
-
     }
 
-    .subscription{
+    .subscription {
       padding: 60px 55px;
       border: 7px solid #f2f4f5;
       margin: 85px 7%;
@@ -363,29 +292,27 @@ main{
       background-position: bottom right;
       background-size: 300px;
 
-      > .title{
+      > .title {
         display: flex;
         flex-flow: column;
         align-items: flex-start;
-        border: 0px solid red;
+        border: 0 solid red;
         margin-bottom: 45px;
         font-size: 26px;
 
-        b{
+        b {}
 
-        }
-        i{
+        i {
           font-style: normal;
         }
-
       }
 
-      > .form form{
+      > .form form {
         display: flex;
 
-        input{
+        input {
           font-size: 14px;
-          display:flex;
+          display: flex;
           justify-content: center;
           align-items: center;
           outline: none;
@@ -397,16 +324,16 @@ main{
           padding-left: 25px;
           padding-right: 25px;
           width: 240px;
-
         }
-        button{
+
+        button {
           height: 45px;
-          background-image: -moz-linear-gradient( -11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
-          background-image: -webkit-linear-gradient( -11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
-          background-image: -ms-linear-gradient( -11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          background-image: -moz-linear-gradient(-11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          background-image: -webkit-linear-gradient(-11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          background-image: -ms-linear-gradient(-11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
           color: #fff;
           font-size: 14px;
-          display:flex;
+          display: flex;
           justify-content: center;
           align-items: center;
           outline: none;
@@ -415,20 +342,16 @@ main{
           border-bottom-right-radius: 30px;
           border: none;
         }
-
       }
-
     }
-
     // Home Page End
-
-    .team{
+    .team {
       border: $border2;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
 
-      .member{
+      .member {
         border: 1px solid #ccc;
         padding: 10px;
         width: 250px;
@@ -438,13 +361,13 @@ main{
         overflow: hidden;
         margin-bottom: 25px;
 
-        .photo{
+        .photo {
           width: 100%;
           height: 300px;
           background-size: cover;
         }
 
-        .portfolio{
+        .portfolio {
           display: flex;
           background: #459b45;
           color: #fff;
@@ -454,18 +377,88 @@ main{
           padding: 7px 0;
           font-family: MainFontThin;
         }
-        .portfolio:hover{
+
+        .portfolio:hover {
           text-decoration: none;
-          opacity: .95;
+          opacity: 0.95;
         }
+      }
+    }
+    //slider styles
+    .slick-slider {
+      .slick-next:before
+      {
+        border-radius: 50%;
+        color: #1F4C9D;
+        font-size: 22px;
+      }
+      .slick-prev:before
+      {
+        border-radius: 50%;
+        color: #1F4C9D;
+        font-size: 22px;
       }
 
     }
 
+    //personsInfo
+    .personInfo{
+      display: flex;
+      align-items: center;
+      text-align: right;
+      justify-content: space-around;
+      flex-direction: row;
+      width: 100%;
+      img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      div{
+        .personName{
+          font-weight: 600;
+          font-size: 16px;
+        }
+        .personPosition{
+          font-size: 14px;
+          color: #1F4C9D;
+        }
+        .personCompany{
+          font-weight: 800;
+          font-size: 20px;
+        }
+      }
+    }
+    .we_are_featured_by{
+      .slick-dots{
+        display: none !important;
+      }
+    }
+    .person{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: left;
 
+      .personReview{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        p{
+          color: #7D8794;
+          font-size: 12px;
+        }
+      }
+    }
+    //we_are_trusted_by
 
+    .company{
+      img{
+        width: 100px;
+      }
+    }
 
   }
-
-
 }
