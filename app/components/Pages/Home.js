@@ -33,8 +33,8 @@ export class Home extends React.Component {
             dots: true,
             infinite: true,
             speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 4
+            slidesToShow: 5,
+            slidesToScroll: 5
         };
         const settingsForTechnologiesSlider = {
             dots: true,
@@ -53,11 +53,13 @@ export class Home extends React.Component {
                 <div className="slider" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Slide1.png)` } }>
 
                     <div className="info">
+
                         <div className="slogan">Современно<span>.</span> Четко<span>.</span> Эффективно<span>.</span></div>
-                        <div className="title">Создаем Ваше Будущее</div>
-                        <div className="call_to_action">Наши Услуги</div>
-                        <div className="pagination"></div>
+                        <div className="title">Создаем Ваше Будущее</div><br/>
+                        <div className="call_to_action"><a href="#" class="btn-gradient">Наши Услуги</a> </div>
+
                     </div>
+                    <div className="pagination"></div>
 
                 </div>
 
@@ -205,7 +207,7 @@ export class Home extends React.Component {
 
                     <div className="menu">
                         <div className="item">Веб-Дизайн</div>
-                        <div className="item">Разработка Сайтов</div>
+                        <div style={ { color: `#1F4C9D` } } className="item">Разработка Сайтов</div>
                         <div className="item">Разработка Ботов</div>
                         <div className="item">Chrome Extensions</div>
                         <div className="item">Программное Обеспечение</div>
@@ -215,22 +217,21 @@ export class Home extends React.Component {
                     <div className="projects">
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
-
-                            <div className="category">РАЗРАБОТКА САЙТОВ</div>
+                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
                             <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
 
                         </div>
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
 
-                            <div className="category">РАЗРАБОТКА САЙТОВ</div>
+                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
                             <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
 
                         </div>
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
 
-                            <div className="category">РАЗРАБОТКА САЙТОВ</div>
+                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
                             <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
 
                         </div>
@@ -238,14 +239,14 @@ export class Home extends React.Component {
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
 
-                            <div className="category">РАЗРАБОТКА САЙТОВ</div>
+                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
                             <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
 
                         </div>
 
-
-
-                        <div className="more_projects">Больше проектов</div>
+                        <div className="more_projects_btn">
+                          <div className="more_projects"><a href="#" class="btn-gradient">Больше проектов</a> </div>
+                        </div>
 
 
                     </div>

@@ -25,14 +25,51 @@ main {
     .slider {
       display: flex;
       align-items: center;
-      padding-left: 7%;
+      padding-left: 14%;
       height: 656px;
       background-size: cover;
       background-repeat: no-repeat;
 
       .info {
-        border: 2px solid #fff;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
         color: #fff;
+
+        .title {
+          font-size: 36px;
+          font-weight: 800;
+        }
+
+        .slogan {
+          font-size: 32px;
+
+          span {
+            color: $slogan_color2;
+            font-size: 1.5em;
+            line-height: 24px;
+          }
+        }
+        .call_to_action:hover{
+          background-color: #0C3376;
+        }
+        .call_to_action {
+          margin-top: 25px;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          width: 180px;
+          height: 45px;
+          background-color: #265ab5;
+          border-radius: 50px;
+
+          a {
+            text-decoration: none;
+            font-size: 22px;
+            color: #fff;
+          }
+        }
       }
     }
 
@@ -119,9 +156,10 @@ main {
 
       .technologies {
         .technology {
-          img{
+          img {
             width: 122px;
           }
+
           .title {
             margin-top: 45px;
             margin-left: 45px;
@@ -150,12 +188,17 @@ main {
 
         .front_text {
           font-size: 20px;
+
         }
       }
 
       .menu {
+        font-size: 12px;
         display: flex;
-
+        align-items:flex-start;
+        text-align: left;
+        justify-content: space-around;
+        margin-bottom: 15px;
         .item {}
       }
 
@@ -163,11 +206,16 @@ main {
         display: flex;
         flex-flow: column;
         justify-content: space-between;
+        .more_projects_btn{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
         .project {
           flex-shrink: 0;
           flex-grow: 1;
-          height: 265px;
+          height: 200px;
           border: 0 solid #ccc;
           margin-bottom: 10px;
           background: $our_services_bg;
@@ -179,22 +227,46 @@ main {
 
           .category {
             border: 2px solid $slogan_color;
-            color: #fff;
+            color: black;
+            margin-top: 60px;
+            margin-left: 60px;
+
+            p{
+              padding-left: 4px;
+              font-size: 12px;
+              border: 1px solid black;
+              width: 120px;
+              border-radius: 3px;
+            }
+
           }
 
           .title {
-            margin-top: 45px;
-            margin-left: 45px;
+            margin-left: 60px;
             font-size: 20px;
+            b{
+              font-size: 24px;
+            }
           }
         }
 
         .more_projects {
-          border-radius: 5px;
-          background: $title_color;
-          color: #fff;
+          margin-top: 25px;
           display: flex;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          width: 180px;
+          height: 40px;
+          background-color: #265ab5;
+          border-radius: 50px;
           cursor: pointer;
+
+          a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+          }
         }
       }
     }
@@ -225,24 +297,28 @@ main {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+
         .company {
+          margin-left: 5px;
           border: 2px solid #F2F4F5;
           height: 150px;
-          width: 150px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          img{
+
+          img {
             width: 100px;
             padding-top: 20px;
           }
-          span{
+
+          span {
             padding-top: 20px;
             font-size: 14px;
             height: 20px;
             color: #929AA5;
           }
+
           .title {
             margin-top: 45px;
             margin-left: 45px;
@@ -404,68 +480,69 @@ main {
     }
     //slider styles
     .slick-slider {
-      .slick-next:before
-      {
-        border-radius: 50%;
-        color: #1F4C9D;
-        font-size: 22px;
-      }
-      .slick-prev:before
-      {
+      .slick-next:before {
         border-radius: 50%;
         color: #1F4C9D;
         font-size: 22px;
       }
 
+      .slick-prev:before {
+        border-radius: 50%;
+        color: #1F4C9D;
+        font-size: 22px;
+      }
     }
-
     //personsInfo
-    .personInfo{
+    .personInfo {
       display: flex;
       align-items: center;
       text-align: right;
       justify-content: space-around;
       flex-direction: row;
       width: 100%;
-      img{
+
+      img {
         width: 100px;
         height: 100px;
         border-radius: 50%;
       }
-      div{
-        .personName{
+
+      div {
+        .personName {
           font-weight: 600;
           font-size: 16px;
         }
-        .personPosition{
+
+        .personPosition {
           font-size: 14px;
           color: #1F4C9D;
         }
-        .personCompany{
+
+        .personCompany {
           font-weight: 800;
           font-size: 20px;
         }
       }
     }
 
-    .person{
+    .person {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
       text-align: left;
 
-      .personReview{
+      .personReview {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 85%;
-        p{
+
+        p {
           color: #7D8794;
           font-size: 12px;
         }
       }
     }
-
   }
 }
