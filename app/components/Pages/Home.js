@@ -56,7 +56,7 @@ export class Home extends React.Component {
 
                         <div className="slogan">Современно<span>.</span> Четко<span>.</span> Эффективно<span>.</span></div>
                         <div className="title">Создаем Ваше Будущее</div><br/>
-                        <div className="call_to_action"><a href="#" class="btn-gradient">Наши Услуги</a> </div>
+                        <div className="call_to_action"><a href="#" className="btn-gradient">Наши Услуги</a> </div>
 
                     </div>
                     <div className="pagination"></div>
@@ -245,7 +245,7 @@ export class Home extends React.Component {
                         </div>
 
                         <div className="more_projects_btn">
-                          <div className="more_projects"><a href="#" class="btn-gradient">Больше проектов</a> </div>
+                          <div className="more_projects"><a href="#" className="btn-gradient">Больше проектов</a> </div>
                         </div>
 
 

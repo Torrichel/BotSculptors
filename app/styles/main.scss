@@ -74,24 +74,23 @@ main {
     }
 
     .our_services {
-      padding: 90px 24%;
+      padding: $GlobalPadding;
 
       > .title {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0 solid red;
         margin-bottom: 45px;
 
         .back_text {
-          font-size: 32px;
+          font-size: 53px;
           opacity: 0.1;
           position: absolute;
         }
 
         .front_text {
-          font-size: 20px;
+          font-size: 26px;
         }
       }
 
@@ -104,7 +103,6 @@ main {
           flex-shrink: 0;
           width: 30%;
           height: 265px;
-          border: 0 solid #ccc;
           margin-bottom: 5%;
           background: $our_services_bg;
           border-radius: 5px;
@@ -123,7 +121,7 @@ main {
     }
 
     .techs {
-      background: $slogan_color;
+      background: #eef0f2;
       padding: 70px 24%;
 
       > .title {
@@ -131,18 +129,18 @@ main {
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0 solid red;
         margin-bottom: 15px;
 
         .back_text {
           color: #fff;
-          font-size: 32px;
-          opacity: 0.1;
+          font-size: 53px;
+          opacity: 0.5;
           position: absolute;
         }
 
         .front_text {
-          font-size: 20px;
+          z-index: 2;
+          font-size: 26px;
         }
       }
 
@@ -152,6 +150,7 @@ main {
         align-items: center;
         text-align: center;
         padding-bottom: 30px;
+        color: $slogan_color2;
       }
 
       .technologies {
@@ -170,24 +169,23 @@ main {
     }
 
     .our_portfolio {
-      padding: 90px 24%;
+      padding: $GlobalPadding;
 
       > .title {
         display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
-        border: 0 solid red;
         margin-bottom: 45px;
 
         .back_text {
-          font-size: 32px;
+          font-size: 53px;
           opacity: 0.1;
           position: absolute;
         }
 
         .front_text {
-          font-size: 20px;
+          font-size: 26px;
 
         }
       }
@@ -216,7 +214,6 @@ main {
           flex-shrink: 0;
           flex-grow: 1;
           height: 200px;
-          border: 0 solid #ccc;
           margin-bottom: 10px;
           background: $our_services_bg;
           border-radius: 5px;
@@ -226,7 +223,6 @@ main {
           background-position-y: bottom;
 
           .category {
-            border: 2px solid $slogan_color;
             color: black;
             margin-top: 60px;
             margin-left: 60px;
@@ -272,7 +268,7 @@ main {
     }
 
     .we_are_trusted_by {
-      padding: 90px 24%;
+      padding: $GlobalPadding;
 
       > .title {
         display: flex;
@@ -283,13 +279,13 @@ main {
         margin-bottom: 45px;
 
         .back_text {
-          font-size: 32px;
+          font-size: 53px;
           opacity: 0.1;
           position: absolute;
         }
 
         .front_text {
-          font-size: 20px;
+          font-size: 26px;
         }
       }
 
@@ -329,7 +325,7 @@ main {
     }
 
     .we_are_featured_by {
-      padding: 90px 24%;
+      padding: $GlobalPadding;
 
       > .title {
         display: flex;
@@ -346,7 +342,7 @@ main {
         }
 
         .front_text {
-          font-size: 25px;
+          font-size: 26px;
         }
       }
 
@@ -361,7 +357,7 @@ main {
           border: 0 solid #ccc;
           margin-right: 5px;
           margin-bottom: 5px;
-          background: $our_services_bg;
+          background: $persons_bg;
           border-radius: 5px;
           background-repeat: no-repeat;
           background-size: 200px;
@@ -380,7 +376,7 @@ main {
     .subscription {
       padding: 60px 55px;
       border: 7px solid #f2f4f5;
-      margin: 85px 7%;
+      margin: 85px 18%;
       border-radius: 10px;
       background-repeat: no-repeat;
       background-position: bottom right;
@@ -440,7 +436,6 @@ main {
     }
     // Home Page End
     .team {
-      border: $border2;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;

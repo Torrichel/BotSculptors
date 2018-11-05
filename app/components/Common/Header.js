@@ -10,13 +10,23 @@ import {Helmet} from 'react-helmet'
 
 
 import logo from '../../static/images/logo.png'
+import phoneIcon from '../../static/images/pages/header/phone.png'
 
 
 export class Header extends React.Component{
 
     constructor(props){
         super(props);
+        this.toggleClass= this.toggleClass.bind(this);
+       this.state = {
+           active: false,
+       };
     }
+
+    toggleClass() {
+        let currentState = this.state.active;
+        this.setState({ active: !currentState });
+    };
 
     hireUs(){
         window.location = config.company;
@@ -73,10 +83,13 @@ export class Header extends React.Component{
                         <div className="fill_brief">Заполнить бриф</div>
                         <div className="get_quote">Расчет стоимости</div>
 
-                        <div className="phone">8(900) <b>333-22-11</b></div>
+                        <div className="phone">
+                          <img src={phoneIcon} alt="phone"/>
+                          8(900) <b>333-22-11</b>
+                      </div>
                         <div className="language">
-                            <span>ENG</span>
-                            <span className="active">РУС</span>
+                            <span onClick={this.toggleClass} className={this.state.active ? 'active' : null }>ENG</span>
+                            <span onClick={this.toggleClass} className={!this.state.active ? 'active' : null }>РУС</span>
                         </div>
 
                     </div>

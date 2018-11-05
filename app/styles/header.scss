@@ -1,6 +1,5 @@
 header{
 
-  border: $border1;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -11,10 +10,10 @@ header{
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: 14%;
+    padding-right: 13%;
     height: 40px;
-    border: $border2;
+
     background: $header_first_line_color;
 
 
@@ -29,7 +28,7 @@ header{
         font-family: MainFontThin;
         font-size: pt-to-px(14);
         font-weight: lighter;
-        margin: 0 30px;
+        margin: 0 18px;
       }
 
       a:last-child{
@@ -48,12 +47,11 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: 14%;
+    padding-right: 13%;
     height: 90px;
-    border: $border2;
     background: $header_second_line_color;
-    border-bottom: 0px solid #ccc;
+
 
     .logo_section{
       display: flex;
@@ -97,10 +95,11 @@ header{
       display: flex;
       justify-content: space-around;
       align-items: center;
+      width: 710px;
 
       .fill_brief, .get_quote{
+        border: 2px solid #d5d9de;
         padding: 7px 17px;
-        border: 2px solid $slogan_color;
         border-radius: 25px;
         display: flex;
         justify-content: center;
@@ -118,7 +117,13 @@ header{
       }
 
       .phone{
-        margin: 0 60px;
+        margin: 0 50px;
+        font-size: 20px;
+        img{
+          width: 17px;
+          margin-right: 3px;
+          margin-bottom: 2px;
+        }
       }
 
       .language{
