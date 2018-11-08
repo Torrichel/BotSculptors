@@ -50,13 +50,14 @@ export class Header extends React.Component{
 
                     <nav className="navBlock">
 
-                        <NavLink to="/how-it-works">Как это работает?</NavLink>
-                        <NavLink to="/team">Услуги</NavLink>
-                        <NavLink to="/portfolio">Блог</NavLink>
-                        <NavLink to="/about">О нас</NavLink>
-                        <NavLink to="/about">Портфолио</NavLink>
-                        <NavLink to="/about">Обзоры</NavLink>
-                        <NavLink to="/about">Контакты</NavLink>
+                        <NavLink to="/how-it-works">How it works?</NavLink>
+                        <NavLink to="/services">Services</NavLink>
+                        <NavLink to="/portfolio">Portfolio</NavLink>
+                        {/*<NavLink to="/about">Reviews</NavLink>*/}
+
+                        <NavLink to="/contact">Contact Us</NavLink>
+                        <NavLink to="/about">About</NavLink>
+
 
                     </nav>
 
@@ -80,16 +81,16 @@ export class Header extends React.Component{
 
                     <div className="navBlock">
 
-                        <div className="fill_brief">Заполнить бриф</div>
-                        <div className="get_quote">Расчет стоимости</div>
+                        <div className="fill_brief">Fill Brief</div>
+                        <div className="get_quote">Get Quote</div>
 
-                        <div className="phone">
+                        <a href='tel:+995571429373' className="phone">
                           <img src={phoneIcon} alt="phone"/>
-                          8(900) <b>333-22-11</b>
-                      </div>
+                          (+995) <b>571 42 93 73</b>
+                        </a>
                         <div className="language">
-                            <span onClick={this.toggleClass} className={this.state.active ? 'active' : null }>ENG</span>
-                            <span onClick={this.toggleClass} className={!this.state.active ? 'active' : null }>РУС</span>
+                            <span onClick={this.toggleClass} className={this.state.active ? 'active' : null }>РУС</span>
+                            <span onClick={this.toggleClass} className={!this.state.active ? 'active' : null }>ENG</span>
                         </div>
 
                     </div>

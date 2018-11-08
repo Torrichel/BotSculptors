@@ -54,9 +54,9 @@ export class Home extends React.Component {
 
                     <div className="info">
 
-                        <div className="slogan">Современно<span>.</span> Четко<span>.</span> Эффективно<span>.</span></div>
-                        <div className="title">Создаем Ваше Будущее</div><br/>
-                        <div className="call_to_action"><a href="#" className="btn-gradient">Наши Услуги</a> </div>
+                        <div className="slogan">Quality<span>.</span> Efficiency<span>.</span> Power<span>.</span></div>
+                        <div className="title">Converting ideas into real-life projects.</div><br/>
+                        <div className="call_to_action"><a href="#" className="btn-gradient">Services</a> </div>
 
                     </div>
                     <div className="pagination"></div>
@@ -67,22 +67,22 @@ export class Home extends React.Component {
                 <div className="our_services">
 
                     <div className="title">
-                        <span className="back_text">НАШИ УСЛУГИ</span>
-                        <span className="front_text">НАШИ УСЛУГИ</span>
+                        <span className="back_text">Services</span>
+                        <span className="front_text">Services</span>
                     </div>
 
                     <div className="services">
 
                         <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
-                            <div className="title">Веб <br/><b>Дизайн</b></div>
+                            <div className="title">Web <br/><b>Design</b></div>
                         </div>
 
                         <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebsiteDevelopment.png)` } }>
-                            <div className="title">Разработка <br/><b>Сайтов</b></div>
+                            <div className="title">Website <br/><b>Development</b></div>
                         </div>
 
                         <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/BotDevelopment.png)` } }>
-                            <div className="title">Разработка <br/><b>Ботов</b></div>
+                            <div className="title">Bot <br/><b>Development</b></div>
                         </div>
 
                         <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/ChromeExtensions.png)` } }>
@@ -90,14 +90,12 @@ export class Home extends React.Component {
                         </div>
 
                         <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/Software.png)` } }>
-                            <div className="title">Программное <br/><b>Обеспечение</b></div>
+                            <div className="title">Software <br/><b>Development</b></div>
                         </div>
 
                         <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/Maintenance.png)` } }>
-                            <div className="title">Техническое <br/><b>Обслуживание</b></div>
+                            <div className="title">Maintenance</div>
                         </div>
-
-
 
 
                     </div>
@@ -109,12 +107,12 @@ export class Home extends React.Component {
                 <div className="techs">
 
                     <div className="title">
-                        <span className="back_text">ТЕХНОЛОГИИ</span>
-                        <span className="front_text">ТЕХНОЛОГИИ</span>
+                        <span className="back_text">Technologies</span>
+                        <span className="front_text">Technologies</span>
                     </div>
 
                     <div className="slogan">
-                        Мы используем только самые последние<br/> технологии современного рынка
+                        We drive most popular technologies<br/> and frameworks
                     </div>
                     <Slider {...settingsForTechnologiesSlider} >
                       <div className="technologies">
@@ -201,51 +199,51 @@ export class Home extends React.Component {
                 <div className="our_portfolio">
 
                     <div className="title">
-                        <span className="back_text">НАШЕ ПОРТФОЛИО</span>
-                        <span className="front_text">НАШЕ ПОРТФОЛИО</span>
+                        <span className="back_text">Portfolio</span>
+                        <span className="front_text">Portfolio</span>
                     </div>
 
                     <div className="menu">
-                        <div className="item">Веб-Дизайн</div>
-                        <div style={ { color: `#1F4C9D` } } className="item">Разработка Сайтов</div>
-                        <div className="item">Разработка Ботов</div>
+                        <div className="item">Web Design</div>
+                        <div style={ { color: `#1F4C9D` } } className="item">Website Development</div>
+                        <div className="item">Bot Development</div>
                         <div className="item">Chrome Extensions</div>
-                        <div className="item">Программное Обеспечение</div>
-                        <div className="item">Техническое Обслуживание</div>
+                        <div className="item">Software Development</div>
+                        <div className="item">Maintenance</div>
                     </div>
 
                     <div className="projects">
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
-                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
-                            <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
+                            <div className="category"><p>Website Development</p></div>
+                            <div className="title"><b>Consulting</b><br/>portal development</div>
 
                         </div>
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
 
-                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
-                            <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
+                            <div className="category"><p>Website Development</p></div>
+                            <div className="title"><b>Consulting</b><br/>portal development</div>
 
                         </div>
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
 
-                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
-                            <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
+                            <div className="category"><p>Website Development</p></div>
+                            <div className="title"><b>Consulting</b><br/>portal development</div>
 
                         </div>
 
 
                         <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
 
-                            <div className="category"><p>РАЗРАБОТКА САЙТОВ</p></div>
-                            <div className="title"><b>Разработка портала</b><br/>в сфере кансалтинга</div>
+                            <div className="category"><p>Website Development</p></div>
+                            <div className="title"><b>Consulting</b><br/>portal development</div>
 
                         </div>
 
                         <div className="more_projects_btn">
-                          <div className="more_projects"><a href="#" className="btn-gradient">Больше проектов</a> </div>
+                          <div className="more_projects"><a href="#" className="btn-gradient">More</a> </div>
                         </div>
 
 
@@ -258,8 +256,8 @@ export class Home extends React.Component {
                 <div className="we_are_trusted_by">
 
                     <div className="title">
-                        <span className="back_text">НАМ ДОВЕРЯЮТ</span>
-                        <span className="front_text">НАМ ДОВЕРЯЮТ</span>
+                        <span className="back_text">Trusted</span>
+                        <span className="front_text">Trusted</span>
                     </div>
 
                     <Slider {...settingsForTrustSlider} >
@@ -339,8 +337,8 @@ export class Home extends React.Component {
                 <div className="we_are_featured_by">
 
                     <div className="title">
-                        <span className="back_text">О НАС ГОВОРЯТ</span>
-                        <span className="front_text">О НАС ГОВОРЯТ</span>
+                        <span className="back_text">Featured</span>
+                        <span className="front_text">Featured</span>
                     </div>
 
                     <Slider {...settingsForReviewsSlider} >
@@ -418,13 +416,13 @@ export class Home extends React.Component {
                 <div className="subscription" style={{backgroundImage: "url(" + Subscription + ")"}}>
 
                     <div className="title">
-                        <b>Появились вопросы?</b>
-                        <i>С удовольствием ответим на них!</i>
+                        <b>Still have questions?</b>
+                        <i>We're ready to support you 24/7!</i>
                     </div>
                     <div className="form">
                         <form action="" method="POST">
-                            <input type="text" placeholder="Ваш E-mail"/>
-                            <button>Свяжитесь со мной</button>
+                            <input type="text" placeholder="E-mail"/>
+                            <button>Send Request</button>
                         </form>
                     </div>
 

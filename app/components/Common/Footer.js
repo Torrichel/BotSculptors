@@ -36,20 +36,20 @@ export class Footer extends React.Component{
                     <nav className="navBlock">
 
                         <div className="nav_menu_top">
-                            <Link to="/how-it-works">Как это работает?</Link>
-                            <Link to="/team">Услуги</Link>
-                            <Link to="/portfolio">Блог</Link>
-                            <Link to="/about">О нас</Link>
-                            <Link to="/about">Портфолио</Link>
-                            <Link to="/about">Обзоры</Link>
-                            <Link to="/about">Контакты</Link>
+                            <Link to="/how-it-works">How it works?</Link>
+                            <Link to="/services">Services</Link>
+
+                            <Link to="/portfolio">Portfolio</Link>
+                            {/*<Link to="/about">Обзоры</Link>*/}
+                            <Link to="/about">Contact Us</Link>
+                            <Link to="/about">About</Link>
                         </div>
 
                         <div className="nav_menu_bottom">
 
                             <div className="sub_menu_1">
-                                <div className="fill_brief">Заполнить бриф</div>
-                                <div className="get_quote">Расчет стоимости</div>
+                                <div className="fill_brief">Fill Brief</div>
+                                <div className="get_quote">Get Quote</div>
                             </div>
                             <div className="sub_menu_2">
 
@@ -68,12 +68,12 @@ export class Footer extends React.Component{
                 <div className="footer_second_line">
 
                     <div className="sub_block_1">
-                        <Link to="/privacy-policy">Политика Конфиденциальности</Link>
+                        <Link to="/privacy-policy">Privacy Policy</Link>
                     </div>
                     <div className="sub_block_2">
 
                         <div className="phone">
-                            <i className="material-icons">call</i><span>8(900) 333-22-11</span>
+                            <i className="material-icons">call</i><span>(+995) 571 42 93 73</span>
                         </div>
 
                         <div className="email">
