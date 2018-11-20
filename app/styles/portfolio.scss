@@ -1,0 +1,16 @@
+.portfolioSection{
+display: flex;
+align-items: center;
+justify-content: space-around;
+
+.portfolioItem{
+  cursor: pointer;
+  margin: 30px 0;
+  width: 500px;
+  border: 2px solid black;
+  img{
+    width: 500px;
+  }
+}
+
+}

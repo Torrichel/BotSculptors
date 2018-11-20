@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import project_img from '../../static/images/pages/portfolio/portfolioImgExample.jpg'
 
 
 export class Portfolio extends React.Component {
@@ -15,8 +16,13 @@ export class Portfolio extends React.Component {
 
         return (
 
-            <div className="titleSection">
-                <h1>Our Portfolio</h1>
+            <div className="portfolioSection">
+                <div className="portfolioItem" >
+
+                  <p className="itemTitle">Adekvatnoe imya proekta</p>
+                  <img className="itemImg" src={project_img}></img>
+
+                </div>
             </div>
 
 
