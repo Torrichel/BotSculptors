@@ -9,7 +9,6 @@ import config from '../../../config'
 import {Helmet} from 'react-helmet'
 
 
-import logo from '../../static/images/logo.png'
 import phoneIcon from '../../static/images/pages/header/phone.png'
 
 
@@ -68,7 +67,7 @@ export class Header extends React.Component{
                     <div className="logo_section">
                         <div className="sub_section_1">
                             <NavLink className="logo" to="/">
-                                <img src={logo} alt="Bot Sculptors" />
+                                <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
                             </NavLink>
                         </div>
                         <div className="sub_section_2">

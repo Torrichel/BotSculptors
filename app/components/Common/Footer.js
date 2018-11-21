@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink, Link } from 'react-router-dom'
 
-import logo from '../../static/images/logo.png'
 
 
 export class Footer extends React.Component{
@@ -24,7 +23,7 @@ export class Footer extends React.Component{
                     <div className="logo_section">
                         <div className="sub_section_1">
                             <NavLink className="logo" to="/">
-                                <img src={logo} alt="Bot Sculptors" />
+                                <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
                             </NavLink>
                         </div>
                         <div className="sub_section_2">
@@ -53,9 +52,9 @@ export class Footer extends React.Component{
                             </div>
                             <div className="sub_menu_2">
 
-                                <Link to="https://github.com/BotSculptors" className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/GIT.png)` } }></Link>
-                                <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/FB.png)` } }></div>
-                                <div className="circle" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/footer/LINKEDIN.png)` } }></div>
+                                <Link to="https://github.com/BotSculptors" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></Link>
+                                <div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/fb.png)` } }></div>
+                                <div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></div>
 
                             </div>
 

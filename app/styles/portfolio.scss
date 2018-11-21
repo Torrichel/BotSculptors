@@ -14,3 +14,34 @@ justify-content: space-around;
 }
 
 }
+
+table.usedSkillsTable {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.usedSkillsTable td, table.usedSkillsTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.usedSkillsTable tbody td {
+  font-size: 13px;
+}
+table.usedSkillsTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.usedSkillsTable thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.usedSkillsTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}

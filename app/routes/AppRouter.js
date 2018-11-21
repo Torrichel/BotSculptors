@@ -10,7 +10,8 @@ import { ConnectedRouter } from 'react-router-redux'
 
 import Home from '../components/Pages/Home'
 
-import Portfolio from '../components/Pages/Portfolio'
+import Portfolio from '../components/Pages/Portfolio/portfolio'
+import PortfolioItem from '../components/Pages/Portfolio/portfolioItem'
 import Team from '../components/Pages/Team'
 import About from '../components/Pages/About'
 import HowItWorks from "../components/Pages/HowItWorks";
@@ -49,6 +50,7 @@ export class AppRouter extends React.Component{
                                     <Route exact path='/tours/:tourID' render={(props) => <Tour props={props} />} />
                                     <Route exact path='/team' render={() => <Team />} />
                                     <Route exact path='/about' render={() => <About />} />
+                                    <Route exact path='/portfolio/portfolioItem/Adekvatnoe_imya_proekta' render={() => <PortfolioItem />} />
                                 </Switch>
                             </div>
 

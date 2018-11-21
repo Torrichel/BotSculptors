@@ -6,13 +6,6 @@ import { Link } from 'react-router-dom'
 import Slider from "react-slick";
 
 
-// Importing images
-import Subscription from '../../static/images/pages/home/subscription.png'
-import Person from '../../static/images/pages/home/person.png'
-import Person1 from '../../static/images/pages/home/person1.png'
-import Company from '../../static/images/pages/home/CompanyLogopng.png'
-import Technologies from '../../static/images/pages/home/technologies.png'
-
 export class Home extends React.Component {
 
     constructor(props) {
@@ -22,6 +15,7 @@ export class Home extends React.Component {
 
 
     render() {
+        const technologyImg  = "https://s3.amazonaws.com/botsculptors/website/technologies.png"
 
         const settingsForReviewsSlider = {
             infinite: true,
@@ -50,7 +44,7 @@ export class Home extends React.Component {
             <div>
 
                 {/* Slider */}
-                <div className="slider" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Slide1.png)` } }>
+                <div className="slider" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/background.png)` } }>
 
                     <div className="info">
 
@@ -73,27 +67,27 @@ export class Home extends React.Component {
 
                     <div className="services">
 
-                        <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
+                        <div className="service" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebDesign.png)` } }>
                             <div className="title">Web <br/><b>Design</b></div>
                         </div>
 
-                        <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebsiteDevelopment.png)` } }>
+                        <div className="service" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebsiteDevelopment.png)` } }>
                             <div className="title">Website <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/BotDevelopment.png)` } }>
+                        <div className="service" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/BotDevelopment.png)` } }>
                             <div className="title">Bot <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/ChromeExtensions.png)` } }>
+                        <div className="service" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/ChromeExtensions.png)` } }>
                             <div className="title">Chrome <br/><b>Extensions</b></div>
                         </div>
 
-                        <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/Software.png)` } }>
+                        <div className="service" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/SoftwareDevelopment.png)` } }>
                             <div className="title">Software <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/Maintenance.png)` } }>
+                        <div className="service" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/tech.png)` } }>
                             <div className="title">Maintenance</div>
                         </div>
 
@@ -117,75 +111,75 @@ export class Home extends React.Component {
                     <Slider {...settingsForTechnologiesSlider} >
                       <div className="technologies">
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                       </div>
 
                       <div className="technologies">
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
-                          </div>
-                      </div>
-                      <div className="technologies">
-                          <div className="technology">
-                            <img src={Technologies} alt="company"></img>
-                          </div>
-                          <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
-                          </div>
-                      </div>
-                      <div className="technologies">
-                          <div className="technology">
-                            <img src={Technologies} alt="company"></img>
-                          </div>
-                          <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
-                          </div>
-                      </div>
-                      <div className="technologies">
-                          <div className="technology">
-                            <img src={Technologies} alt="company"></img>
-                          </div>
-                          <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                           <div className="technology">
-                            <img src={Technologies} alt="company"></img>
+                            <img src={technologyImg} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={technologyImg} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={technologyImg} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={technologyImg} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={technologyImg} alt="company"></img>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <img src={technologyImg} alt="company"></img>
+                          </div>
+                          <div className="technology">
+                            <img src={technologyImg} alt="company"></img>
                           </div>
                       </div>
 
@@ -214,28 +208,28 @@ export class Home extends React.Component {
 
                     <div className="projects">
 
-                        <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
+                        <div className="project">
                             <div className="category"><p>Website Development</p></div>
                             <div className="title"><b>Consulting</b><br/>portal development</div>
 
                         </div>
 
-                        <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
-
-                            <div className="category"><p>Website Development</p></div>
-                            <div className="title"><b>Consulting</b><br/>portal development</div>
-
-                        </div>
-
-                        <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
+                        <div className="project" >
 
                             <div className="category"><p>Website Development</p></div>
                             <div className="title"><b>Consulting</b><br/>portal development</div>
 
                         </div>
 
+                        <div className="project" >
 
-                        <div className="project" style={ { backgroundImage: `url(https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-571535901675/Our+Services/WebDesign.png)` } }>
+                            <div className="category"><p>Website Development</p></div>
+                            <div className="title"><b>Consulting</b><br/>portal development</div>
+
+                        </div>
+
+
+                        <div className="project" >
 
                             <div className="category"><p>Website Development</p></div>
                             <div className="title"><b>Consulting</b><br/>portal development</div>
@@ -264,7 +258,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company" >
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -272,7 +266,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company" >
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -280,7 +274,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company">
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -288,7 +282,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company">
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -296,7 +290,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company" >
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -304,7 +298,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company" >
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -312,7 +306,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company" >
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -320,7 +314,7 @@ export class Home extends React.Component {
                       <div className="companies">
 
                         <div className="company" >
-                          <img src={Company} alt="company"></img>
+                          <img src="https://s3.amazonaws.com/botsculptors/website/CompanyLogopng.png" alt="company"></img>
                           <span>Ebay</span>
                         </div>
 
@@ -346,7 +340,7 @@ export class Home extends React.Component {
 
                           <div className="person">
                                 <div className="personInfo">
-                                  <img src={Person} alt="person" ></img>
+                                  <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
                                   <div>
                                     <span className="personName">Литвинов Евгений<br/></span>
                                     <span className="personPosition">Арт-директор компании<br/></span>
@@ -362,7 +356,7 @@ export class Home extends React.Component {
 
                           <div className="person">
                                 <div className="personInfo">
-                                  <img src={Person} alt="person" ></img>
+                                  <img src="https://s3.amazonaws.com/botsculptors/website/person.png" alt="person" ></img>
                                   <div>
                                     <span className="personName">Литвинов Евгений<br/></span>
                                     <span className="personPosition">Арт-директор компании<br/></span>
@@ -378,7 +372,7 @@ export class Home extends React.Component {
 
                           <div className="person">
                                 <div className="personInfo">
-                                  <img src={Person1} alt="person" ></img>
+                                  <img src="https://s3.amazonaws.com/botsculptors/website/person1.png" alt="person" ></img>
                                   <div>
                                     <span className="personName">Абдурахман Абдурахманович<br/></span>
                                     <span className="personPosition">Арт-директор компании<br/></span>
@@ -394,7 +388,7 @@ export class Home extends React.Component {
 
                           <div className="person">
                                 <div className="personInfo">
-                                  <img src={Person} alt="person" ></img>
+                                  <img src="https://s3.amazonaws.com/botsculptors/website/person.png" alt="person" ></img>
                                   <div>
                                     <span className="personName">Литвинов Евгений<br/></span>
                                     <span className="personPosition">Арт-директор компании<br/></span>
@@ -413,7 +407,7 @@ export class Home extends React.Component {
                 </div>
 
                 {/* Subscribe */}
-                <div className="subscription" style={{backgroundImage: "url(" + Subscription + ")"}}>
+                <div className="subscription" style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>
 
                     <div className="title">
                         <b>Still have questions?</b>

@@ -28,6 +28,7 @@ main {
       padding-left: 14%;
       height: 656px;
       background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
 
       .info {
@@ -107,8 +108,8 @@ main {
           background: $our_services_bg;
           border-radius: 5px;
           background-repeat: no-repeat;
-          background-size: 200px;
-          background-position-x: right;
+          background-size: 250px;
+          background-position-x: 50px;
           background-position-y: bottom;
 
           .title {
