@@ -50,7 +50,17 @@ export const BackendDeveloperSubjectList = [
   },{
     SubjectName:"Gulp",
     ImageSrc:"devicon-gulp-plain colored questionImg"
+  },{
+    SubjectName:"Apache",
+    ImageSrc:"devicon-apache-plain-wordmark colored questionImg"
+  },{
+    SubjectName:"ReactJs",
+    ImageSrc:"devicon-atom-original colored questionImg"
+  },{
+    SubjectName:"BackboneJS",
+    ImageSrc:"devicon-backbonejs-plain-wordmark colored questionImg"
   }
+
 
 
 
@@ -62,6 +72,15 @@ export const DesignerSubjectList = [
   {
     SubjectName:"AngularJs",
     ImageSrc:"devicon-angularjs-plain-wordmark colored questionImg"
+  },{
+    SubjectName:"Apache",
+    ImageSrc:"devicon-apache-plain-wordmark colored questionImg"
+  },{
+    SubjectName:"ReactJs",
+    ImageSrc:"devicon-atom-original colored questionImg"
+  },{
+    SubjectName:"BackboneJS",
+    ImageSrc:"devicon-backbonejs-plain-wordmark colored questionImg"
   },{
     SubjectName:"Apache",
     ImageSrc:"devicon-apache-plain-wordmark colored questionImg"
