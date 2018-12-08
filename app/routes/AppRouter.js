@@ -15,6 +15,7 @@ import PortfolioItem from '../components/Pages/Portfolio/portfolioItem'
 import Team from '../components/Pages/Team'
 import About from '../components/Pages/About'
 import HowItWorks from "../components/Pages/HowItWorks";
+import Join from "../components/Pages/Join/Join.js"
 
 
 import createBrowserHistory from 'history/createBrowserHistory';
@@ -50,7 +51,8 @@ export class AppRouter extends React.Component{
                                     <Route exact path='/tours/:tourID' render={(props) => <Tour props={props} />} />
                                     <Route exact path='/team' render={() => <Team />} />
                                     <Route exact path='/about' render={() => <About />} />
-                                    <Route exact path='/portfolio/portfolioItem/Adekvatnoe_imya_proekta' render={() => <PortfolioItem />} />
+                                    <Route exact path='/portfolio/portfolioItem/portfolioItem' render={() => <PortfolioItem />} />
+                                    <Route exact path='/join' render={() => <Join />} />
                                 </Switch>
                             </div>
 

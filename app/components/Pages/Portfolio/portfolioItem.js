@@ -102,8 +102,8 @@ export class PortfolioItem extends React.Component {
             <div className="developerForThisProject">
                 <img src="https://s3.amazonaws.com/botsculptors/website/person1.png"></img>
                 <div className="DeveloperName">
-                  <span className="DeveloperName">Махмед Взрыватель</span>
-                  <span className="DeveloperRoleInProject">Инженер-ядершик</span>
+                  <span className="DeveloperName">Семён Семёныч</span>
+                  <span className="DeveloperRoleInProject">Front-end developer</span>
 
                 </div>
                 <button type="button" name="developerPage">&#8250;</button>
