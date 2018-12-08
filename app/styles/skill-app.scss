@@ -5,10 +5,11 @@
 // form styles
 
 .form-style-5{
+
 	max-width: 500px;
 	padding: 10px 20px;
 	background: #f4f7f8;
-	margin: 10px auto;
+	margin: 40px 0;
 	padding: 20px;
 	background: #f4f7f8;
 	border-radius: 8px;
@@ -48,7 +49,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	background-color: #e8eeef;
-	color:black;
+	color:#696969;
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	margin-bottom: 30px;
@@ -103,7 +104,7 @@
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
-	background: #109177;
+	background: #0A2B66;
 }
 .Skill-App {
   display: flex;
@@ -174,31 +175,38 @@ select {
 }
 
 /* Transition */
-
+.NeedMore{
+  margin: 20px 0;
+}
 .questionImg {
-  margin: 0px 5px;
   font-size: 6rem;
 }
 
 /* selected subject */
 
 .selected {
-  box-shadow: 0px 12px 22px 1px #333;
+  color: $title_color;
+  background-color: #d5d3d3;
 }
 
 .question {
-  margin: 10px;
-  cursor: pointer;
+
+  border: 1px solid #979b9f;
+width: 250px;
+height: 65px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+ justify-content: center;
   align-items: center;
+  .SubjectText{
+    cursor: pointer;
+  }
 }
 
 .SubjectsItems {
   font-family: 'Sniglet', cursive;
   font-size: 1.4em;
-  width: 50%;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

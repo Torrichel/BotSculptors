@@ -1,37 +1,27 @@
 
 export const WebDeveloperSubjectList = [
 {
-  SubjectName:"Android",
-  ImageSrc:"devicon-android-plain-wordmark colored questionImg"
+  SubjectName:"Android"
 },
 {
-  SubjectName:"AmazonWebServices",
-  ImageSrc:"devicon-amazonwebservices-plain-wordmark colored questionImg"
+  SubjectName:"AmazonWebServices"
 },
 {
-  SubjectName:"AngularJs",
-  ImageSrc:"devicon-angularjs-plain-wordmark colored questionImg"
+  SubjectName:"AngularJs"
 },{
-  SubjectName:"Apache",
-  ImageSrc:"devicon-apache-plain-wordmark colored questionImg"
+  SubjectName:"Apache"
 },{
-  SubjectName:"ReactJs",
-  ImageSrc:"devicon-atom-original colored questionImg"
+  SubjectName:"ReactJs"
 },{
-  SubjectName:"BackboneJS",
-  ImageSrc:"devicon-backbonejs-plain-wordmark colored questionImg"
+  SubjectName:"BackboneJS"
 },{
-  SubjectName:"CoffeScript",
-  ImageSrc:"devicon-coffeescript-original-wordmark colored questionImg"
+  SubjectName:"CoffeScript"
 },{
-  SubjectName:"C++",
-  ImageSrc:"devicon-cplusplus-line-wordmark questionImg"
+  SubjectName:"C++"
 },{
-  SubjectName:"d3js",
-  ImageSrc:"devicon-d3js-plain colored questionImg"
+  SubjectName:"d3js"
 },{
-  SubjectName:"Gulp",
-  ImageSrc:"devicon-gulp-plain colored questionImg"
+  SubjectName:"Gulp"
 }
 
 
@@ -42,23 +32,17 @@ export const WebDeveloperSubjectList = [
 
 export const BackendDeveloperSubjectList = [
   {
-    SubjectName:"C++",
-    ImageSrc:"devicon-cplusplus-line-wordmark questionImg"
+    SubjectName:"C++"
   },{
-    SubjectName:"d3js",
-    ImageSrc:"devicon-d3js-plain colored questionImg"
+    SubjectName:"d3js"
   },{
-    SubjectName:"Gulp",
-    ImageSrc:"devicon-gulp-plain colored questionImg"
+    SubjectName:"Gulp"
   },{
-    SubjectName:"Apache",
-    ImageSrc:"devicon-apache-plain-wordmark colored questionImg"
+    SubjectName:"Apache"
   },{
-    SubjectName:"ReactJs",
-    ImageSrc:"devicon-atom-original colored questionImg"
+    SubjectName:"ReactJs"
   },{
-    SubjectName:"BackboneJS",
-    ImageSrc:"devicon-backbonejs-plain-wordmark colored questionImg"
+    SubjectName:"BackboneJS"
   }
 
 
@@ -70,26 +54,19 @@ export const BackendDeveloperSubjectList = [
 
 export const DesignerSubjectList = [
   {
-    SubjectName:"AngularJs",
-    ImageSrc:"devicon-angularjs-plain-wordmark colored questionImg"
+    SubjectName:"AngularJs"
   },{
-    SubjectName:"Apache",
-    ImageSrc:"devicon-apache-plain-wordmark colored questionImg"
+    SubjectName:"Apache"
   },{
-    SubjectName:"ReactJs",
-    ImageSrc:"devicon-atom-original colored questionImg"
+    SubjectName:"ReactJs"
   },{
-    SubjectName:"BackboneJS",
-    ImageSrc:"devicon-backbonejs-plain-wordmark colored questionImg"
+    SubjectName:"BackboneJS"
   },{
-    SubjectName:"Apache",
-    ImageSrc:"devicon-apache-plain-wordmark colored questionImg"
+    SubjectName:"Apache"
   },{
-    SubjectName:"ReactJs",
-    ImageSrc:"devicon-atom-original colored questionImg"
+    SubjectName:"ReactJs"
   },{
-    SubjectName:"BackboneJS",
-    ImageSrc:"devicon-backbonejs-plain-wordmark colored questionImg"
+    SubjectName:"BackboneJS"
   }
 
 

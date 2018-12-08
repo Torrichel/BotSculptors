@@ -28,8 +28,8 @@ export class Skill_app extends Component {
   }
 
   onHandleClick(e){
-
-    if (e.target.classList.contains("questionImg") && e.target.parentNode.classList.contains('selected') === false ) {
+console.log(e.target.classList);
+    if (e.target.classList.contains("SubjectText") && e.target.parentNode.classList.contains('selected') === false ) {
       let activeSkill = this.state.activeSkill +1;
       e.target.parentNode.classList.add('selected')
       this.setState({
@@ -37,7 +37,7 @@ export class Skill_app extends Component {
 
       })
     }else {
-      if (e.target.classList.contains("questionImg")) {
+      if (e.target.classList.contains("SubjectText")) {
         let activeSkill = this.state.activeSkill -1;
         e.target.parentNode.classList.remove('selected')
         this.setState({
@@ -58,11 +58,8 @@ export class Skill_app extends Component {
             <Presets onChange={this.presetChange}/>
             {this.state.showSubject !== false ? <Subjects onClick={this.onHandleClick}  preset={this.state.skillsPreset}/> : <div></div> }
 
-
-
-
-
-            {this.state.activeSkill < 5 ? <span className="NeedMore">Need more skills {5 -this.state.activeSkill} </span> : <JoinForm/>}
+            {this.state.activeSkill  < 5  && this.state.showSubject === true ? <span className="NeedMore">Need more skills {5 -this.state.activeSkill} </span> : <div></div>}
+            {this.state.activeSkill  >= 5  ? <JoinForm/>:<div></div>}
 
       </div>
     );

@@ -3,26 +3,25 @@ import {WebDeveloperSubjectList,BackendDeveloperSubjectList,DesignerSubjectList}
 
 
 const WebDeveloper = WebDeveloperSubjectList.map((subject,i) =>
+
 <div className='question'   key={i}>
- <span>{subject.SubjectName}</span>
- <i className={subject.ImageSrc} ></i>
+ <span className="SubjectText">{subject.SubjectName}</span>
  </div>
 );
 
 
 const BackendDeveloper = BackendDeveloperSubjectList.map((subject,i) =>
-<div className='question'  key={i}>
- <span>{subject.SubjectName}</span>
- <i className={subject.ImageSrc} ></i>
+<div className='question'   key={i}>
+ <span className="SubjectText">{subject.SubjectName}</span>
  </div>
+
 );
 
 
 
 const Designer = DesignerSubjectList.map((subject,i) =>
 <div className='question'   key={i}>
- <span>{subject.SubjectName}</span>
- <i className={subject.ImageSrc} ></i>
+ <span className="SubjectText">{subject.SubjectName}</span>
  </div>
 );
 
