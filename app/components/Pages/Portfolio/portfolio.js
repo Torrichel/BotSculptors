@@ -20,7 +20,7 @@ export class Portfolio extends React.Component {
         return (
 
             <div className="portfolioSection">
-                    <NavLink to="portfolio/portfolioItem/portfolioItem">
+                    <NavLink to="portfolio/portfolioItem">
                       <div className="portfolioItem" >
                       <p className="itemTitle">Portfolio Item</p>
                       <img className="itemImg" src={project_img}></img>

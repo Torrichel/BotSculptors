@@ -211,41 +211,49 @@ main {
           justify-content: center;
         }
 
-        .project {
-          flex-shrink: 0;
-          flex-grow: 1;
-          height: 200px;
-          margin-bottom: 10px;
-          background: $our_services_bg;
-          border-radius: 5px;
-          background-repeat: no-repeat;
-          background-size: 200px;
-          background-position-x: right;
-          background-position-y: bottom;
+        a{
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          text-decoration: none;
+          color: inherit;
+          .project {
+            flex-shrink: 0;
+            flex-grow: 1;
+            height: 200px;
+            margin-bottom: 10px;
+            background: $our_services_bg;
+            border-radius: 5px;
+            background-repeat: no-repeat;
+            background-size: 200px;
+            background-position-x: right;
+            background-position-y: bottom;
 
-          .category {
-            color: black;
-            margin-top: 60px;
-            margin-left: 60px;
+            .category {
+              color: black;
+              margin-top: 60px;
+              margin-left: 60px;
 
-            p{
-              padding-left: 4px;
-              font-size: 12px;
-              border: 1px solid black;
-              width: 120px;
-              border-radius: 3px;
+              p{
+                padding-left: 4px;
+                font-size: 12px;
+                border: 1px solid black;
+                max-width: 160px;
+                border-radius: 3px;
+              }
+
             }
 
-          }
-
-          .title {
-            margin-left: 60px;
-            font-size: 20px;
-            b{
-              font-size: 24px;
+            .title {
+              margin-left: 60px;
+              font-size: 20px;
+              b{
+                font-size: 24px;
+              }
             }
           }
         }
+
 
         .more_projects {
           margin-top: 25px;

@@ -8,7 +8,7 @@ import { Footer } from '../components/Common/Footer'
 
 import { ConnectedRouter } from 'react-router-redux'
 
-import Home from '../components/Pages/Home'
+import Home from '../components/Pages/HomePage/Home'
 
 import Portfolio from '../components/Pages/Portfolio/portfolio'
 import PortfolioItem from '../components/Pages/Portfolio/portfolioItem'
@@ -51,7 +51,7 @@ export class AppRouter extends React.Component{
                                     <Route exact path='/tours/:tourID' render={(props) => <Tour props={props} />} />
                                     <Route exact path='/team' render={() => <Team />} />
                                     <Route exact path='/about' render={() => <About />} />
-                                    <Route exact path='/portfolio/portfolioItem/portfolioItem' render={() => <PortfolioItem />} />
+                                    <Route exact path='/portfolio/portfolioItem' render={() => <PortfolioItem />} />
                                     <Route exact path='/join' render={() => <Join />} />
                                 </Switch>
                             </div>
