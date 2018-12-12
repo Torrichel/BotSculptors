@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import Slider from "react-slick";
 
-import {Projects} from './components/Projects'
+import {Projects} from './components/Projects.js'
 
 export class Home extends React.Component {
 
@@ -210,7 +210,7 @@ export class Home extends React.Component {
 
                     <Projects/>
 
-                    
+
 
                 </div>
 
