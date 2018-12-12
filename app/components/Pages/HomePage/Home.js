@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import Slider from "react-slick";
 
-import {Projects} from './components/Projects.js'
+import {Projects} from './Components/Projects.js'
 
 export class Home extends React.Component {
 

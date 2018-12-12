@@ -60,10 +60,12 @@ export class Header extends React.Component{
                                 <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
                             </NavLink>
                         </div>
+                        <NavLink  to="/">
                         <div className="sub_section_2">
                             <div className="title">Bot <b>Sculptors</b></div>
                             <div className="slogan">Bot Development and Design</div>
                         </div>
+                        </NavLink>
                     </div>
 
 
@@ -77,7 +79,7 @@ export class Header extends React.Component{
                           <img src={phoneIcon} alt="phone"/>
                           (+995) <b>571 42 93 73</b>
                         </a>
-              
+
 
                     </div>
 
