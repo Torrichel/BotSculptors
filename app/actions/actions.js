@@ -1,13 +1,12 @@
 import axios from 'axios'
 
-const baseURL = ' http://localhost:3000';
+const baseURL = 'https://botsculptors.com/api/v1/projects';
 
 
-// Find bot users
-export function findBotUsers(q, p){
+// Get project
+export function findBotUsers(name){
     return {
-        type: 'FIND_BOT_USERS',
-        payload: axios.get( `${baseURL}/api/users?searchTerm=${q}&_page=${p}` )
+        type: 'GET_PROJECT',
+        payload: axios.get( `${baseURL}/${name}` )
     }
 }
-

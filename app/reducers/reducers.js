@@ -1,32 +1,27 @@
 import { combineReducers } from 'redux'
 import { LOCATION_CHANGE, routerReducer, routerMiddleware } from 'react-router-redux'
 
-function botUsersReducer(state=[], action){
+function projectReducer(state={}, action){
+
 
     switch ( action.type ){
 
+
         // Clearing state on Location Change
-        case LOCATION_CHANGE:
-            return [];
-
-        // Find bot users success
-        case "FIND_BOT_USERS_FULFILLED":
+        //case LOCATION_CHANGE:
+        //return Object.assign(state, {trip: {}});
 
 
-            return {
-                type: action.type,
-                payload: action.payload
-            };
-
-        // Find bot users rejected
-        case "FIND_BOT_USERS_REJECTED":
+        // Get project success
+        case 'GET_PROJECT_FULFILLED':
+            return action.payload.data.data;
 
 
-            return {
-                type: action.type,
-                payload: action.payload
-            };
-
+        // Get trip failure
+        // case 'GET_TRIP_REJECTED':
+        //     return Object.assign(state, {
+        //         trip: {}
+        //     });
 
         default:
             return state;
@@ -38,7 +33,7 @@ function botUsersReducer(state=[], action){
 
 
 const rootReducer = combineReducers({
-    botUsersReducer,
+    projectReducer: projectReducer,
     routing: routerReducer
 });
 

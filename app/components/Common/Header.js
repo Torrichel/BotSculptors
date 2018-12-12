@@ -14,18 +14,8 @@ import phoneIcon from '../../static/images/pages/header/phone.png'
 
 export class Header extends React.Component{
 
-    constructor(props){
-        super(props);
-        this.toggleClass= this.toggleClass.bind(this);
-       this.state = {
-           active: false,
-       };
-    }
 
-    toggleClass() {
-        let currentState = this.state.active;
-        this.setState({ active: !currentState });
-    };
+
 
     hireUs(){
         window.location = config.company;
@@ -87,10 +77,7 @@ export class Header extends React.Component{
                           <img src={phoneIcon} alt="phone"/>
                           (+995) <b>571 42 93 73</b>
                         </a>
-                        <div className="language">
-                            <span onClick={this.toggleClass} className={this.state.active ? 'active' : null }>РУС</span>
-                            <span onClick={this.toggleClass} className={!this.state.active ? 'active' : null }>ENG</span>
-                        </div>
+              
 
                     </div>
 

@@ -17,10 +17,8 @@ export class Projects extends React.Component {
     componentWillMount() {
         axios.get(`https://botsculptors.com/api/v1/projects`)
           .then(res => {
-            console.log(res.data.data[0].project.title);
             const persons = res.data.data;
             this.setState({ persons:persons });
-            console.log(this.state.persons);
           })
 
 
