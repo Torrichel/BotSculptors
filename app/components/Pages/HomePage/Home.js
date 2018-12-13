@@ -61,7 +61,7 @@ export class Home extends React.Component {
                 {/* Our Services */}
                 <div className="our_services">
 
-                    <div className="title">
+                    <div className="title" id='services'>
                         <span className="back_text">Services</span>
                         <span className="front_text">Services</span>
                     </div>
@@ -191,14 +191,14 @@ export class Home extends React.Component {
                 </div>
 
                 {/* Our Portfolio */}
-                <div className="our_portfolio">
+                <div   className="our_portfolio">
 
-                    <div className="title">
+                    <div className="title"  id='portfolio'>
                         <span className="back_text">Portfolio</span>
                         <span className="front_text">Portfolio</span>
                     </div>
 
-                    <div className="menu">
+                    <div className="menu" >
                         <div className="item">Web Design</div>
                         <div style={ { color: `#1F4C9D` } } className="item">Website Development</div>
                         <div className="item">Bot Development</div>

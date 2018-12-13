@@ -68,13 +68,14 @@ footer{
 
       .nav_menu_top{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         flex-grow: 1;
         flex-flow: row wrap;
         margin-bottom: 10px;
         margin-top: 25px;
 
         a{
+          margin-left: 50px;
           color: #000;
           font-family: MainFontThin;
           font-size: pt-to-px(14);
@@ -93,7 +94,7 @@ footer{
       .nav_menu_bottom{
 
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         flex-grow: 1;
         margin-top: 15px;
 
@@ -120,6 +121,7 @@ footer{
 
         }
         .sub_menu_2{
+          margin-left: 50px;
           display: flex;
           justify-content: space-between;
           align-items: center;

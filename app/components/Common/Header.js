@@ -9,7 +9,6 @@ import config from '../../../config'
 import {Helmet} from 'react-helmet'
 
 
-import phoneIcon from '../../static/images/pages/header/phone.png'
 
 
 export class Header extends React.Component{
@@ -39,12 +38,9 @@ export class Header extends React.Component{
 
                     <nav className="navBlock">
 
-                        <NavLink to="/how-it-works">How it works?</NavLink>
-                        <NavLink to="/services">Services</NavLink>
-                        <NavLink to="/portfolio">Portfolio</NavLink>
+                        <a href="#services">Services</a>
+                        <a href="#portfolio">Portfolio</a>
                         {/*<NavLink to="/about">Reviews</NavLink>*/}
-
-                        <NavLink to="/contact">Contact Us</NavLink>
                         <NavLink to="/about">About</NavLink>
 
 
@@ -74,12 +70,6 @@ export class Header extends React.Component{
 
                         <div className="fill_brief">Fill Brief</div>
                         <div className="get_quote">Get Quote</div>
-
-                        <a href='tel:+995571429373' className="phone">
-                          <img src={phoneIcon} alt="phone"/>
-                          (+995) <b>571 42 93 73</b>
-                        </a>
-
 
                     </div>
 

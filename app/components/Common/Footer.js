@@ -20,27 +20,26 @@ export class Footer extends React.Component{
 
                 <div className="footer_first_line">
 
-                    <div className="logo_section">
-                        <div className="sub_section_1">
-                            <NavLink className="logo" to="/">
-                                <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
-                            </NavLink>
-                        </div>
-                        <div className="sub_section_2">
-                            <div className="title"><span>Bot </span><b>Sculptors</b></div>
-                            <div className="slogan">Bot Development and Design</div>
-                        </div>
-                    </div>
+                  <div className="logo_section">
+                      <div className="sub_section_1">
+                          <NavLink className="logo" to="/">
+                              <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
+                          </NavLink>
+                      </div>
+                      <NavLink  to="/">
+                      <div className="sub_section_2">
+                          <div className="title">Bot <b>Sculptors</b></div>
+                          <div className="slogan">Bot Development and Design</div>
+                      </div>
+                      </NavLink>
+                  </div>
 
                     <nav className="navBlock">
 
                         <div className="nav_menu_top">
-                            <Link to="/how-it-works">How it works?</Link>
-                            <Link to="/services">Services</Link>
-
-                            <Link to="/portfolio">Portfolio</Link>
+                          <a href="#services">Services</a>
+                          <a href="#portfolio">Portfolio</a>
                             {/*<Link to="/about">Обзоры</Link>*/}
-                            <Link to="/about">Contact Us</Link>
                             <Link to="/about">About</Link>
                         </div>
 
@@ -71,9 +70,6 @@ export class Footer extends React.Component{
                     </div>
                     <div className="sub_block_2">
 
-                        <div className="phone">
-                            <i className="material-icons">call</i><span>(+995) 571 42 93 73</span>
-                        </div>
 
                         <div className="email">
                             <i className="material-icons">mail_outline</i><span>info@botsculptors.com</span>
