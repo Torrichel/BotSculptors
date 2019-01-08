@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+
 import axios from 'axios'
 
 
@@ -9,16 +10,20 @@ export class Projects extends React.Component {
     constructor(props) {
         super(props);
         this.state ={
-          persons: []
+          projects: []
         }
     }
+
+
+
+
 
 
     componentWillMount() {
         axios.get(`https://botsculptors.com/api/v1/projects`)
           .then(res => {
-            const persons = res.data.data;
-            this.setState({ persons:persons });
+            const projects = res.data.data;
+            this.setState({ projects:projects });
           })
 
 
@@ -28,12 +33,13 @@ export class Projects extends React.Component {
 
     render() {
 
-      const Projects = this.state.persons.map((person,i) =>
-<NavLink to={"/portfolio/"+person.project.url} key={i} >
+
+      const Projects = this.state.projects.map((projects,i) =>
+<NavLink to={"/projects/"+projects.project.url} key={i} >
       <div className="project"  >
 
-          <div className="category"><p>{person.project.title}</p></div>
-          <div className="title"><b>{person.project.text}</b><br/>{person.project.meta_description}</div>
+          <div className="category"><p>{projects.project.title}</p></div>
+          <div className="title"><b>{projects.project.text}</b><br/>{projects.project.meta_description}</div>
 
       </div>
       </NavLink>
@@ -65,4 +71,10 @@ export class Projects extends React.Component {
 }
 
 
-export default connect(null)(Projects);
+
+
+const mapStateToProps = (state) => {
+  return state
+};
+
+export default connect(mapStateToProps)(Projects);

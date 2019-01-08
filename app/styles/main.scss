@@ -98,25 +98,64 @@ main {
       .services {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: space-around;
 
-        .service {
+        .service{
           flex-shrink: 0;
           width: 30%;
           height: 265px;
+          min-width: 300px !important;
+          margin: 0 10px;
           margin-bottom: 5%;
           background: $our_services_bg;
           border-radius: 5px;
-          background-repeat: no-repeat;
-          background-size: 250px;
-          background-position-x: 140px;
-          background-position-y: bottom;
-
           .title {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
           }
+        }
+        .service-web {
+          background-repeat: no-repeat;
+          background-size: 320px;
+          background-position-x: 60px;
+          background-position-y: bottom;
+        }
+        .service-website{
+          background-repeat: no-repeat;
+          background-size: 320px;
+          background-position-x: 60px;
+          background-position-y: 115px;
+        }
+        .service-bot{
+          background-repeat: no-repeat;
+          background-size: 140px;
+          background-position-x: 180px;
+          background-position-y: 70px;
+        }
+        .service-extensions{
+          background-repeat: no-repeat;
+          background-size: 230px;
+          background-position-x: 130px;
+          background-position-y: 105px;
+        }
+        .service-software{
+          background-repeat: no-repeat;
+          background-size: 160px;
+          background-position-x: 160px;
+          background-position-y: 95px;
+        }
+        .service-software{
+          background-repeat: no-repeat;
+          background-size: 160px;
+          background-position-x: 160px;
+          background-position-y: 95px;
+        }
+        .service-maintenance{
+          background-repeat: no-repeat;
+          background-size: 210px;
+          background-position-x: 140px;
+          background-position-y: 110px;
         }
       }
     }
