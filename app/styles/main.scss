@@ -1,3 +1,4 @@
+
 main {
   display: flex;
   justify-content: center;
@@ -20,6 +21,23 @@ main {
 
     p {
       font-size: 17px;
+    }
+    //slick arrows
+    .slick-next:before
+    {
+        content: '→' !important;
+    }
+    [dir='rtl'] .slick-next:before
+    {
+        content: '←' !important;
+    }
+    .slick-prev:before
+    {
+        content: '←' !important;
+    }
+    [dir='rtl'] .slick-prev:before
+    {
+        content: '→' !important;
     }
     // Home Page Start
     .slider {
