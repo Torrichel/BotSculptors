@@ -209,14 +209,35 @@ main {
         padding-bottom: 30px;
         color: $slogan_color2;
       }
-
       .technologies {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
         .technology {
+          border: 0.5px solid #d5d9de;
           display: grid;
           align-content: center;
           justify-content: center;
-          img {
-            width: 120px;
+          height: 120px;
+          @media screen and (max-width: 1250px) {
+            .devicons{
+              font-size: 4em;
+            }
+          }
+          @media screen and (max-width: 1000px) {
+            .devicons{
+              font-size: 3em;
+            }
+          }
+          @media screen and (max-width: 800px) {
+            .devicons{
+              font-size: 2em;
+            }
+          }
+          span {
+            color: #1f4c9d;
+            font-size: 5em;
+
           }
 
           .title {

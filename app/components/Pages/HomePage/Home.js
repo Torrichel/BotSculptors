@@ -112,75 +112,75 @@ export class Home extends React.Component {
                     <Slider {...settingsForTechnologiesSlider} >
                       <div className="technologies">
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-python" alt="technology"></span>
                           </div>
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-github_badge" alt="technology"></span>
                           </div>
                       </div>
 
                       <div className="technologies">
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-javascript" alt="technology"></span>
                           </div>
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
-                          </div>
-                      </div>
-                      <div className="technologies">
-                          <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
-                          </div>
-                          <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-angular" alt="technology"></span>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-backbone" alt="technology"></span>
                           </div>
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
-                          </div>
-                      </div>
-                      <div className="technologies">
-                          <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
-                          </div>
-                          <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-react" alt="technology"></span>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-github_badge" alt="technology"></span>
                           </div>
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
-                          </div>
-                      </div>
-                      <div className="technologies">
-                          <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
-                          </div>
-                          <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-php" alt="technology"></span>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-html5_connectivity" alt="technology"></span>
                           </div>
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-html5" alt="technology"></span>
                           </div>
                       </div>
                       <div className="technologies">
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-css3" alt="technology"></span>
                           </div>
                           <div className="technology">
-                            <img src={technologyImg} alt="company"></img>
+                            <span className="devicons devicons-linux" alt="technology"></span>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <span className="devicons devicons-gulp" alt="technology"></span>
+                          </div>
+                          <div className="technology">
+                            <span className="devicons devicons-dropbox" alt="technology"></span>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <span className="devicons devicons-visualstudio" alt="technology"></span>
+                          </div>
+                          <div className="technology">
+                            <span className="devicons devicons-swift" alt="technology"></span>
+                          </div>
+                      </div>
+                      <div className="technologies">
+                          <div className="technology">
+                            <span className="devicons devicons-unity_small" alt="technology"></span>
+                          </div>
+                          <div className="technology">
+                            <span className="devicons devicons-bootstrap" alt="technology"></span>
                           </div>
                       </div>
 
