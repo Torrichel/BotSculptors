@@ -96,17 +96,15 @@ main {
       }
 
       .services {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: ". . ." ". . .";
+        grid-gap: 15px 15px;
 
         .service{
           flex-shrink: 0;
-          width: 30%;
           height: 265px;
-          min-width: 300px !important;
-          margin: 0 10px;
-          margin-bottom: 5%;
           background: $our_services_bg;
           border-radius: 5px;
           .title {
@@ -118,44 +116,32 @@ main {
         .service-web {
           background-repeat: no-repeat;
           background-size: 320px;
-          background-position-x: 60px;
-          background-position-y: bottom;
+          background-position: calc(100% + 70px) bottom;
         }
         .service-website{
           background-repeat: no-repeat;
-          background-size: 320px;
-          background-position-x: 60px;
-          background-position-y: 115px;
+          background-size: 400px;
+          background-position: calc(100% + 150px) bottom;
         }
         .service-bot{
           background-repeat: no-repeat;
           background-size: 140px;
-          background-position-x: 180px;
-          background-position-y: 70px;
+          background-position: calc(100% + 20px) bottom;
         }
         .service-extensions{
           background-repeat: no-repeat;
-          background-size: 230px;
-          background-position-x: 130px;
-          background-position-y: 105px;
+          background-size: 280px;
+          background-position: calc(100% + 110px) bottom;
         }
         .service-software{
           background-repeat: no-repeat;
-          background-size: 160px;
-          background-position-x: 160px;
-          background-position-y: 95px;
-        }
-        .service-software{
-          background-repeat: no-repeat;
-          background-size: 160px;
-          background-position-x: 160px;
-          background-position-y: 95px;
+          background-size: 180px;
+          background-position: calc(100% + 15px) bottom;
         }
         .service-maintenance{
           background-repeat: no-repeat;
-          background-size: 210px;
-          background-position-x: 140px;
-          background-position-y: 110px;
+          background-size: 250px;
+          background-position: calc(100% + 65px) calc(100% + 10px);
         }
       }
     }
