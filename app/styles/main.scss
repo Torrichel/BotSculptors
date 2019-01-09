@@ -39,6 +39,9 @@ main {
     {
         content: '→' !important;
     }
+    .slick-dots li button:before{
+      content: '•' !important;
+    }
     // Home Page Start
     .slider {
       display: flex;
@@ -209,8 +212,11 @@ main {
 
       .technologies {
         .technology {
+          display: grid;
+          align-content: center;
+          justify-content: center;
           img {
-            width: 122px;
+            width: 120px;
           }
 
           .title {
