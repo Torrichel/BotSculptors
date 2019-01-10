@@ -180,7 +180,30 @@ main {
     .techs {
       background: #eef0f2;
       padding: 70px 24%;
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (min-width: 1600px) {
+        .slick-slider {
+          width: 1278px;
+        }
+      }
+      @media screen and (max-width: 1600px) and (min-width: 1200px) {
+        .slick-slider {
+          width: 936px;
+          .devicons {
+            font-size: 4em;
+          }
+        }
+      }
+      @media screen and (max-width: 1200px) and (min-width: 320px) {
+        .slick-slider {
+          width: 690px;
+          .devicons {
+            font-size: 3em;
+          }
+        }
+      }
       > .title {
         display: flex;
         position: relative;
@@ -219,21 +242,6 @@ main {
           align-content: center;
           justify-content: center;
           height: 120px;
-          @media screen and (max-width: 1250px) {
-            .devicons{
-              font-size: 4em;
-            }
-          }
-          @media screen and (max-width: 1000px) {
-            .devicons{
-              font-size: 3em;
-            }
-          }
-          @media screen and (max-width: 800px) {
-            .devicons{
-              font-size: 2em;
-            }
-          }
           span {
             color: #1f4c9d;
             font-size: 5em;
