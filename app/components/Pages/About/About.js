@@ -1,36 +1,94 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { Emoji } from 'emoji-mart'
+import Popup from '../Popup/Popup'
 
-
-
-export class About extends React.Component {
+export class About extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+          popupImage: null,
+          show: false
+        }
+
+        this.showModal = this.showModal.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.handleShow = this.handleShow.bind(this);
+
     }
 
+    showModal(e) {
+        const  imageLink = e.target.parentElement.parentElement.style.backgroundImage.replace('url(','').replace(')','').replace(/\"/gi, "");
+        this.setState ({
+          popupImage: imageLink,
+          show: true
+        })
+    };
 
+
+    handleClose() {
+      this.setState({ show: false });
+    }
+
+    handleShow() {
+      this.setState({ show: true });
+    }
 
 
     render() {
 
     const imagesLinks = [
-        "https://i.ibb.co/d2YcBnK/1280x960-1-min.jpg",
-        "https://i.ibb.co/R24bSHH/Pozoyan-min.jpg",
-        "https://i.ibb.co/0CW91wc/Petrosyan-min.jpg",
-        "https://i.ibb.co/MR8tDrb/Kurkhulishvili-min.jpg",
-        "https://i.ibb.co/fq8brvV/Kuksin-min.jpg",
-        "https://i.ibb.co/qFJ1Qkr/Korolov-min.jpg",
-        "https://i.ibb.co/RP4YZ94/Ivanova-min.jpg",
-        "https://i.ibb.co/jkxKHj0/Bokeria-min.jpg"
+         {
+           link : "https://i.ibb.co/d2YcBnK/1280x960-1-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         },
+         {
+           link : "https://i.ibb.co/R24bSHH/Pozoyan-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         },
+         {
+           link :     "https://i.ibb.co/0CW91wc/Petrosyan-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         },
+         {
+           link : "https://i.ibb.co/MR8tDrb/Kurkhulishvili-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         },
+         {
+           link : "https://i.ibb.co/fq8brvV/Kuksin-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         },
+         {
+           link : "https://i.ibb.co/qFJ1Qkr/Korolov-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         },
+         {
+           link : "https://i.ibb.co/RP4YZ94/Ivanova-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         },
+         {
+           link : "https://i.ibb.co/jkxKHj0/Bokeria-min.jpg",
+           name : "Светлан Овчинников",
+           status : "full-stack"
+         }
       ];
 
-      const teamList = imagesLinks.map((link, i) =>
+      const teamList = imagesLinks.map(({link,name, status}, i) =>
 
             <div key={i} className="grid-item" style={ { backgroundImage: `url(${link})` } }>
+              <div className="personName">
+                <p className="name">{name}<br/><span className="status">{status}</span></p>
+                <p className="moreInfo" onClick={this.showModal}>Узнать больше</p>
+              </div>
             </div>
 
         );
@@ -38,6 +96,8 @@ export class About extends React.Component {
         return (
 
           <div className="about">
+
+          <Popup show={this.state.show} handleClose={this.handleClose} image={this.state.popupImage}/>
 
             <div className="slider" style={ { backgroundImage: `url(https://i.ibb.co/1zX1Cm4/about-page-bg.png)` } }>
 

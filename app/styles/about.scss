@@ -1,3 +1,18 @@
+.modal-open {
+  padding: 0px !important;
+}
+.modal-dialog {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) !important;
+        .modal-header{
+          border: none !important;
+          img {
+            width: 200px;
+          }
+        }
+}
 .about{
 
   .info {
@@ -97,6 +112,9 @@
           .grid-item {
             width:  300px !important;
             height:   300px !important;
+            .moreInfo {
+              padding-top: 120px !important;
+            }
           }
       }
     }
@@ -106,10 +124,13 @@
           .grid-item {
             width: 280px !important;
             height:  280px !important;
+            .moreInfo {
+              padding-top: 60px !important;
+
+            }
           }
       }
     }
-
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, 300px);
@@ -117,14 +138,44 @@
       grid-gap: 15px 15px;
       align-items: center;
       justify-content: center;
-      filter: grayscale(100%);
       margin-bottom: 30px;
+      .grid-item:hover {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        .personName {
+          display: block;
+        }
+      }
       .grid-item {
+        -webkit-filter: grayscale(80%);
+        filter: grayscale(80%);
         width: 400px;
         height: 400px;
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; /* Resize the background image to cover the entire container */
+
+        .personName {
+          display: none;
+          padding: 40px 0 0 40px;
+          .name{
+            color: #fff;
+            font-size: 28px;
+          }
+          .status {
+            font-style: italic;
+            font-family: "Open Sans";
+            color: #9b9b9b;
+            line-height: 30px;
+          }
+          .moreInfo{
+            cursor: pointer;
+            color: white;
+            padding-top: 200px;
+            font-size: 20px;
+          }
+
+        }
       }
     }
   }

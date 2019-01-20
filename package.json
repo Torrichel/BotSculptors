@@ -23,8 +23,10 @@
     "emoji-mart": "^2.6.1",
     "express": "^4.16.3",
     "history": "^4.7.2",
+    "node-sass": "^4.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.0.0",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.0.0",
     "react-emoji": "^0.5.0",
     "react-emoji-picker": "^1.0.13",
@@ -44,8 +46,7 @@
     "redux-promise-middleware": "^4.4.1",
     "redux-thunk": "^2.2.0",
     "shuffle-array": "^1.0.1",
-    "slick-carousel": "^1.8.1",
-    "node-sass": "^4.0.0"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
