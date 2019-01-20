@@ -7,11 +7,95 @@
         left: 50%;
         transform: translate(-50%, -50%) !important;
         .modal-header{
+          padding: 0;
           border: none !important;
-          img {
-            width: 200px;
+          .close{
+            padding: 8px;
           }
-        }
+          .grid-container {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              grid-template-areas: "person-info info info" "person-info info info";
+              .info {
+                padding: 50px 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.3fr 2.4fr;
+                grid-template-areas: "" ".";
+                grid-area: info;
+                .name {
+                  color: #0d0d0d;
+                  font-family: "Open Sans";
+                  font-size: 22px;
+                  font-weight: 400;
+                }
+                .status{
+                  color: #1f4c9d;
+                  font-family: "Open Sans";
+                  font-size: 16px;
+                  font-style: italic;
+                }
+                .text {
+                    padding-top: 30px;
+                    color: #7d8794;
+                    font-family: "Open Sans";
+                    font-size: 15px;
+                    font-style: italic;
+                    line-height: 24px;
+                    letter-spacing: 0.15px;
+                }
+              }
+              .person-info {
+                background-color: #e8e8e8;
+                display: grid;
+                width:  calc(100% - 50px);
+                justify-items: center;
+                grid-template-columns: 1fr;
+                grid-area: person-info;
+                padding: 20px;
+              }
+              img {
+                padding: 20px;
+                width: 200px;
+                height: 200px;
+                border-radius: 100px;;
+              }
+              .media {
+                display: grid;
+                font-size: 16px;
+                grid-template-rows: 45px 45px 45px;
+                justify-items: center;
+                align-items: center;
+                margin-bottom: 30px;
+                .email {
+                  color: #1f4c9d;
+                  font-style: italic;
+                  padding-bottom: 25px;
+                }
+                img {
+                  padding: 0 3px 0 0;
+                  width: 22px;
+                  height: 22px;
+                }
+                .social {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  height: 50px;
+                  .circle{
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    border: 2px solid #d5d9de;
+                    margin-left: 10px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                  }
+
+                }
+              }
+            }
+          }
 }
 .about{
 

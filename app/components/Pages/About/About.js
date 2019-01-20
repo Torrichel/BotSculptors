@@ -15,7 +15,6 @@ export class About extends Component {
 
         this.showModal = this.showModal.bind(this);
         this.handleClose = this.handleClose.bind(this);
-        this.handleShow = this.handleShow.bind(this);
 
     }
 
@@ -32,9 +31,6 @@ export class About extends Component {
       this.setState({ show: false });
     }
 
-    handleShow() {
-      this.setState({ show: true });
-    }
 
 
     render() {
