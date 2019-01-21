@@ -38,42 +38,42 @@ export class About extends Component {
     const imagesLinks = [
          {
            link : "https://i.ibb.co/d2YcBnK/1280x960-1-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          },
          {
            link : "https://i.ibb.co/R24bSHH/Pozoyan-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          },
          {
            link :     "https://i.ibb.co/0CW91wc/Petrosyan-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          },
          {
            link : "https://i.ibb.co/MR8tDrb/Kurkhulishvili-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          },
          {
            link : "https://i.ibb.co/fq8brvV/Kuksin-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          },
          {
            link : "https://i.ibb.co/qFJ1Qkr/Korolov-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          },
          {
            link : "https://i.ibb.co/RP4YZ94/Ivanova-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          },
          {
            link : "https://i.ibb.co/jkxKHj0/Bokeria-min.jpg",
-           name : "Светлан Овчинников",
+           name : "Svetlan Ovchinikov",
            status : "full-stack"
          }
       ];
