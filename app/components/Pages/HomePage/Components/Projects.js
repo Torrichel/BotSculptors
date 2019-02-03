@@ -29,6 +29,12 @@ export class Projects extends React.Component {
 
       };
 
+      // IDEA: meta_description 3
+      // title 2
+
+
+      //text
+
 
 
     render() {

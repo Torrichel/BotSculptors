@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import Gallery from 'react-photo-gallery';
 import {getProject} from '../../../actions/actions'
 import Lightbox from 'react-images';
-import Skills from './Skills'
+import Skills from './Skills';
+import { Redirect} from 'react-router-dom'
 
 const photos = [
   {
@@ -88,100 +89,105 @@ export class PortfolioItem extends React.Component {
 
   render() {
 console.log(this.state.project);
-    return (<div className="PortfolioPage">
-      <div className="PortfolioItem">
-        <div className="PortfolioItemBackgroundImg" style={{
-            backgroundImage: `url(https://www.rosphoto.com/images/u/articles/1608/5_16.jpg)`
-          }}>
-          <h1>{this.state.project.title}</h1>
-        </div>
-        <div className="projectDetails">
-          <h3 className="front_text">About the project</h3>
-          <h3 className="back_text">About the project</h3>
-          <p className="projectNameDescription">
-            {this.state.project.meta_description}
-          </p>
-          <button type="button" name="button">Read more</button>
-
-        </div>
-        <div className="usedTechnology">
-          <h3 className="back_text">Technology</h3>
-          <h3 className="front_text">Technology</h3>
-          <span>Technologies used in this project</span>
-          <table className="usedSkillsTable">
-            <tbody>
-              <tr>
-                <td>
-                  <span>01.</span>Apache Software Foundation</td>
-                <td>
-                  <span>04.</span>JavaScript</td>
-              </tr>
-              <tr>
-                <td>
-                  <span>02.</span>Android</td>
-                <td>
-                  <span>05.</span>Jira</td>
-              </tr>
-              <tr>
-                <td>
-                  <span>03.</span>Chai</td>
-                <td>
-                  <span>06.</span>Mocha</td>
-              </tr>
-
-            </tbody>
-          </table>
-          <div className="usedSkillsTable">
-              <div className="Skills">
-                <Skills skills={this.state.project.skillsAndTechnologies}/>
-
-              </div>
-            </div>
-
-        </div>
-        <div className="workedOnProject">
-          <span>worked on the project:</span>
-          <div className="Developers">
-            <div className="developerForThisProject">
-              <img src="https://s3.amazonaws.com/botsculptors/website/person.png"></img>
-              <div className="DeveloperName">
-                <span className="DeveloperName">Семён Семёныч</span>
-                <span className="DeveloperRoleInProject">Front-end developer</span>
-
-              </div>
-              <button type="button" name="developerPage">&#8250;</button>
-            </div>
-            <div className="developerForThisProject">
-              <img src="https://s3.amazonaws.com/botsculptors/website/person1.png"></img>
-              <div className="DeveloperName">
-                <span className="DeveloperName">Семён Семёныч</span>
-                <span className="DeveloperRoleInProject">Front-end developer</span>
-
-              </div>
-              <button type="button" name="developerPage">&#8250;</button>
-            </div>
-            <div className="developerForThisProject">
-              <img src="https://s3.amazonaws.com/botsculptors/website/person.png"></img>
-              <div className="DeveloperName">
-                <span className="DeveloperName">Семён Семёныч</span>
-                <span className="DeveloperRoleInProject">Front-end developer</span>
-
-              </div>
-              <button type="button" name="developerPage">&#8250;</button>
-            </div>
-
-          </div>
-        </div>
-        <div className="PortfolioImgGallery">
-          <h3 className="front_text">Gallery</h3>
-          <h3 className="back_text">Gallery</h3>
-
-        </div>
+if (this.state.project !== null && undefined) {
+  return (<div className="PortfolioPage">
+    <div className="PortfolioItem">
+      <div className="PortfolioItemBackgroundImg" style={{
+          backgroundImage: `url(https://www.rosphoto.com/images/u/articles/1608/5_16.jpg)`
+        }}>
+        <h1>{this.state.project.title}</h1>
+      </div>
+      <div className="projectDetails">
+        <h3 className="front_text">About the project</h3>
+        <h3 className="back_text">About the project</h3>
+        <p className="projectNameDescription">
+          {this.state.project.meta_description}
+        </p>
+        <button type="button" name="button">Read more</button>
 
       </div>
-      <Gallery photos={photos} onClick={this.openLightbox}/>
-      <Lightbox images={photos} onClose={this.closeLightbox} onClickPrev={this.gotoPrevious} onClickNext={this.gotoNext} currentImage={this.state.currentImage} isOpen={this.state.lightboxIsOpen}/>
-    </div>)
+      <div className="usedTechnology">
+        <h3 className="back_text">Technology</h3>
+        <h3 className="front_text">Technology</h3>
+        <span>Technologies used in this project</span>
+        <table className="usedSkillsTable">
+          <tbody>
+            <tr>
+              <td>
+                <span>01.</span>Apache Software Foundation</td>
+              <td>
+                <span>04.</span>JavaScript</td>
+            </tr>
+            <tr>
+              <td>
+                <span>02.</span>Android</td>
+              <td>
+                <span>05.</span>Jira</td>
+            </tr>
+            <tr>
+              <td>
+                <span>03.</span>Chai</td>
+              <td>
+                <span>06.</span>Mocha</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div className="usedSkillsTable">
+            <div className="Skills">
+              <Skills skills={this.state.project.skillsAndTechnologies}/>
+
+            </div>
+          </div>
+
+      </div>
+      <div className="workedOnProject">
+        <span>worked on the project:</span>
+        <div className="Developers">
+          <div className="developerForThisProject">
+            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"></img>
+            <div className="DeveloperName">
+              <span className="DeveloperName">Семён Семёныч</span>
+              <span className="DeveloperRoleInProject">Front-end developer</span>
+
+            </div>
+            <button type="button" name="developerPage">&#8250;</button>
+          </div>
+          <div className="developerForThisProject">
+            <img src="https://s3.amazonaws.com/botsculptors/website/person1.png"></img>
+            <div className="DeveloperName">
+              <span className="DeveloperName">Семён Семёныч</span>
+              <span className="DeveloperRoleInProject">Front-end developer</span>
+
+            </div>
+            <button type="button" name="developerPage">&#8250;</button>
+          </div>
+          <div className="developerForThisProject">
+            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"></img>
+            <div className="DeveloperName">
+              <span className="DeveloperName">Семён Семёныч</span>
+              <span className="DeveloperRoleInProject">Front-end developer</span>
+
+            </div>
+            <button type="button" name="developerPage">&#8250;</button>
+          </div>
+
+        </div>
+      </div>
+      <div className="PortfolioImgGallery">
+        <h3 className="front_text">Gallery</h3>
+        <h3 className="back_text">Gallery</h3>
+
+      </div>
+
+    </div>
+    <Gallery photos={photos} onClick={this.openLightbox}/>
+    <Lightbox images={photos} onClose={this.closeLightbox} onClickPrev={this.gotoPrevious} onClickNext={this.gotoNext} currentImage={this.state.currentImage} isOpen={this.state.lightboxIsOpen}/>
+  </div>)
+}
+
+return <Redirect to="/" />
+
   }
 
 }

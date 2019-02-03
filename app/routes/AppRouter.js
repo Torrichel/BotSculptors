@@ -45,11 +45,12 @@ export class AppRouter extends React.Component{
                             <div className="mainIn">
                                 <Switch>
                                     <Route exact path='/' render={() => <Home />} />
-                                    <Route exact path='/portfolio' render={() => <Portfolio />} />
                                     <Route exact path='/team' render={() => <Team />} />
                                     <Route exact path='/about' render={() => <About />} />
                                     <Route exact path='/projects/:projectID' render={(props) => <PortfolioItem  match={props.match}/>} />
                                     <Route exact path='/join' render={() => <Join />} />
+
+                                    <Redirect to="/" />
                                 </Switch>
                             </div>
 
