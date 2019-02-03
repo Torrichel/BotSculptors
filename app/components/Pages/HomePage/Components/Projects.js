@@ -44,8 +44,9 @@ export class Projects extends React.Component {
 <NavLink to={"/projects/"+projects.project.url} key={i} >
       <div className="project"  >
 
-          <div className="category"><p>{projects.project.title}</p></div>
-          <div className="title"><b>{projects.project.text}</b><br/>{projects.project.meta_description}</div>
+          <div className="category"><p>{projects.project.titls}</p></div>
+          <div className="title"><b>{projects.project.title}</b><br/>
+          {projects.project.meta_description}</div>
 
       </div>
       </NavLink>

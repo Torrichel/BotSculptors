@@ -101,7 +101,7 @@ if (this.state.project !== null && undefined) {
         <h3 className="front_text">About the project</h3>
         <h3 className="back_text">About the project</h3>
         <p className="projectNameDescription">
-          {this.state.project.meta_description}
+          {this.state.project.text}
         </p>
         <button type="button" name="button">Read more</button>
 
