@@ -103,6 +103,8 @@ export class PortfolioItem extends React.Component {
           pageLoadError: true
         })
       });
+
+      scroll(0,0);
     }
 
   render() {
