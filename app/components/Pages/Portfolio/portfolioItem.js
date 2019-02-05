@@ -51,12 +51,14 @@ export class PortfolioItem extends React.Component {
     this.state = {
       currentImage: 0,
       url: props.match.params.projectID,
-      project: {}
+      project: {},
+      pageLoadError: false
     };
     this.closeLightbox = this.closeLightbox.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
+    this.isEmpty = this.isEmpty.bind(this);
   }
   openLightbox(event, obj) {
     this.setState({currentImage: obj.index, lightboxIsOpen: true});
@@ -74,6 +76,13 @@ export class PortfolioItem extends React.Component {
       currentImage: this.state.currentImage + 1
     });
   }
+  isEmpty (obj)  {
+    for(var key in this) {
+        if(this.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
 
   componentWillReceiveProps(nextProps) {
       this.setState({
@@ -83,13 +92,23 @@ export class PortfolioItem extends React.Component {
       });
     }
   // Fetch project once component did mount
-  componentDidMount() {
-      this.props.dispatch(getProject(this.state.url));
+  componentWillMount() {
+
+      this.props.dispatch(getProject(this.state.url))
+      .then((res) => {
+        console.log("result",res)
+      })
+      .catch((err) => {
+        this.setState({
+          pageLoadError: true
+        })
+      });
     }
 
   render() {
-console.log(this.state.project);
-if (this.state.project !== null && undefined) {
+
+
+if (!this.state.pageLoadError) {
   return (<div className="PortfolioPage">
     <div className="PortfolioItem">
       <div className="PortfolioItemBackgroundImg" style={{
@@ -185,15 +204,16 @@ if (this.state.project !== null && undefined) {
     <Lightbox images={photos} onClose={this.closeLightbox} onClickPrev={this.gotoPrevious} onClickNext={this.gotoNext} currentImage={this.state.currentImage} isOpen={this.state.lightboxIsOpen}/>
   </div>)
 }
+  return <Redirect to="/" />
 
-return <Redirect to="/" />
+
+
 
   }
 
 }
 
 const mapStateToProps = (state, ownProps) => {
-
   return Object.assign({}, ownProps, {project: state.projectReducer});
 };
 
