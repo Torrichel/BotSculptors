@@ -280,13 +280,18 @@ main {
       }
 
       .menu {
-        font-size: 12px;
+        font-size: 16px;
         display: flex;
         align-items:flex-start;
         text-align: left;
-        justify-content: space-around;
+        justify-content: space-between;
         margin-bottom: 15px;
-        .item {}
+        .active {
+          color: #1f4c9d;
+        }
+        .item {
+          cursor: pointer;
+        }
       }
 
       .projects {
@@ -306,26 +311,31 @@ main {
           text-decoration: none;
           color: inherit;
           .project {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
             flex-shrink: 0;
             flex-grow: 1;
-            height: 200px;
+            height: 265px;
             margin-bottom: 10px;
             background: $our_services_bg;
+            color: #ffffff;
             border-radius: 5px;
-            background-repeat: no-repeat;
-            background-size: 200px;
-            background-position-x: right;
-            background-position-y: bottom;
+            background-size: cover;
 
             .category {
-              color: black;
-              margin-top: 60px;
-              margin-left: 60px;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              color: #ffffff;
+              padding: 0 0 0 40px;
 
               p{
-                padding-left: 4px;
+                padding: 1px 5px 1px 5px;
+                margin-left: 4px;
                 font-size: 12px;
-                border: 1px solid black;
+                border: 1px solid #ffffff;;
                 max-width: 160px;
                 border-radius: 3px;
               }
@@ -333,7 +343,7 @@ main {
             }
 
             .title {
-              margin-left: 60px;
+              padding: 0 40px 10px 42px;
               font-size: 20px;
               b{
                 font-size: 24px;
@@ -342,7 +352,9 @@ main {
           }
         }
 
-
+        .more_projects:hover {
+          background-color: #002FFC;
+        }
         .more_projects {
           margin-top: 25px;
           display: flex;
@@ -354,11 +366,15 @@ main {
           background-color: #265ab5;
           border-radius: 50px;
           cursor: pointer;
-
-          a {
+          button {
+            background: inherit;
+            border: none;
             text-decoration: none;
             font-size: 18px;
             color: #fff;
+          }
+          button:focus {
+            outline:0;
           }
         }
       }

@@ -10,8 +10,10 @@ export class Projects extends React.Component {
     constructor(props) {
         super(props);
         this.state ={
-          projects: []
+          projects: [],
+          showProjectCount: 10
         }
+
     }
 
 
@@ -26,7 +28,7 @@ export class Projects extends React.Component {
             this.setState({ projects:projects });
           })
 
-
+          this.showMore = this.showMore.bind(this);
       };
 
       // IDEA: meta_description 3
@@ -36,22 +38,30 @@ export class Projects extends React.Component {
       //text
 
 
+      showMore (){
+          this.setState({ showProjectCount: this.state.showProjectCount + 2 });
+      }
+
 
     render() {
 
-
       const Projects = this.state.projects.map((projects,i) =>
-<NavLink to={"/projects/"+projects.project.url} key={i} >
-      <div className="project"  >
+      (this.state.showProjectCount > i && projects.project.services.includes(this.props.activeCategory))?
+        (<NavLink to={"/projects/"+projects.project.url} key={projects._id} >
+          <div className="project"  style={{  backgroundImage: `url(${projects.project.gallery.cardImage})`}} >
 
-          <div className="category"><p>{projects.project.titls}</p></div>
-          <div className="title"><b>{projects.project.title}</b><br/>
-          {projects.project.meta_description}</div>
+            <div className="category">{projects.project.services.map((service,i) => <p key={i}> {service} </p>)}</div>
+            <div className="title"><b>{projects.project.title}</b><br/>
+            {projects.project.meta_description}</div>
 
-      </div>
-      </NavLink>
+          </div>
+        </NavLink>)
+        : null
 
     );
+
+
+
 
         return (
 
@@ -62,7 +72,7 @@ export class Projects extends React.Component {
 
 
               <div className="more_projects_btn">
-                <div className="more_projects"><a href="#" className="btn-gradient">More</a> </div>
+                <div className="more_projects"><button className="btn-gradient" onClick={this.showMore} >More</button></div>
               </div>
 
 

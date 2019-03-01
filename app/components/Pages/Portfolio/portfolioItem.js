@@ -121,8 +121,8 @@ if (!this.state.pageLoadError) {
       <div className="projectDetails">
         <h3 className="front_text">About the project</h3>
         <h3 className="back_text">About the project</h3>
-        <p className="projectNameDescription">
-          {this.state.project.text}
+        <p className="projectNameDescription"   dangerouslySetInnerHTML={{ __html: this.state.project.text }}   >
+
         </p>
         <button type="button" name="button">Read more</button>
 
@@ -131,36 +131,7 @@ if (!this.state.pageLoadError) {
         <h3 className="back_text">Technology</h3>
         <h3 className="front_text">Technology</h3>
         <span>Technologies used in this project</span>
-        <table className="usedSkillsTable">
-          <tbody>
-            <tr>
-              <td>
-                <span>01.</span>Apache Software Foundation</td>
-              <td>
-                <span>04.</span>JavaScript</td>
-            </tr>
-            <tr>
-              <td>
-                <span>02.</span>Android</td>
-              <td>
-                <span>05.</span>Jira</td>
-            </tr>
-            <tr>
-              <td>
-                <span>03.</span>Chai</td>
-              <td>
-                <span>06.</span>Mocha</td>
-            </tr>
-
-          </tbody>
-        </table>
-        <div className="usedSkillsTable">
-            <div className="Skills">
-              <Skills skills={this.state.project.skillsAndTechnologies}/>
-
-            </div>
-          </div>
-
+        <Skills skills={this.state.project.skillsAndTechnologies}/>
       </div>
       <div className="workedOnProject">
         <span>worked on the project:</span>

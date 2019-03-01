@@ -11,9 +11,21 @@ export class Home extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state ={
+          activeCategory: "Web Design",
+        }
+
+        this.categoryChange =  this.categoryChange.bind(this)
 
     }
 
+    categoryChange (e){
+      let category = e.target.dataset.category;
+      if (category !== undefined) {
+        this.setState({ activeCategory: category });
+      }
+
+    }
 
     render() {
         const technologyImg  = "https://s3.amazonaws.com/botsculptors/website/technologies.png"
@@ -198,17 +210,17 @@ export class Home extends React.Component {
                         <span className="front_text">Portfolio</span>
                     </div>
 
-                    <div className="menu" >
-                        <div className="item">Web Design</div>
-                        <div style={ { color: `#1F4C9D` } } className="item">Website Development</div>
-                        <div className="item">Bot Development</div>
-                        <div className="item">Chrome Extensions</div>
-                        <div className="item">Software Development</div>
-                        <div className="item">Maintenance</div>
+                    <div className="menu" onClick={this.categoryChange}>
+                        <div className={ this.state.activeCategory == "Web Design" ? "active item" : "item"}  data-category ="Web Design">Web Design</div>
+                        <div className={this.state.activeCategory == "Website Development" ? "active item" : "item"} data-category="Website Development">Website Development</div>
+                        <div className={this.state.activeCategory == "Bot Development" ? "active item" : "item"} data-category="Bot Development">Bot Development</div>
+                        <div className={this.state.activeCategory == "Chrome Extensions" ? "active item" : "item"} data-category="Chrome Extensions">Chrome Extensions</div>
+                        <div className={this.state.activeCategory == "Software Development" ? "active item" : "item"} data-category="Software Development">Software Development</div>
+                        <div className={this.state.activeCategory == "Maintenance" ? "active item" : "item"} data-category="Maintenance">Maintenance</div>
                     </div>
 
 
-                    <Projects/>
+                    <Projects activeCategory={this.state.activeCategory}/>
 
 
 

@@ -8,17 +8,13 @@ export class Skills extends React.Component {
 
 
         return (
-          <div>
-
-              {
-                this.props.skills
-                // <ul>
-               // this.props.skills.map(function(item, i){
-               //   console.log('test');
-               //   <li>Test</li>
-               // })
-// </ul>{this.props.skills}
-             }
+          <div className="usedSkillsTable">
+          { this.props.skills !== undefined ? (
+            this.props.skills.map((item,i) => {
+            return <div className="usedTechnologyItem" key={i}>  <span>{'0' + (1 + i) }.</span>{item}</div>
+          })) :
+          null
+        }
 
           </div>
 

@@ -47,7 +47,9 @@ justify-content: space-around;
     background-position: center;
     background-repeat: no-repeat;
     h1{
-      color: white;
+      color: #fff;
+      text-transform: capitalize;
+
     }
   }
   .projectDetails{
@@ -109,30 +111,31 @@ justify-content: space-around;
     span{
       font-size: 16px;
       color: gray;
-      margin-bottom: 35px;
     }
-    table{
-      width: 50%;
-      margin-bottom: 40px;
-      td, th {
-        border: 1px solid #d5d9de;
-        padding: 20px 10px;
-      }
-      td{
-        width: 300px;
+    div.usedSkillsTable{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      .usedTechnologyItem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
         font-size: 18px;
         font-weight: 600;
-        span{
+        border: 1px solid #d5d9de;
+        padding: 20px 10px;
+        width: 250px;
+      }
+      span{
           font-size: 28px;
           color: #2558b5;
           font-weight: 800;
-          padding: 0 20px;
-        }
-
+          padding: 0 5px 0 0 ;
       }
 
-
-    }
+      }
   }
   .PortfolioImgGallery{
     display: flex;
