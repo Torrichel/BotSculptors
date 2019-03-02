@@ -38,8 +38,8 @@ export class Header extends React.Component{
 
                     <nav className="navBlock">
 
-                        <a href="#services">Services</a>
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="/#services">Services</a>
+                        <a href="/#portfolio">Portfolio</a>
                         {/*<NavLink to="/about">Reviews</NavLink>*/}
                         <NavLink to="/about">About</NavLink>
 
