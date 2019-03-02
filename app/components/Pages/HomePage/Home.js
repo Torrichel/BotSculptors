@@ -311,7 +311,7 @@ export class Home extends React.Component {
                 <div className="we_are_featured_by">
 
                     <div className="title">
-                        <span className="back_text">Featured</span>
+                        <span className="back_text">People About Us</span>
                         <span className="front_text"></span>
                     </div>
 
