@@ -312,7 +312,7 @@ export class Home extends React.Component {
 
                     <div className="title">
                         <span className="back_text">Featured</span>
-                        <span className="front_text">Featured</span>
+                        <span className="front_text"></span>
                     </div>
 
                     <Slider {...settingsForReviewsSlider} >
