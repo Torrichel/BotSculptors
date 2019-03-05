@@ -152,7 +152,6 @@
     .description{
         text-align: center;
         width: 598px;
-        height: 88px;
         color: #7d8794;
         font-style: italic;
         font-size: 17px;
@@ -183,6 +182,7 @@
   }
   .dream-team {
     padding: 70px 14%;
+    padding-top: 0;
     align-items: center;
     justify-content: center;
     @media screen and (min-width: 1250px) {
