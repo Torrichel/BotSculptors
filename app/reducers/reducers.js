@@ -16,7 +16,6 @@ function projectReducer(state={}, action){
         case 'GET_PROJECT_FULFILLED':
             return action.payload.data.data;
 
-
         // Get trip failure
         // case 'GET_TRIP_REJECTED':
         //     return Object.assign(state, {
@@ -31,9 +30,29 @@ function projectReducer(state={}, action){
 }
 
 
+function usersReducer(state={}, action){
+
+
+    switch ( action.type ){
+
+
+
+        case 'GET_USERS_FULFILLED':
+            return action.payload.data.data;
+
+
+        default:
+            return state;
+
+    }
+
+}
+
+
 
 const rootReducer = combineReducers({
     projectReducer: projectReducer,
+    usersReducer: usersReducer,
     routing: routerReducer
 });
 

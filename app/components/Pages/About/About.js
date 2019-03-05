@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { getUsers } from '../../../actions/actions'
+
 import { Emoji } from 'emoji-mart'
 
 import Popup from '../Popup/Popup'
@@ -12,8 +14,11 @@ export class About extends Component {
         super(props);
         this.state = {
           popupImage: null,
-          show: false
-        }
+          show: false,
+          users: []
+        };
+
+        props.dispatch( getUsers() );
 
         this.showModal = this.showModal.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -33,63 +38,38 @@ export class About extends Component {
       this.setState({ show: false });
     }
 
+    componentWillReceiveProps(nextProps) {
+
+        this.setState({
+            users: nextProps.users
+        });
+
+
+    }
+    
 
 
     render() {
 
-    const imagesLinks = [
-         {
-           link : "https://i.ibb.co/d2YcBnK/1280x960-1-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         },
-         {
-           link : "https://i.ibb.co/R24bSHH/Pozoyan-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         },
-         {
-           link :     "https://i.ibb.co/0CW91wc/Petrosyan-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         },
-         {
-           link : "https://i.ibb.co/MR8tDrb/Kurkhulishvili-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         },
-         {
-           link : "https://i.ibb.co/fq8brvV/Kuksin-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         },
-         {
-           link : "https://i.ibb.co/qFJ1Qkr/Korolov-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         },
-         {
-           link : "https://i.ibb.co/RP4YZ94/Ivanova-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         },
-         {
-           link : "https://i.ibb.co/jkxKHj0/Bokeria-min.jpg",
-           name : "Svetlan Ovchinikov",
-           status : "full-stack"
-         }
-      ];
+    const users = this.state.users || [];
 
-      const teamList = imagesLinks.map(({link,name, status}, i) =>
 
-            <div key={i} className="grid-item" style={ { backgroundImage: `url(${link})` } }>
-              <div className="personName">
-                <p className="name">{name}<br/><span className="status">{status}</span></p>
-                <p className="moreInfo" onClick={this.showModal}>Узнать больше</p>
-              </div>
+
+        let teamList = users.map((user, i) =>
+
+
+            <div key={i} className="grid-item" style={ { backgroundImage: `url(${user.photo})` } }>
+                <div className="personName">
+                    <p className="name">{user.firstName + ' ' + user.lastName}<br/><span className="status">{user.title}</span></p>
+                    <p className="moreInfo" onClick={this.showModal}>Show More</p>
+                </div>
             </div>
 
+
         );
+
+
+
 
         return (
 
@@ -153,4 +133,16 @@ export class About extends Component {
 }
 
 
-export default connect(null)(About);
+const mapStateToProps = (state, ownProps) => {
+
+    return Object.assign({}, ownProps, {
+        users: state.usersReducer ? state.usersReducer : [],
+    });
+
+
+
+
+};
+
+
+export default connect(mapStateToProps)(About);
