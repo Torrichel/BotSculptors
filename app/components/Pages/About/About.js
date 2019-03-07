@@ -26,9 +26,13 @@ export class About extends Component {
     }
 
     showModal(e) {
-        const  imageLink = e.target.parentElement.parentElement.style.backgroundImage.replace('url(','').replace(')','').replace(/\"/gi, "");
+        const  id = e.target.id;
+        const users = this.state.users;
+
+        const currentUser = users.filter(e => e._id === id);
+
         this.setState ({
-          popupImage: imageLink,
+          popupUser: currentUser,
           show: true
         })
     };
@@ -46,14 +50,12 @@ export class About extends Component {
 
 
     }
-    
+
 
 
     render() {
 
     const users = this.state.users || [];
-
-
 
         let teamList = users.map((user, i) =>
 
@@ -61,7 +63,7 @@ export class About extends Component {
             <div key={i} className="grid-item" style={ { backgroundImage: `url(${user.photo})` } }>
                 <div className="personName">
                     <p className="name">{user.firstName + ' ' + user.lastName}<br/><span className="status">{user.title}</span></p>
-                    <p className="moreInfo" onClick={this.showModal}>Show More</p>
+                    <p className="moreInfo" id={user._id} onClick={this.showModal}>Show More</p>
                 </div>
             </div>
 
@@ -75,7 +77,7 @@ export class About extends Component {
 
           <div className="about">
 
-          <Popup show={this.state.show} handleClose={this.handleClose} image={this.state.popupImage}/>
+          <Popup show={this.state.show} handleClose={this.handleClose} user={this.state.popupUser}/>
 
             <div className="slider" style={ { backgroundImage: `url(https://i.ibb.co/1zX1Cm4/about-page-bg.png)` } }>
 
