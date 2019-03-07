@@ -7,7 +7,7 @@ const baseURL = 'https://botsculptors.com/api/v1';
 export function getProject(name){
     return {
         type: 'GET_PROJECT',
-        payload: axios.get( `${baseURL}/${name}` )
+        payload: axios.get( `${baseURL}/projects/${name}` )
     }
 }
 
