@@ -44,8 +44,8 @@ export class Projects extends React.Component {
 
 
     render() {
-
-      const Projects = this.state.projects.map((projects,i) =>
+      const projects = this.state.projects || [];
+      const Projects = projects.map((projects,i) =>
       (this.state.showProjectCount > i && projects.project.services.includes(this.props.activeCategory))?
         (<NavLink to={"/projects/"+projects.project.url} key={projects._id} >
           <div className="project"  style={{  backgroundImage: `url(${projects.project.gallery.cardImage})`}} >

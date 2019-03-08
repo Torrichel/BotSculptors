@@ -51,7 +51,7 @@ export class Footer extends React.Component{
                             </div>
                             <div className="sub_menu_2">
 
-                                <Link to="https://github.com/BotSculptors" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></Link>
+                                <a href="https://github.com/BotSculptors" target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
                                 <div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/fb.png)` } }></div>
                                 <div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></div>
 
