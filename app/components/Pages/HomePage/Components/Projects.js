@@ -11,7 +11,7 @@ export class Projects extends React.Component {
         super(props);
         this.state ={
           projects: [],
-          showProjectCount: 2
+          showProjectCount: 20
         }
 
     }
