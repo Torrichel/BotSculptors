@@ -117,10 +117,13 @@ justify-content: space-around;
       color: gray;
     }
     div.usedSkillsTable{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
       margin-bottom: 30px;
       margin-top: 30px;
+      width: 30%;
       .usedTechnologyItem{
         display: flex;
         justify-content: center;
@@ -189,7 +192,9 @@ justify-content: space-around;
         flex-direction: row;
         img{
           height: 55px;
-          padding-right: 12px;
+          width: 55px;
+          border-radius: 50px;
+          margin-right: 12px;
         }
         .DeveloperName{
           height: 40px;
