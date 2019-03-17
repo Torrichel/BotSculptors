@@ -65,13 +65,13 @@ export class Header extends React.Component{
                     </div>
 
 
-
-                    <div className="navBlock">
+                    {/* <div className="navBlock">
 
                         <div className="fill_brief">Fill Brief</div>
                         <div className="get_quote">Get Quote</div>
 
-                    </div>
+                    </div> */}
+
 
                 </div>
 
