@@ -98,7 +98,7 @@ if (!this.state.pageLoadError) {
   return (<div className="PortfolioPage">
     <div className="PortfolioItem">
       <div className="PortfolioItemBackgroundImg" style={{
-          backgroundImage: `url(https://www.rosphoto.com/images/u/articles/1608/5_16.jpg)`
+          backgroundImage: `url(${this.state.project.gallery !== undefined ? this.state.project.gallery.cardImage : []})`
         }}>
         <h1>{this.state.project.title}</h1>
       </div>

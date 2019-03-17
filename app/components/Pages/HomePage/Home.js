@@ -226,7 +226,7 @@ export class Home extends React.Component {
 
                 </div>
 
-                {/* We're trusted by */}
+                {/* We're trusted by
                 <div className="we_are_trusted_by">
 
                     <div className="title">
@@ -306,8 +306,9 @@ export class Home extends React.Component {
 
 
                 </div>
+                */}
 
-                {/* We're featured by */}
+                {/* We're featured by
                 <div className="we_are_featured_by">
 
                     <div className="title">
@@ -385,7 +386,7 @@ export class Home extends React.Component {
 
 
                 </div>
-
+*/}
                 {/* Subscribe */}
                 <div className="subscription" style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>
 
