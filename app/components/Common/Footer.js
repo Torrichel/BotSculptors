@@ -52,8 +52,8 @@ export class Footer extends React.Component{
                             <div className="sub_menu_2">
 
                                 <a href="https://github.com/BotSculptors" target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
-                                <div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/fb.png)` } }></div>
-                                <div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></div>
+
+                                <a href="https://www.linkedin.com/company/botsculptors" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></a>
 
                             </div>
 
@@ -79,7 +79,7 @@ export class Footer extends React.Component{
 
 
                     <div className="sub_block_3">
-                        BotSculptors © 2018
+                        BotSculptors © 2019
                     </div>
 
                 </div>

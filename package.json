@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "BotSculptors",
   "scripts": {
-    "start": "webpack-dev-server --port 8081",
-    "build": "webpack"
+    "start": "webpack-dev-server -p --port 8081",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",

@@ -57,7 +57,7 @@ export class Home extends React.Component {
             <div>
 
                 {/* Slider */}
-                <div className="slider" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/background.png)` } }>
+                <div className="slider" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/background.jpg)` } }>
 
                     <div className="info">
 
@@ -216,6 +216,7 @@ export class Home extends React.Component {
                         <div className={this.state.activeCategory == "Bot Development" ? "active item" : "item"} data-category="Bot Development">Bot Development</div>
                         <div className={this.state.activeCategory == "Chrome Extensions" ? "active item" : "item"} data-category="Chrome Extensions">Chrome Extensions</div>
                         <div className={this.state.activeCategory == "Software Development" ? "active item" : "item"} data-category="Software Development">Software Development</div>
+                        <div className={this.state.activeCategory == "Mobile Development" ? "active item" : "item"} data-category="Mobile Development">Mobile Development</div>
                         <div className={this.state.activeCategory == "Maintenance" ? "active item" : "item"} data-category="Maintenance">Maintenance</div>
                     </div>
 
@@ -388,20 +389,21 @@ export class Home extends React.Component {
                 </div>
 */}
                 {/* Subscribe */}
-                <div className="subscription" style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>
 
-                    <div className="title">
-                        <b>Still have questions?</b>
-                        <i>We're ready to support you 24/7!</i>
-                    </div>
-                    <div className="form">
-                        <form action="" method="POST">
-                            <input type="text" placeholder="E-mail"/>
-                            <button>Send Request</button>
-                        </form>
-                    </div>
+                {/*<div className="subscription" style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>*/}
 
-                </div>
+                    {/*<div className="title">*/}
+                        {/*<b>Still have questions?</b>*/}
+                        {/*<i>We're ready to support you 24/7!</i>*/}
+                    {/*</div>*/}
+                    {/*<div className="form">*/}
+                        {/*<form action="" method="POST">*/}
+                            {/*<input type="text" placeholder="E-mail"/>*/}
+                            {/*<button>Send Request</button>*/}
+                        {/*</form>*/}
+                    {/*</div>*/}
+
+                {/*</div>*/}
 
             </div>
 

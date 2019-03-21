@@ -1,12 +1,19 @@
 'use strict';
 
-let HTMLWebpackPlugin = require('html-webpack-plugin'),
-    HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
+const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
         template: __dirname + '/app/index.html',
         filename: 'index.html',
         inject: 'body'
-    }),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+    });
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
+
+
+
 
 module.exports = {
     entry: [__dirname + '/app/store.js', __dirname + '/app/styles/index.scss'],

@@ -1,7 +1,7 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Gallery from 'react-photo-gallery';
-import {getProject} from '../../../actions/actions'
+import { getProject } from '../../../actions/actions'
 import Lightbox from 'react-images';
 import Skills from './Skills';
 import { Redirect} from 'react-router-dom'
@@ -118,7 +118,7 @@ if (!this.state.pageLoadError) {
         <Skills skills={this.state.project.skillsAndTechnologies}/>
       </div>
       <div className="workedOnProject">
-        <span>worked on the project:</span>
+        <span>Worked on the project</span>
         <div className="Developers">
           {  this.state.authors.map((author) =>(
                 <div className="developerForThisProject" key={author._id}>
