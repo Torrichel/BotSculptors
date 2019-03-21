@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 
 import Slider from "react-slick";
@@ -28,7 +27,6 @@ export class Home extends React.Component {
     }
 
     render() {
-        const technologyImg  = "https://s3.amazonaws.com/botsculptors/website/technologies.png"
 
         const settingsForReviewsSlider = {
             infinite: true,
@@ -63,7 +61,7 @@ export class Home extends React.Component {
 
                         <div className="slogan">Quality<span>.</span> Efficiency<span>.</span> Power<span>.</span></div>
                         <div className="title">Converting ideas into real-life projects.</div><br/>
-                        <div className="call_to_action"><a href="#" className="btn-gradient">Services</a> </div>
+                        <div className="call_to_action"><a href="#services" className="btn-gradient">Services</a> </div>
 
                     </div>
                     <div className="pagination"></div>
@@ -80,27 +78,27 @@ export class Home extends React.Component {
 
                     <div className="services">
 
-                        <div className="service service-web" style={ { backgroundImage: `url(https://i.ibb.co/RgMq957/Web-Design-min.png)` } }>
+                        <div className="service service-web" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebDesign.png)` } }>
                             <div className="title">Web <br/><b>Design</b></div>
                         </div>
 
-                        <div className="service service-website" style={ { backgroundImage: `url(https://i.ibb.co/rdfBdyd/Website-Development-min.png)` } }>
+                        <div className="service service-website" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebsiteDevelopment.png)` } }>
                             <div className="title">Website <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service service-bot" style={ { backgroundImage: `url(https://i.ibb.co/kKgwmwd/Bot-Development-min.png)` } }>
+                        <div className="service service-bot" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/BotDevelopment.png)` } }>
                             <div className="title">Bot <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service service-extensions" style={ { backgroundImage: `url(https://i.ibb.co/bsd3RyX/Chrome-Extensions-min.png)` } }>
+                        <div className="service service-extensions" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/ChromeExtensions.png)` } }>
                             <div className="title">Chrome <br/><b>Extensions</b></div>
                         </div>
 
-                        <div className="service service-software" style={ { backgroundImage: `url(https://i.ibb.co/r74cdV6/Software-Development-min.png)` } }>
+                        <div className="service service-software" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/SoftwareDevelopment.png)` } }>
                             <div className="title">Software <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service service-maintenance" style={ { backgroundImage: `url(https://i.ibb.co/HnwFXRB/imgonline-com-ua-Resize-96r4yw-V75-YDw-JQ.png)` } }>
+                        <div className="service service-maintenance" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/Maintenance.png)` } }>
                             <div className="title">Maintenance</div>
                         </div>
 

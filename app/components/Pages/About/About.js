@@ -79,7 +79,7 @@ export class About extends Component {
 
           <Popup show={this.state.show} handleClose={this.handleClose} user={this.state.popupUser}/>
 
-            <div className="slider" style={ { backgroundImage: `url(https://i.ibb.co/1zX1Cm4/about-page-bg.png)` } }>
+            <div className="slider" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/about-page-bg.jpg)` } }>
 
                 <div className="info">
 

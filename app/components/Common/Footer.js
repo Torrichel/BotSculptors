@@ -39,15 +39,14 @@ export class Footer extends React.Component{
                         <div className="nav_menu_top">
                           <a href="#services">Services</a>
                           <a href="#portfolio">Portfolio</a>
-                            {/*<Link to="/about">Обзоры</Link>*/}
                             <Link to="/about">About</Link>
                         </div>
 
                         <div className="nav_menu_bottom">
 
                             <div className="sub_menu_1">
-                                <div className="fill_brief">Fill Brief</div>
-                                <div className="get_quote">Get Quote</div>
+                                {/*<div className="fill_brief">Fill Brief</div>*/}
+                                {/*<div className="get_quote">Get Quote</div>*/}
                             </div>
                             <div className="sub_menu_2">
 
