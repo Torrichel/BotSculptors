@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { Link } from "react-scroll"
+
 
 import Slider from "react-slick";
 
@@ -10,9 +12,9 @@ export class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
           activeCategory: "Web Design",
-        }
+        };
 
         this.categoryChange =  this.categoryChange.bind(this)
 
@@ -61,7 +63,7 @@ export class Home extends React.Component {
 
                         <div className="slogan">Quality<span>.</span> Efficiency<span>.</span> Power<span>.</span></div>
                         <div className="title">Converting ideas into real-life projects.</div><br/>
-                        <div className="call_to_action"><a href="#services" className="btn-gradient">Services</a> </div>
+                        <div className="call_to_action"><Link offset={-60} to="services" smooth={true} className="btn-gradient">Services</Link> </div>
 
                     </div>
                     <div className="pagination"></div>

@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { Link } from "react-scroll"
 
 // Import config file
 import config from '../../../config'
 
 // Import Helmet to take care about page head section
-import {Helmet} from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 
 
@@ -16,11 +17,25 @@ export class Header extends React.Component{
 
 
 
-    hireUs(){
-        window.location = config.company;
-    }
-
     render(){
+
+        let nav;
+
+        if(window.location.pathname === '/'){
+
+            nav = <nav className="navBlock">
+                <Link offset={-60} smooth={true} to="services">Services</Link>
+                <Link offset={-40} smooth={true} to="portfolio">Portfolio</Link>
+                <NavLink to="/about">About</NavLink>
+            </nav>;
+
+        } else{
+            nav = <nav className="navBlock">
+                <a href="/#services">Services</a>
+                <a href="/#portfolio">Portfolio</a>
+                <NavLink to="/about">About</NavLink>
+            </nav>;
+        }
 
         return (
 
@@ -36,15 +51,13 @@ export class Header extends React.Component{
                 <div className="header_first_line">
 
 
-                    <nav className="navBlock">
-
-                        <a href="/#services">Services</a>
-                        <a href="/#portfolio">Portfolio</a>
-                        {/*<NavLink to="/about">Reviews</NavLink>*/}
-                        <NavLink to="/about">About</NavLink>
 
 
-                    </nav>
+
+                        {nav}
+
+
+
 
                 </div>
 

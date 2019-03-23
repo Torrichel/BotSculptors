@@ -12,7 +12,7 @@ export class PortfolioItem extends React.Component {
   constructor(props) {
 
     super(props);
-    console.log(props.match.params.projectID);
+
     this.state = {
       currentImage: 0,
       url: props.match.params.projectID,
@@ -27,6 +27,11 @@ export class PortfolioItem extends React.Component {
     this.gotoPrevious = this.gotoPrevious.bind(this);
     this.isEmpty = this.isEmpty.bind(this);
   }
+
+  componentDidMount(){
+      window.scrollTo(0, 0);
+  }
+
   openLightbox(event, obj) {
     this.setState({currentImage: obj.index, lightboxIsOpen: true});
   }
@@ -125,10 +130,10 @@ if (!this.state.pageLoadError) {
                     <img src={author.photo}></img>
                     <div className="DeveloperName">
                       <span className="DeveloperName">{author.firstName} {author.lastName}</span>
-                      <span className="DeveloperRoleInProject">Front-end developer</span>
+                      <span className="DeveloperRoleInProject">{author.title}</span>
 
                     </div>
-                    <button type="button" name="developerPage">&#8250;</button>
+                    {/*<button type="button" name="developerPage">&#8250;</button>*/}
                   </div>
               ))}
         </div>

@@ -13,3 +13,24 @@ html, body{
 .emoji-mart-emoji{
   border: none;
 }
+
+a{
+  cursor: pointer;
+}
+
+
+.privacy-policy{
+  padding-left: 15%;
+  padding-right: 13%;
+
+
+  span{
+    font-size: 25px;
+    font-weight: lighter;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.24);
+    font-family: MainFontThin;
+  }
+
+
+}

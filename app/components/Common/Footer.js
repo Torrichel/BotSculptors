@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { NavLink, Link } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom'
+import { Link } from "react-scroll"
 
 
 export class Footer extends React.Component{
@@ -11,6 +11,26 @@ export class Footer extends React.Component{
     }
 
     render(){
+
+        let nav;
+
+        if(window.location.pathname === '/'){
+
+            nav = <div className="nav_menu_top">
+                    <Link offset={-60} smooth={true} to="services">Services</Link>
+                    <Link offset={-40} smooth={true} to="portfolio">Portfolio</Link>
+                    <NavLink to="/about">About</NavLink>
+                </div>;
+
+        } else{
+            nav = <div className="nav_menu_top">
+                    <a href="/#services">Services</a>
+                    <a href="/#portfolio">Portfolio</a>
+                    <NavLink to="/about">About</NavLink>
+                </div>;
+        }
+
+
 
 
         return (
@@ -36,11 +56,7 @@ export class Footer extends React.Component{
 
                     <nav className="navBlock">
 
-                        <div className="nav_menu_top">
-                          <a href="#services">Services</a>
-                          <a href="#portfolio">Portfolio</a>
-                            <Link to="/about">About</Link>
-                        </div>
+                        {nav}
 
                         <div className="nav_menu_bottom">
 
@@ -50,9 +66,9 @@ export class Footer extends React.Component{
                             </div>
                             <div className="sub_menu_2">
 
-                                <a href="https://github.com/BotSculptors" target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
+                                <a target="_blank" href="https://github.com/BotSculptors" target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
 
-                                <a href="https://www.linkedin.com/company/botsculptors" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></a>
+                                <a target="_blank" href="https://www.linkedin.com/company/botsculptors" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></a>
 
                             </div>
 
@@ -65,20 +81,20 @@ export class Footer extends React.Component{
                 <div className="footer_second_line">
 
                     <div className="sub_block_1">
-                        <Link to="/privacy-policy">Privacy Policy</Link>
+                        <NavLink to="/privacy-policy">Privacy Policy</NavLink>
                     </div>
                     <div className="sub_block_2">
 
 
                         <div className="email">
-                            <i className="material-icons">mail_outline</i><span>info@botsculptors.com</span>
+                            <i className="material-icons">mail_outline</i><a target="_top" href="mailto:info@botsculptors.com?Subject=Need%20help">info@botsculptors.com</a>
                         </div>
 
                     </div>
 
 
                     <div className="sub_block_3">
-                        BotSculptors © 2019
+                        Copyright © 2019
                     </div>
 
                 </div>

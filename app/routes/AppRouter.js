@@ -10,14 +10,14 @@ import { ConnectedRouter } from 'react-router-redux'
 
 import Home from '../components/Pages/HomePage/Home'
 
-import Portfolio from '../components/Pages/Portfolio/portfolio'
 import PortfolioItem from '../components/Pages/Portfolio/portfolioItem'
 import Team from '../components/Pages/Team'
 import About from '../components/Pages/About'
+import PrivacyPolicy from '../components/Pages/PrivacyPolicy'
 import Join from "../components/Pages/Join/Join.js"
 
 
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 
 export const history = createBrowserHistory();
 
@@ -38,7 +38,7 @@ export class AppRouter extends React.Component{
 
                 <ConnectedRouter history={history}>
                     <div id="main">
-                        <Header />
+                        <Header {...this.props} />
 
                         <main>
 
@@ -47,6 +47,7 @@ export class AppRouter extends React.Component{
                                     <Route exact path='/' render={() => <Home />} />
                                     <Route exact path='/team' render={() => <Team />} />
                                     <Route exact path='/about' render={() => <About />} />
+                                    <Route exact path='/privacy-policy' render={() => <PrivacyPolicy />} />
                                     <Route exact path='/projects/:projectID' render={(props) => <PortfolioItem  match={props.match}/>} />
                                     <Route exact path='/join' render={() => <Join />} />
 
