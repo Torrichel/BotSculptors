@@ -8,8 +8,13 @@
 @import 'config';
 
 
+// Mixins
+@import  'mixins';
+
+
 // Header section
 @import 'header';
+
 
 // Work area section
 @import 'main';
@@ -25,3 +30,6 @@
 
 //About page styles
 @import  'about';
+
+
+

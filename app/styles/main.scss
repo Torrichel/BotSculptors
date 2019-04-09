@@ -273,6 +273,12 @@ main {
         align-items: center;
         margin-bottom: 45px;
 
+        padding: 0 40px 10px 42px;
+        font-size: 20px;
+
+
+      }
+
         .back_text {
           font-size: 53px;
           opacity: 0.1;
@@ -292,6 +298,13 @@ main {
         text-align: left;
         justify-content: space-between;
         margin-bottom: 15px;
+
+        @include mobile{
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+        }
+
         .active {
           color: #1f4c9d;
         }
@@ -304,6 +317,9 @@ main {
         display: flex;
         flex-flow: column;
         justify-content: space-between;
+
+
+
         .more_projects_btn{
           display: flex;
           align-items: center;
@@ -345,6 +361,11 @@ main {
                 border: 1px solid #ffffff;;
                 max-width: 160px;
                 border-radius: 3px;
+                white-space: nowrap;
+              }
+
+              @include mobile{
+                display: none;
               }
 
             }
@@ -352,10 +373,24 @@ main {
             .title {
               padding: 0 40px 10px 42px;
               font-size: 20px;
+              color: #dadada;
+              text-shadow: 2px 2px 0 #000000, 4px 4px 0 #000000;
+
+              overflow: hidden;
+              max-height: 95px;
+              text-overflow: ellipsis;
+
+
+
               b{
                 font-size: 24px;
               }
             }
+
+
+
+
+
           }
         }
 
@@ -397,6 +432,9 @@ main {
         align-items: center;
         border: 0 solid red;
         margin-bottom: 45px;
+        height: 100px;
+
+
 
         .back_text {
           font-size: 53px;
@@ -666,4 +704,3 @@ main {
       }
     }
   }
-}

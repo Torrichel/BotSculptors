@@ -46,12 +46,14 @@ export class Footer extends React.Component{
                               <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
                           </NavLink>
                       </div>
-                      <NavLink  to="/">
+
                       <div className="sub_section_2">
-                          <div className="title">Bot <b>Sculptors</b></div>
-                          <div className="slogan">Bot Development and Design</div>
+                          <NavLink  to="/">
+                            <div className="title">Bot <b>Sculptors</b></div>
+                            <div className="slogan">Bot Development and Design</div>
+                          </NavLink>
                       </div>
-                      </NavLink>
+
                   </div>
 
                     <nav className="navBlock">

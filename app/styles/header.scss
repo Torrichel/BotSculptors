@@ -9,6 +9,8 @@ header{
   justify-content: center;
   background: $color1;
 
+
+
   .header_first_line{
     display: flex;
     justify-content: flex-end;
@@ -45,7 +47,6 @@ header{
 
 
   }
-
   .header_second_line{
     display: flex;
     justify-content: space-between;
@@ -79,6 +80,11 @@ header{
         text-decoration: none;
         padding-left: 30px;
         padding-top: 12px;
+
+
+        @include mobile{
+          display: none;
+        }
 
         .title{
           font-size: 28px;

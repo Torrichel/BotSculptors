@@ -38,12 +38,17 @@ footer{
         padding-left: 22px;
         padding-top: 12px;
 
+        @include mobile{
+          display: none;
+        }
+
         .title{
           margin-top: -17px;
           height: 45px;
           font-size: 30px;
           color: $title_color;
           font-family: MainFontThin;
+
 
           span{
             margin-left: -2px;
@@ -53,6 +58,7 @@ footer{
           font-size: 15px ;
           font-family: MainFontThin;
           color: $slogan_color;
+          white-space: nowrap;
         }
       }
 
@@ -164,6 +170,10 @@ footer{
     background: $header_second_line_color;
     border-bottom: 0px solid #ccc;
     font-size: pt-to-px(14);
+
+    @include mobile{
+      flex-flow: column;
+    }
 
 
 
