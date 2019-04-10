@@ -14,27 +14,24 @@ export class About extends Component {
         super(props);
         this.state = {
           popupImage: null,
+          popupUser: {},
           show: false,
           users: []
         };
 
         props.dispatch( getUsers() );
 
-        this.showModal = this.showModal.bind(this);
         this.handleClose = this.handleClose.bind(this);
 
     }
 
-    showModal(e) {
-        const  id = e.target.id;
-        const users = this.state.users;
-
-        const currentUser = users.filter(e => e._id === id);
+    showModal = user => {
 
         this.setState ({
-          popupUser: currentUser,
+          popupUser: user,
           show: true
-        })
+        });
+
     };
 
 
@@ -48,7 +45,6 @@ export class About extends Component {
             users: nextProps.users
         });
 
-
     }
 
 
@@ -57,24 +53,30 @@ export class About extends Component {
     }
 
 
-
-    render() {
-
-    const users = this.state.users || [];
-
-        let teamList = users.map((user, i) =>
+    getTeam = users => {
 
 
-            <div key={i} className="grid-item" style={ { backgroundImage: `url(${user.photo})` } }>
-                <div className="personName">
-                    <p className="name">{user.firstName + ' ' + user.lastName}<br/><span className="status">{user.title}</span></p>
-                    <p className="moreInfo" id={user._id} onClick={this.showModal}>Show More</p>
-                </div>
+        return users.map((user, i) =>
+
+
+            <div
+                key={i}
+                className="grid-item"
+                id={user._id}
+                onClick={() => {this.showModal(user)}}>
+                <div className='bg' style={ { backgroundImage: `url(${user.photo})` } }></div>
             </div>
 
 
         );
 
+    };
+
+
+
+    render() {
+
+        const { users = [] } = this.state;
 
 
 
@@ -124,7 +126,7 @@ export class About extends Component {
 
             <div className="dream-team">
               <div className="grid-container">
-                {teamList}
+                {this.getTeam(users)}
               </div>
             </div>
 

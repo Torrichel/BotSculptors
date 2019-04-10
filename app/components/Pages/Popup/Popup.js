@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Modal, Button } from 'react-bootstrap'
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 
 export class Popup extends Component {
 
   constructor(props, context) {
-  super(props, context);
-}
+    super(props, context);
+    console.log(props)
+  }
 
 render() {
 
-  const { bio,email,firstName,lastName,photo,title,upwork } = this.props.user !== undefined ? this.props.user[0] : [];
+  const { bio='', email='', firstName='', lastName='', photo='', title='', upwork='', github='', linkedIn='' } = this.props.user;
   return (
     <div>
       <Modal show={this.props.show} onHide={this.props.handleClose}>
@@ -25,12 +26,16 @@ render() {
           <div className="person-info">
             <img alt="person" src={photo} />
             <div className="media">
-              <span className="email">{email}</span>
+
+              <a className="email" target='_top' href={`mailto:${email}`}>{email}</a>
+
               <div className="social">
 
-                  <a href="https://github.com/BotSculptors" target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
-                  <a href={upwork} target="_blank"><div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/fb.png)` } }></div></a>
-                  <div className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></div>
+                  <a href={github} target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
+
+                  {/*<a href={linkedIn} target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png` } }></a>*/}
+
+
 
               </div>
             </div>
