@@ -144,11 +144,17 @@ main {
           height: 265px;
           background: $our_services_bg;
           border-radius: 5px;
+          user-select: none;
+
           .title {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
           }
+        }
+        .service:hover{
+          cursor: pointer;
+          opacity: .9;
         }
         .service-web {
           background-repeat: no-repeat;

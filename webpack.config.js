@@ -14,7 +14,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 
-
 module.exports = {
     entry: [__dirname + '/app/store.js', __dirname + '/app/styles/index.scss'],
     module: {
@@ -24,7 +23,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['es2015', 'react'],
+                    presets: ['es2015', 'react', 'stage-2'],
                     plugins: ['transform-decorators-legacy']
                 }
             },

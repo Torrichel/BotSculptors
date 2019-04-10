@@ -1,14 +1,14 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { Link } from "react-scroll"
+import { Link, Element, scroller } from 'react-scroll';
 
 
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
-import {Projects} from './Components/Projects.js'
+import { Projects } from './Components/Projects.js';
 
-export class Home extends React.Component {
+export class Home extends Component {
 
     constructor(props) {
         super(props);
@@ -16,17 +16,31 @@ export class Home extends React.Component {
           activeCategory: "Web Design",
         };
 
-        this.categoryChange =  this.categoryChange.bind(this)
 
     }
 
-    categoryChange (e){
-      let category = e.target.dataset.category;
-      if (category !== undefined) {
-        this.setState({ activeCategory: category });
-      }
+    setCategory = (category, scroll) => {
 
-    }
+
+        this.setState({ activeCategory: category }, () => {
+
+            if(scroll){
+                scroller.scrollTo('our_portfolio', {
+                    duration: 1000,
+                    delay: 100,
+                    smooth: true,
+                    offset: 50
+
+                });
+            }
+
+
+        });
+
+    };
+
+
+
 
     render() {
 
@@ -51,6 +65,8 @@ export class Home extends React.Component {
             slidesToScroll: 6
         };
 
+        const { activeCategory } = this.state;
+
 
         return (
 
@@ -63,7 +79,14 @@ export class Home extends React.Component {
 
                         <div className="slogan">Quality<span>.</span> Efficiency<span>.</span> Power<span>.</span></div>
                         <div className="title">Converting ideas into real-life projects.</div><br/>
-                        <div className="call_to_action"><Link offset={-60} to="services" smooth={true} className="btn-gradient">Services</Link> </div>
+                        <div className="call_to_action">
+                            <Link
+                                offset={-60}
+                                to="services"
+                                smooth={true}
+                                duration={1000}
+                                delay={100}
+                                className="btn-gradient">Services</Link> </div>
 
                     </div>
                     <div className="pagination"></div>
@@ -71,7 +94,7 @@ export class Home extends React.Component {
                 </div>
 
                 {/* Our Services */}
-                <div className="our_services">
+                <Element className="our_services" name="our_services">
 
                     <div className="title" id='services'>
                         <span className="back_text">Services</span>
@@ -80,27 +103,51 @@ export class Home extends React.Component {
 
                     <div className="services">
 
-                        <div className="service service-web" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebDesign.png)` } }>
+                        <div
+                            className="service service-web"
+                            style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebDesign.png)` } }
+                            onClick={() => {this.setCategory('Web Design', true)}}>
+
                             <div className="title">Web <br/><b>Design</b></div>
                         </div>
 
-                        <div className="service service-website" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebsiteDevelopment.png)` } }>
+                        <div
+                            className="service service-website"
+                            style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebsiteDevelopment.png)` } }
+                            onClick={() => {this.setCategory('Website Development', true)}}>
+
                             <div className="title">Website <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service service-bot" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/BotDevelopment.png)` } }>
+                        <div
+                            className="service service-bot"
+                            style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/BotDevelopment.png)` } }
+                            onClick={() => {this.setCategory('Bot Development', true)}}>
+
                             <div className="title">Bot <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service service-extensions" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/ChromeExtensions.png)` } }>
+                        <div
+                            className="service service-extensions"
+                            style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/ChromeExtensions.png)` } }
+                            onClick={() => {this.setCategory('Chrome Extensions', true)}}>
+
                             <div className="title">Chrome <br/><b>Extensions</b></div>
                         </div>
 
-                        <div className="service service-software" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/SoftwareDevelopment.png)` } }>
+                        <div
+                            className="service service-software"
+                            style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/SoftwareDevelopment.png)` } }
+                            onClick={() => {this.setCategory('Software Development', true)}}>
+
                             <div className="title">Software <br/><b>Development</b></div>
                         </div>
 
-                        <div className="service service-maintenance" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/Maintenance.png)` } }>
+                        <div
+                            className="service service-maintenance"
+                            style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/Maintenance.png)` } }
+                            onClick={() => {this.setCategory('Maintenance', true)}}>
+
                             <div className="title">Maintenance</div>
                         </div>
 
@@ -108,7 +155,7 @@ export class Home extends React.Component {
                     </div>
 
 
-                </div>
+                </Element>
 
                 {/* Technologies */}
                 <div className="techs">
@@ -203,25 +250,43 @@ export class Home extends React.Component {
                 </div>
 
                 {/* Our Portfolio */}
-                <div   className="our_portfolio">
+                <div className="our_portfolio">
 
                     <div className="title"  id='portfolio'>
                         <span className="back_text">Portfolio</span>
                         <span className="front_text">Portfolio</span>
                     </div>
 
-                    <div className="menu" onClick={this.categoryChange}>
-                        <div className={ this.state.activeCategory == "Web Design" ? "active item" : "item"}  data-category ="Web Design">Web Design</div>
-                        <div className={this.state.activeCategory == "Website Development" ? "active item" : "item"} data-category="Website Development">Website Development</div>
-                        <div className={this.state.activeCategory == "Bot Development" ? "active item" : "item"} data-category="Bot Development">Bot Development</div>
-                        <div className={this.state.activeCategory == "Chrome Extensions" ? "active item" : "item"} data-category="Chrome Extensions">Chrome Extensions</div>
-                        <div className={this.state.activeCategory == "Software Development" ? "active item" : "item"} data-category="Software Development">Software Development</div>
-                        <div className={this.state.activeCategory == "Mobile Development" ? "active item" : "item"} data-category="Mobile Development">Mobile Development</div>
-                        <div className={this.state.activeCategory == "Maintenance" ? "active item" : "item"} data-category="Maintenance">Maintenance</div>
+                    <div className="menu">
+
+                        <div
+                            className={`item ${activeCategory === 'Web Design' ? 'active' : ''}`}
+                            onClick={() => {this.setCategory('Web Design')}}>Web Design</div>
+
+                        <div
+                            className={`item ${activeCategory === 'Website Development' ? 'active' : ''}`}
+                            onClick={() => {this.setCategory('Website Development')}}>Website Development</div>
+
+                        <div
+                            className={`item ${activeCategory === 'Bot Development' ? 'active' : ''}`}
+                            onClick={() => {this.setCategory('Bot Development')}}>Bot Development</div>
+
+                        <div
+                            className={`item ${activeCategory === 'Chrome Extensions' ? 'active' : ''}`}
+                            onClick={() => {this.setCategory('Chrome Extensions')}}>Chrome Extensions</div>
+
+                        <div
+                            className={`item ${activeCategory === 'Software Development' ? 'active' : ''}`}
+                            onClick={() => {this.setCategory('Software Development')}}>Software Development</div>
+
+                        <div
+                            className={`item ${activeCategory === 'Maintenance' ? 'active' : ''}`}
+                            onClick={() => {this.setCategory('Maintenance')}}>Maintenance</div>
+
                     </div>
 
 
-                    <Projects activeCategory={this.state.activeCategory}/>
+                    <Projects activeCategory={activeCategory}/>
 
 
 
