@@ -10,14 +10,12 @@ header{
   background: $color1;
 
 
-
   .header_first_line{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    padding-left: 14%;
-    padding-right: 13%;
+    padding: 0 13%;
     height: 40px;
 
     background: $header_first_line_color;
@@ -52,8 +50,7 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-left: 14%;
-    padding-right: 13%;
+    padding: 0 13%;
     height: 90px;
     background: $header_second_line_color;
 

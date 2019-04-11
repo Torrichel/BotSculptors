@@ -20,7 +20,6 @@
     "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
     "devicons": "^1.8.0",
-    "emoji-mart": "^2.6.1",
     "history": "^4.7.2",
     "node-sass": "^4.0.0",
     "prop-types": "^15.6.2",
