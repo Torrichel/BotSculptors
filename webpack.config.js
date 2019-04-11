@@ -3,19 +3,19 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-        template: __dirname + '/app/index.html',
-        filename: 'index.html',
-        inject: 'body'
-    });
+    template: __dirname + '/public/index.html',
+    filename: 'index.html',
+    inject: 'body'
+});
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
+const path = require('path');
 
 
 
 module.exports = {
-    entry: [__dirname + '/app/store.js', __dirname + '/app/styles/index.scss'],
+    entry: ['babel-polyfill', path.join(__dirname, 'src/index.js'), path.join(__dirname, 'src/assets/scss/index.scss')],
     module: {
         loaders: [
             {
@@ -31,6 +31,7 @@ module.exports = {
                 test: /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             },
+
             {
                 test: /\.(jpg|ttf|png|gif|svg|pdf|ico)$/,
                 use: [
@@ -50,11 +51,13 @@ module.exports = {
         path: __dirname + '/dist',
         publicPath: '/'
     },
+
     plugins: [
-        HTMLWebpackPluginConfig, new ExtractTextPlugin('styles/styles.css', {
+        HTMLWebpackPluginConfig, new ExtractTextPlugin('src/assets/scss/styles.css', {
             allChunks: true
         })
     ],
+
     devServer: {
         historyApiFallback: true
     }
