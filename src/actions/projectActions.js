@@ -8,8 +8,14 @@ const getProjectWebsite = (url) => dispatch => {
 
 };
 
+const listAllProjectsWebsite = () => dispatch => {
 
-export const projectActions = { getProjectWebsite };
+    projectService.listAllProjectsWebsite(dispatch);
+
+};
+
+
+export const projectActions = { getProjectWebsite, listAllProjectsWebsite };
 
 
 

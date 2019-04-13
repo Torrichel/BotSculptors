@@ -10,21 +10,39 @@ import { Projects } from './Components/Projects.js';
 
 import { Header, Footer } from "../../common";
 
+import { projectActions } from '../../../actions';
+
+import ReactPaginate from "react-paginate";
+
+
+
+
+
 export class Home extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          activeCategory: "Web Design",
+            activeCategory: "Bot Development",
+            projects: [],
+            offset: 0,
+            perPage: 2,
+            pageCount: 0,
+            forcePage: 0
         };
 
+    }
 
+    componentDidMount() {
+        this.props.dispatch( projectActions.listAllProjectsWebsite() );
     }
 
     setCategory = (category, scroll) => {
 
+        const { projects=[] } = this.props;
 
-        this.setState({ activeCategory: category }, () => {
+
+        this.setState({ activeCategory: category, forcePage: 0 }, () => {
 
             if(scroll){
                 scroller.scrollTo('our_portfolio', {
@@ -36,13 +54,52 @@ export class Home extends Component {
                 });
             }
 
+            this.filter(category, projects, 0);
 
         });
 
     };
 
+    componentWillReceiveProps(nextProps) {
+
+        const { projects=[] } = nextProps;
+        const { activeCategory } = this.state;
+
+       this.filter(activeCategory, projects, 0);
 
 
+
+    }
+
+    handlePageClick = data => {
+
+        const { perPage, activeCategory } = this.state;
+        const { projects } = this.props;
+
+        let selected = data.selected;
+        let offset = Math.ceil(selected * perPage);
+
+        this.setState({ forcePage: selected }, () => {
+            this.filter(activeCategory, projects, offset);
+        });
+
+
+    };
+
+    filter = (activeCategory, projects, offset) => {
+        const { perPage } = this.state;
+        const appliedCategory = projects.filter(({project}) => {
+            return project.services.includes(activeCategory);
+        });
+
+
+        this.setState({
+            pageCount: appliedCategory.length / perPage,
+            projects: appliedCategory.slice(offset).slice(0, perPage)
+        });
+
+
+    };
 
     render() {
 
@@ -67,7 +124,7 @@ export class Home extends Component {
             slidesToScroll: 6
         };
 
-        const { activeCategory } = this.state;
+        const { activeCategory, projects=[], pageCount=0, forcePage } = this.state;
 
 
         return (
@@ -293,9 +350,22 @@ export class Home extends Component {
                             </div>
 
 
-                            <Projects activeCategory={activeCategory}/>
+                            <Projects projects={projects} activeCategory={activeCategory}/>
 
-
+                            {pageCount > 0 ? <ReactPaginate
+                                nextLabel={<i className="material-icons">keyboard_arrow_right</i>}
+                                previousLabel={<i className="material-icons">keyboard_arrow_left</i>}
+                                forcePage={forcePage}
+                                breakLabel={'...'}
+                                breakClassName={'break-me'}
+                                pageCount={pageCount}
+                                marginPagesDisplayed={2}
+                                pageRangeDisplayed={5}
+                                onPageChange={this.handlePageClick}
+                                containerClassName={'pagination'}
+                                subContainerClassName={'pages pagination'}
+                                activeClassName={'active'}
+                            /> : ''}
 
                         </div>
 
@@ -492,5 +562,14 @@ export class Home extends Component {
 
 }
 
+const mapStateToProps = (state, ownProps) => {
 
-export default connect(null)(Home);
+    return Object.assign({}, ownProps, {
+        projects: state.projectReducer.websiteProjects,
+    });
+
+
+};
+
+
+export default connect(mapStateToProps)(Home);

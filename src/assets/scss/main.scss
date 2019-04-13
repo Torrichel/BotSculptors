@@ -325,6 +325,15 @@ main {
         justify-content: space-between;
 
 
+        .notFound{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: MainFontUltralight;
+          font-size: 43px;
+        }
+
+
 
         .more_projects_btn{
           display: flex;
@@ -351,6 +360,7 @@ main {
             color: #ffffff;
             border-radius: 5px;
             background-size: cover;
+            background-position: top right;
 
             .category {
               display: flex;
@@ -378,18 +388,24 @@ main {
 
             .title {
               padding: 0 40px 10px 42px;
-              font-size: 20px;
-              color: #dadada;
-              text-shadow: 2px 2px 0 #000000, 4px 4px 0 #000000;
 
-              overflow: hidden;
-              max-height: 95px;
-              text-overflow: ellipsis;
 
+
+
+              span{
+                font-size: 20px;
+                color: #dadada;
+                font-family: MainFontUltralight;
+
+                @include mobile{
+                  display: none;
+                }
+              }
 
 
               b{
                 font-size: 24px;
+                font-family: MainFontThin;
               }
             }
 

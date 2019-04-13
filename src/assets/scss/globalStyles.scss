@@ -34,3 +34,41 @@ a{
 
 
 }
+
+
+
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  li{
+    display: flex;
+    height: 40px;
+
+
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      outline: none;
+    }
+
+
+  }
+
+  li.active{
+    a{
+      background: #265ab5;
+      border-color: #265ab5;
+    }
+    a:hover{
+      background: #0C3376;
+      border-color: #0C3376;
+    }
+  }
+
+
+}
