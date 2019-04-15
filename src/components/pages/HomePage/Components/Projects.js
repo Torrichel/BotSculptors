@@ -13,7 +13,9 @@ export const Projects = props => {
             {projects.length ? projects.map((project, i) =>
                 <NavLink target='_blank' to={"/projects/" + project.project.url} key={project._id}>
 
-                    <div className="project" style={{backgroundImage: `url(${project.project.gallery.cardImage})`}}>
+                    <div className="project" >
+
+                        <div className="bg" style={{backgroundImage: `url(${project.project.gallery.cardImage})`}}></div>
 
                         <div className="category">{project.project.services.map((service, i) => <p
                             key={i}> {service} </p>)}</div>

@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { Component, Fragment }  from 'react';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
@@ -8,62 +8,113 @@ import { Helmet } from 'react-helmet';
 
 
 
-export const Header = props => {
 
 
-    // TODO think about refactoring this
-    let nav;
+export class Header extends Component {
 
-    if(window.location.pathname === '/'){
+    constructor(props){
+        super(props);
 
-        nav = <nav className="navBlock">
-            <Link duration={1000} delay={100} offset={-60} smooth={true} to="services">Services</Link>
-            <Link duration={1000} delay={100} offset={-40} smooth={true} to="portfolio">Portfolio</Link>
-            <NavLink to="/about">About</NavLink>
-        </nav>;
+        this.state = {
+            open: false
+        };
 
-    } else{
-        nav = <nav className="navBlock">
-            <a href="/#services">Services</a>
-            <a href="/#portfolio">Portfolio</a>
-            <NavLink to="/about">About</NavLink>
-        </nav>;
+
+        this.container = React.createRef();
+
     }
 
-    return (
+    componentDidMount() {
+        document.addEventListener("mousedown", this.handleClickOutside);
+    }
+    componentWillUnmount() {
+        document.removeEventListener("mousedown", this.handleClickOutside);
+    }
+    handleClickOutside = event => {
+        if (this.container.current && !this.container.current.contains(event.target)) {
+            this.setState({
+                open: false
+            });
+        }
+    };
 
-        <header>
+    handleClick = () => {
+        this.setState(state => {
+            return {
+                open: !state.open,
+            };
+        });
+    };
 
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Bot Development & Design</title>
-                <meta name="description" content="" />
+    render(){
 
-            </Helmet>
 
-            <div className="header_first_line">
-                {nav}
-            </div>
+        let nav;
 
-            <div className="header_second_line">
+        if(window.location.pathname === '/'){
 
-                <div className="logo_section">
-                    <div className="sub_section_1">
-                        <NavLink className="logo" to="/">
-                            <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
-                        </NavLink>
+            nav = <nav className="navBlock">
+
+            </nav>;
+
+        } else{
+            nav = <nav className="navBlock">
+                <Link duration={1000} delay={100} offset={-60} smooth={true} to="/services">Services</Link>
+                <a href="/#services">Services</a>
+                <a href="/#portfolio">Portfolio</a>
+                <NavLink to="/about">About</NavLink>
+            </nav>;
+        }
+
+        return (
+
+            <header>
+
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Bot Development & Design</title>
+                    <meta name="description" content="" />
+
+                </Helmet>
+
+                <div className={`header_first_line${this.state.open ? ' fixed' : ''}`}>
+
+                    <div className="navBlock" ref={this.container}>
+
+                        <i onClick={this.handleClick} className="material-icons">{this.state.open ? 'clear' : 'menu'}</i>
+
+
+                        <nav className={`menu ${this.state.open ? 'show' : ''}`}>
+                            <Link onClick={this.handleClick} duration={1000} delay={100} offset={-60} smooth={true} to="services">Services</Link>
+                            <Link onClick={this.handleClick} duration={1000} delay={100} offset={-40} smooth={true} to="portfolio">Portfolio</Link>
+                            <NavLink onClick={this.handleClick} to="/about">About</NavLink>
+                        </nav>
+
+
+
                     </div>
 
-                    <div className="sub_section_2">
-                        <NavLink  to="/">
-                            <div className="title">Bot <b>Sculptors</b></div>
-                            <div className="slogan">Bot Development and Design</div>
-                        </NavLink>
-                    </div>
                 </div>
 
+                <div className={`header_second_line${this.state.open ? ' fixed' : ''}`}>
 
-                {/* <div className="navBlock">
+                    <div className="logo_section">
+                        <div className="sub_section_1">
+                            <NavLink className="logo" to="/">
+                                <img src="https://s3.amazonaws.com/botsculptors/website/logo.png" alt="Bot Sculptors" />
+                            </NavLink>
+                        </div>
+
+                        <div className="sub_section_2">
+                            <NavLink  to="/">
+                                <div className="title">Bot <b>Sculptors</b></div>
+                                <div className="slogan">Bot Development and Design</div>
+                            </NavLink>
+                        </div>
+                    </div>
+
+
+                    {/* <div className="navBlock">
 
                         <div className="fill_brief">Fill Brief</div>
                         <div className="get_quote">Get Quote</div>
@@ -71,11 +122,14 @@ export const Header = props => {
                     </div> */}
 
 
-            </div>
+                </div>
 
 
-        </header>
+            </header>
 
-    );
+        );
 
-};
+    }
+
+
+}

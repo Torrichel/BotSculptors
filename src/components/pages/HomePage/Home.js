@@ -15,6 +15,9 @@ import { projectActions } from '../../../actions';
 import ReactPaginate from "react-paginate";
 
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 
@@ -28,7 +31,69 @@ export class Home extends Component {
             offset: 0,
             perPage: 2,
             pageCount: 0,
-            forcePage: 0
+            forcePage: 0,
+            technologies: [
+                'amazonwebservices-original colored',
+                'android-plain colored',
+                'angularjs-plain colored',
+                'apache-plain colored',
+                'apple-original',
+                'atom-original colored',
+                'babel-plain colored',
+                'bitbucket-plain colored',
+                'bootstrap-plain colored',
+                'bower-plain colored',
+                'confluence-plain colored',
+                'css3-plain colored',
+                'd3js-plain colored',
+                'csharp-plain colored',
+                'cplusplus-plain colored',
+                'django-plain colored',
+                'docker-plain colored',
+                'express-original colored',
+                'facebook-plain colored',
+                'git-plain colored',
+                'github-plain',
+                'gitlab-plain colored',
+                'go-plain',
+                'grunt-plain colored',
+                'gulp-plain colored',
+                'heroku-original colored',
+                'html5-plain colored',
+                'jasmine-plain colored',
+                'javascript-plain colored',
+                'jetbrains-plain colored',
+                'jquery-plain colored',
+                'laravel-plain colored',
+                'less-plain-wordmark colored',
+                'linux-plain',
+                'meteor-plain colored',
+                'mocha-plain colored',
+                'mongodb-plain colored',
+                'mysql-plain colored',
+                'nginx-original colored',
+                'nodejs-plain colored',
+                'oracle-original colored',
+                'photoshop-plain colored',
+                'php-plain colored',
+                'phpstorm-plain colored',
+                'postgresql-plain colored',
+                'python-plain colored',
+                'pycharm-plain colored',
+                'react-original colored',
+                'sass-original colored',
+                'slack-plain colored',
+                'sourcetree-plain colored',
+                'ssh-plain-wordmark',
+                'trello-plain colored',
+                'typescript-plain colored',
+                'ubuntu-plain colored',
+                'vim-plain colored',
+                'vuejs-plain colored',
+                'webpack-plain colored',
+                'webstorm-plain colored',
+                'wordpress-plain colored'
+            ]
         };
 
     }
@@ -101,6 +166,7 @@ export class Home extends Component {
 
     };
 
+
     render() {
 
         const settingsForReviewsSlider = {
@@ -116,15 +182,45 @@ export class Home extends Component {
             slidesToShow: 5,
             slidesToScroll: 5
         };
-        const settingsForTechnologiesSlider = {
-            dots: true,
+
+        const { technologies } = this.state;
+
+        const settings = {
+            dots: false,
             infinite: true,
-            speed: 500,
-            slidesToShow: 6,
-            slidesToScroll: 6
+            slidesToShow: 1,
+            speed: 2000,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            rows: 2,
+            slidesPerRow: 10,
+            arrows: false,
+
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesPerRow: 8
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesPerRow: 5
+                    }
+                },
+                // {
+                //     breakpoint: 480,
+                //     settings: {
+                //
+                //     }
+                // }
+            ]
+
+
         };
 
-        const { activeCategory, projects=[], pageCount=0, forcePage } = this.state;
+        const { activeCategory, projects, pageCount=0, forcePage } = this.state;
 
 
         return (
@@ -150,7 +246,7 @@ export class Home extends Component {
                                         smooth={true}
                                         duration={1000}
                                         delay={100}
-                                        className="btn-gradient">Services</Link> </div>
+                                        className="btn-gradient">Our services</Link> </div>
 
                             </div>
                             <div className="pagination"></div>
@@ -172,7 +268,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebDesign.png)` } }
                                     onClick={() => {this.setCategory('Web Design', true)}}>
 
-                                    <div className="title">Web <br/><b>Design</b></div>
+                                    <div className="title">Web <br/>Design</div>
                                 </div>
 
                                 <div
@@ -180,7 +276,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebsiteDevelopment.png)` } }
                                     onClick={() => {this.setCategory('Website Development', true)}}>
 
-                                    <div className="title">Website <br/><b>Development</b></div>
+                                    <div className="title">Website <br/>Development</div>
                                 </div>
 
                                 <div
@@ -188,7 +284,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/BotDevelopment.png)` } }
                                     onClick={() => {this.setCategory('Bot Development', true)}}>
 
-                                    <div className="title">Bot <br/><b>Development</b></div>
+                                    <div className="title">Bot <br/>Development</div>
                                 </div>
 
                                 <div
@@ -196,7 +292,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/ChromeExtensions.png)` } }
                                     onClick={() => {this.setCategory('Chrome Extensions', true)}}>
 
-                                    <div className="title">Chrome <br/><b>Extensions</b></div>
+                                    <div className="title">Chrome <br/>Extensions</div>
                                 </div>
 
                                 <div
@@ -204,7 +300,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/SoftwareDevelopment.png)` } }
                                     onClick={() => {this.setCategory('Software Development', true)}}>
 
-                                    <div className="title">Software <br/><b>Development</b></div>
+                                    <div className="title">Software <br/>Development</div>
                                 </div>
 
                                 <div
@@ -222,6 +318,8 @@ export class Home extends Component {
                         </Element>
 
                         {/* Technologies */}
+
+
                         <div className="techs">
 
                             <div className="title">
@@ -229,83 +327,13 @@ export class Home extends Component {
                                 <span className="front_text">Technologies</span>
                             </div>
 
-                            <div className="slogan">
-                                We drive most popular technologies<br/> and frameworks
-                            </div>
-                            <Slider {...settingsForTechnologiesSlider} >
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-python" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-github_badge" alt="technology"></span>
-                                    </div>
-                                </div>
+                            <Slider {...settings}>
 
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-javascript" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-angular" alt="technology"></span>
-                                    </div>
-                                </div>
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-backbone" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-react" alt="technology"></span>
-                                    </div>
-                                </div>
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-github_badge" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-php" alt="technology"></span>
-                                    </div>
-                                </div>
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-html5_connectivity" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-html5" alt="technology"></span>
-                                    </div>
-                                </div>
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-css3" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-linux" alt="technology"></span>
-                                    </div>
-                                </div>
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-gulp" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-dropbox" alt="technology"></span>
-                                    </div>
-                                </div>
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-visualstudio" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-swift" alt="technology"></span>
-                                    </div>
-                                </div>
-                                <div className="technologies">
-                                    <div className="technology">
-                                        <span className="devicons devicons-unity_small" alt="technology"></span>
-                                    </div>
-                                    <div className="technology">
-                                        <span className="devicons devicons-bootstrap" alt="technology"></span>
-                                    </div>
-                                </div>
+                                {technologies.map((technology, t) =>
+
+                                    <div key={t} className={`devicon devicon-${technology}`}></div>
+
+                                )}
 
 
                             </Slider>
@@ -326,7 +354,6 @@ export class Home extends Component {
                                 <div
                                     className={`item ${activeCategory === 'Web Design' ? 'active' : ''}`}
                                     onClick={() => {this.setCategory('Web Design')}}>Web Design</div>
-
                                 <div
                                     className={`item ${activeCategory === 'Website Development' ? 'active' : ''}`}
                                     onClick={() => {this.setCategory('Website Development')}}>Website Development</div>

@@ -1,7 +1,7 @@
 'use strict';
+const path = require('path');
 
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
     template: __dirname + '/public/index.html',
     filename: 'index.html',
@@ -9,8 +9,6 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const path = require('path');
 
 
 
@@ -28,12 +26,12 @@ module.exports = {
                 }
             },
             {
-                test: /\.(sass|scss)$/,
+                test: /\.(css|sass|scss)$/,
                 loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             },
 
             {
-                test: /\.(jpg|ttf|png|gif|svg|pdf|ico)$/,
+                test: /\.(jpg|eot|ttf|woff|woff2|png|gif|svg|pdf|ico)$/,
                 use: [
                     {
                         loader: 'file-loader',

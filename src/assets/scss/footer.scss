@@ -11,8 +11,17 @@ footer{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 13%;
+    padding: 20px $content-padding-desktop;
     height: 198px;
+
+    @include mobile{
+      padding: 20px $content-padding-mobile;
+    }
+
+    @include tablet{
+      padding: 20px $content-padding-tablet;
+    }
+
 
     background: $header_first_line_color;
     border-bottom: 2px solid #eceff1;
@@ -40,6 +49,10 @@ footer{
 
         @include mobile{
           display: none;
+        }
+
+        @include tablet{
+          //display: none;
         }
 
         .title{
@@ -70,15 +83,25 @@ footer{
       flex-flow: column nowrap;
       border: 0;
       flex-grow: 1;
-      margin-left: 10%;
+
 
       .nav_menu_top{
         display: flex;
         justify-content: flex-end;
         flex-grow: 1;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         margin-bottom: 10px;
         margin-top: 25px;
+
+        @include mobile{
+          flex-flow: column;
+          align-items: flex-end;
+        }
+
+        @include tablet{
+          flex-flow: column;
+          align-items: flex-end;
+        }
 
         a{
           margin-left: 50px;
@@ -86,6 +109,15 @@ footer{
           font-family: MainFontThin;
           font-size: pt-to-px(14);
           font-weight: lighter;
+
+
+          @include tablet{
+            margin-left: 0;
+          }
+
+          @include mobile{
+            margin-left: 0;
+          }
 
         }
 
@@ -133,6 +165,14 @@ footer{
           align-items: center;
           margin-top: 10px;
 
+          @include mobile{
+            margin-left: 0;
+          }
+
+          @include tablet{
+            margin-left: 0;
+          }
+
           .circle{
             width: 45px;
             height: 45px;
@@ -164,14 +204,26 @@ footer{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 13%;
+    padding: 10px $content-padding-desktop;
     height: 90px;
+
+    @include mobile{
+      padding: 10px $content-padding-mobile;
+    }
+
+    @include tablet{
+      padding: 10px $content-padding-tablet;
+    }
 
     background: $header_second_line_color;
     border-bottom: 0px solid #ccc;
     font-size: pt-to-px(14);
 
     @include mobile{
+      flex-flow: column;
+    }
+
+    @include tablet{
       flex-flow: column;
     }
 

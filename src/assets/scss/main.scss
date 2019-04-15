@@ -1,7 +1,7 @@
-
 main {
   display: flex;
   justify-content: center;
+
 
   .mainIn {
     width: 100%;
@@ -22,6 +22,7 @@ main {
     p {
       font-size: 17px;
     }
+
     //slick arrows
     .slick-next:before
     {
@@ -42,15 +43,28 @@ main {
     .slick-dots li button:before{
       content: '•' !important;
     }
+
+
     // Home Page Start
     .slider {
+
       display: flex;
       align-items: center;
-      padding: 0 13%;
+      padding: 0 $content-padding-desktop;
       height: 656px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
+      @include mobile{
+        height: 300px;
+        padding: 0 $content-padding-mobile;
+      }
+
+      @include tablet{
+        height: 350px;
+        padding: 0 $content-padding-tablet;
+      }
 
       .info {
         display: flex;
@@ -60,11 +74,16 @@ main {
 
         .title {
           font-size: 36px;
-          font-weight: 800;
+          font-family: MainFontUltralight;
+
         }
 
         .slogan {
           font-size: 32px;
+          font-family: MainFontThin;
+          @include mobile{
+            display: none;
+          }
 
           span {
             color: $slogan_color2;
@@ -101,8 +120,18 @@ main {
       }
     }
 
+
+
     .our_services {
-      padding: $GlobalPadding;
+      padding: 70px $content-padding-desktop;
+
+      @include mobile{
+        padding: 50px $content-padding-mobile;
+      }
+
+      @include tablet{
+        padding: 50px $content-padding-tablet;
+      }
 
       > .title {
         display: flex;
@@ -115,29 +144,30 @@ main {
           font-size: 53px;
           opacity: 0.1;
           position: absolute;
+          font-family: MainFontUltralight;
+          text-transform: uppercase;
         }
 
         .front_text {
           font-size: 26px;
+          font-family: MainFontThin;
+          text-transform: uppercase;
         }
       }
 
-      @media screen and (min-width: 1250px) {
-        .services {
-            grid-template-columns: repeat(3, 1fr) !important;
-        }
-      }
-      @media screen and (max-width: 1250px) {
-        .services {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-        }
-      }
 
       .services {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 15px 15px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+
+
+        @include tablet{
+          grid-template-columns: 1fr;
+        }
+        @include mobile{
+          grid-template-columns: 1fr;
+        }
 
 
         .service{
@@ -150,6 +180,9 @@ main {
             margin-top: 45px;
             margin-left: 45px;
             font-size: 20px;
+            font-family: MainFontThin;
+
+
           }
         }
         .service:hover{
@@ -158,64 +191,83 @@ main {
         }
         .service-web {
           background-repeat: no-repeat;
-          background-size: 320px;
-          background-position: calc(100% + 70px) bottom;
+          background-size: 260px;
+          background-position: calc(100% + 54px) 128px;
         }
         .service-website{
           background-repeat: no-repeat;
-          background-size: 400px;
-          background-position: calc(100% + 150px) bottom;
+          background-size: 320px;
+          background-position: calc(100% + 120px) 116px;
         }
         .service-bot{
           background-repeat: no-repeat;
-          background-size: 140px;
-          background-position: calc(100% + 20px) bottom;
+          background-size: 120px;
+          background-position: calc(100% + 13px) 100px;
         }
         .service-extensions{
           background-repeat: no-repeat;
-          background-size: 280px;
-          background-position: calc(100% + 110px) bottom;
+          background-size: 210px;
+          background-position: calc(100% + 86px) 132px;
         }
         .service-software{
           background-repeat: no-repeat;
-          background-size: 180px;
-          background-position: calc(100% + 15px) bottom;
+          background-size: 140px;
+          background-position: calc(100% + 19px) 120px;
         }
         .service-maintenance{
           background-repeat: no-repeat;
-          background-size: 250px;
-          background-position: calc(100% + 65px) calc(100% + 10px);
+          background-size: 215px;
+          background-position: calc(100% + 59px) 113px;
         }
       }
     }
 
     .techs {
       background: #eef0f2;
-      padding: 70px 24%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      @media screen and (min-width: 1600px) {
-        .slick-slider {
-          width: 1278px;
-        }
+      padding: 70px $content-padding-desktop;
+
+
+      @include mobile{
+        padding: 50px $content-padding-mobile;
       }
-      @media screen and (max-width: 1600px) and (min-width: 1200px) {
-        .slick-slider {
-          width: 936px;
-          .devicons {
-            font-size: 4em;
+
+      @include tablet{
+        padding: 50px $content-padding-tablet;
+      }
+
+      .slick-slider{
+        margin-top: 50px;
+        .devicon{
+          border: 0.5px solid #d5d9de;
+          font-size: 50px;
+          text-align: center;
+          padding: 10px 0;
+
+          @include mobile{
+            font-size: 40px;
           }
-        }
-      }
-      @media screen and (max-width: 1200px) and (min-width: 320px) {
-        .slick-slider {
-          width: 690px;
-          .devicons {
-            font-size: 3em;
+
+          @include tablet{
+            font-size: 45px;
           }
+
         }
+
+        .devicon:focus{
+          outline: none;
+        }
+
+        .slick-slide > div{
+          padding: 0 1px;
+        }
+
       }
+
+
+
+
+
+
       > .title {
         display: flex;
         position: relative;
@@ -228,11 +280,15 @@ main {
           font-size: 53px;
           opacity: 0.5;
           position: absolute;
+          font-family: MainFontUltralight;
+          text-transform: uppercase;
         }
 
         .front_text {
           z-index: 2;
           font-size: 26px;
+          font-family: MainFontThin;
+          text-transform: uppercase;
         }
       }
 
@@ -243,6 +299,8 @@ main {
         text-align: center;
         padding-bottom: 30px;
         color: $slogan_color2;
+
+
       }
       .technologies {
         display: grid;
@@ -254,9 +312,19 @@ main {
           align-content: center;
           justify-content: center;
           height: 120px;
+
+          @include mobile{
+            height: auto;
+          }
+
           span {
             color: #000;
             font-size: 5em;
+
+            @include mobile{
+
+              font-size: 60px;
+            }
 
           }
 
@@ -270,7 +338,15 @@ main {
     }
 
     .our_portfolio {
-      padding: $GlobalPadding;
+      padding: 70px $content-padding-desktop;
+
+      @include tablet{
+        padding: 50px $content-padding-tablet;
+      }
+
+      @include mobile{
+        padding: 50px $content-padding-mobile;
+      }
 
       > .title {
         display: flex;
@@ -282,6 +358,14 @@ main {
         padding: 0 40px 10px 42px;
         font-size: 20px;
 
+        @include tablet{
+          margin-bottom: 10px;
+        }
+
+        @include mobile{
+          margin-bottom: 10px;
+        }
+
 
       }
 
@@ -289,160 +373,163 @@ main {
           font-size: 53px;
           opacity: 0.1;
           position: absolute;
+          font-family: MainFontUltralight;
+          text-transform: uppercase;
         }
 
         .front_text {
           font-size: 26px;
-
+          font-family: MainFontThin;
+          text-transform: uppercase;
         }
+
+
+    .menu {
+      font-size: 16px;
+      display: flex;
+      align-items:flex-start;
+      text-align: left;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      @include tablet{
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+      }
+      @include mobile{
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
       }
 
-      .menu {
-        font-size: 16px;
+      .active {
+        color: #1f4c9d;
+      }
+      .item {
+        cursor: pointer;
+      }
+    }
+
+    .projects {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+
+
+      .notFound{
         display: flex;
-        align-items:flex-start;
-        text-align: left;
-        justify-content: space-between;
-        margin-bottom: 15px;
-
-        @include mobile{
-          flex-flow: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .active {
-          color: #1f4c9d;
-        }
-        .item {
-          cursor: pointer;
-        }
+        justify-content: center;
+        align-items: center;
+        font-family: MainFontUltralight;
+        font-size: 23px;
       }
 
-      .projects {
+
+
+      a{
         display: flex;
         flex-flow: column;
         justify-content: space-between;
+        text-decoration: none;
+        color: inherit;
 
-
-        .notFound{
+        .project {
           display: flex;
+          flex-direction: column;
+          align-items: flex-start;
           justify-content: center;
-          align-items: center;
-          font-family: MainFontUltralight;
-          font-size: 43px;
-        }
+          flex-shrink: 0;
+          flex-grow: 1;
+          height: 265px;
+          margin-bottom: 10px;
+          color: #ffffff;
+          border-radius: 5px;
 
+          background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 
+          position: relative;
 
-        .more_projects_btn{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        a{
-          display: flex;
-          flex-flow: column;
-          justify-content: space-between;
-          text-decoration: none;
-          color: inherit;
-          .project {
+          .category {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            flex-shrink: 0;
-            flex-grow: 1;
-            height: 265px;
-            margin-bottom: 10px;
-            background: $our_services_bg;
+            justify-content: flex-start;
+            align-items: center;
             color: #ffffff;
-            border-radius: 5px;
-            background-size: cover;
-            background-position: top right;
+            padding: 0 0 0 40px;
+            margin-bottom: 10px;
 
-            .category {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              color: #ffffff;
-              padding: 0 0 0 40px;
-              margin-bottom: 10px;
+            p{
+              padding: 1px 5px 1px 5px;
+              margin-left: 4px;
+              font-size: 12px;
+              border: 1px solid #ffffff;;
+              max-width: 160px;
+              border-radius: 3px;
+              white-space: nowrap;
+            }
 
-              p{
-                padding: 1px 5px 1px 5px;
-                margin-left: 4px;
-                font-size: 12px;
-                border: 1px solid #ffffff;;
-                max-width: 160px;
-                border-radius: 3px;
-                white-space: nowrap;
+            @include tablet{
+              display: none;
+            }
+            @include mobile{
+              display: none;
+            }
+
+          }
+
+          .title {
+            padding: 0 40px 10px 42px;
+
+
+            span{
+              font-size: 24px;
+              color: #fff;
+              font-family: MainFontUltralight;
+
+              @include tablet{
+                display: none;
               }
-
               @include mobile{
                 display: none;
               }
-
-            }
-
-            .title {
-              padding: 0 40px 10px 42px;
-
-
-
-
-              span{
-                font-size: 20px;
-                color: #dadada;
-                font-family: MainFontUltralight;
-
-                @include mobile{
-                  display: none;
-                }
-              }
-
-
-              b{
-                font-size: 24px;
-                font-family: MainFontThin;
-              }
             }
 
 
-
-
-
+            b{
+              font-size: 24px;
+              font-family: MainFontThin;
+              font-weight: normal;
+              margin-top: 10px;
+              display: inline-block;
+              margin-bottom: 8px;
+            }
           }
+
+
         }
 
-        .more_projects:hover {
-          background-color: #002FFC;
+
+
+        .project .bg{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background-size: cover;
+          background-position: top right;
+          z-index: -1;
+
         }
-        .more_projects {
-          margin-top: 25px;
-          display: flex;
-          text-align: center;
-          align-items: center;
-          justify-content: center;
-          width: 180px;
-          height: 40px;
-          background-color: #265ab5;
-          border-radius: 50px;
-          cursor: pointer;
-          button {
-            background: inherit;
-            border: none;
-            text-decoration: none;
-            font-size: 18px;
-            color: #fff;
-          }
-          button:focus {
-            outline:0;
-          }
-        }
+
+
       }
+
+
     }
+
+  }
+
 
     .we_are_trusted_by {
       padding: $GlobalPadding;
@@ -463,10 +550,14 @@ main {
           opacity: 0.1;
           position: absolute;
           white-space: nowrap;
+          font-family: MainFontUltralight;
+          text-transform: uppercase;
         }
 
         .front_text {
           font-size: 26px;
+          font-family: MainFontThin;
+          text-transform: uppercase;
         }
       }
 
@@ -520,10 +611,12 @@ main {
           font-size: 30px;
           opacity: 0.1;
           position: absolute;
+          text-transform: uppercase;
         }
 
         .front_text {
           font-size: 26px;
+          text-transform: uppercase;
         }
       }
 
@@ -654,26 +747,13 @@ main {
         }
       }
     }
-    //slider styles
-    .slick-slider {
-      .slick-next:before {
-        cursor: pointer ;
-        color: #000;
-        font-size: 22px;
-      }
 
-      .slick-prev:before {
-        cursor: pointer ;
-        color: #000;
-        font-size: 22px;
-      }
-      .slick-slide,.slick-slide:active,.slick-slide:active {
-        outline: none;
-        text-decoration: none;
-        border: none;
-      }
-    }
-    //personsInfo
+
+
+
+
+
+    // --------------------------------------------------
     .personInfo {
       display: flex;
       align-items: center;
@@ -725,4 +805,11 @@ main {
         }
       }
     }
+
+
+  }
+
+
+
+
   }
