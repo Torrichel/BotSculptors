@@ -33,66 +33,90 @@ export class Home extends Component {
             pageCount: 0,
             forcePage: 0,
             technologies: [
-                'amazonwebservices-original colored',
-                'android-plain colored',
+
+                // Page 1 Row 1
                 'angularjs-plain colored',
-                'apache-plain colored',
-                'apple-original',
-                'atom-original colored',
-                'babel-plain colored',
-                'bitbucket-plain colored',
-                'bootstrap-plain colored',
-                'bower-plain colored',
-                'confluence-plain colored',
+                'react-original colored',
+                'vuejs-plain colored',
+
+                'html5-plain colored',
                 'css3-plain colored',
                 'd3js-plain colored',
-                'csharp-plain colored',
-                'cplusplus-plain colored',
-                'django-plain colored',
-                'docker-plain colored',
-                'express-original colored',
-                'facebook-plain colored',
-                'git-plain colored',
-                'github-plain',
-                'gitlab-plain colored',
-                'go-plain',
+
+                'webpack-plain colored',
                 'grunt-plain colored',
                 'gulp-plain colored',
-                'heroku-original colored',
-                'html5-plain colored',
-                'jasmine-plain colored',
-                'javascript-plain colored',
-                'jetbrains-plain colored',
-                'jquery-plain colored',
+                'babel-plain colored',
+
+                // Page 1 Row 2
+                'php-plain colored',
                 'laravel-plain colored',
-                'less-plain-wordmark colored',
-                'linux-plain',
-                'meteor-plain colored',
+                'wordpress-plain colored',
                 'mocha-plain colored',
                 'mongodb-plain colored',
-                'mysql-plain colored',
-                'nginx-original colored',
-                'nodejs-plain colored',
-                'oracle-original colored',
-                'photoshop-plain colored',
-                'php-plain colored',
-                'phpstorm-plain colored',
                 'postgresql-plain colored',
-                'python-plain colored',
-                'pycharm-plain colored',
-                'react-original colored',
+                'nodejs-plain colored',
+                'express-original colored',
+                'docker-plain colored',
+                'jasmine-plain colored',
+
+                // Page 2 Row 1
+                'meteor-plain colored',
+                'django-plain colored',
+                'python-plain-wordmark colored',
+                'backbonejs-plain-wordmark colored',
+                'bower-plain colored',
+                'redis-plain-wordmark',
+                'sequelize-plain colored',
+                'krakenjs-plain colored',
                 'sass-original colored',
-                'slack-plain colored',
-                'sourcetree-plain colored',
+                'less-plain-wordmark colored',
+
+                // Page 2 Row 2
+                'nginx-original colored',
+                'yii-plain-wordmark colored',
+                'jquery-plain-wordmark colored',
+                'apache-plain-wordmark colored',
+                'zend-plain-wordmark colored',
+                'oracle-original colored',
+                'mysql-plain colored',
                 'ssh-plain-wordmark',
+                'foundation-plain-wordmark colored',
+                'bootstrap-plain colored',
+
+
+
+                // Page 3 Row 1
+                'photoshop-plain colored',
+                'illustrator-plain colored',
+                'gimp-plain colored',
+
+                'phpstorm-plain colored',
+                'pycharm-plain colored',
+                'webstorm-plain colored',
+                'jetbrains-plain colored',
+
+                'atom-original colored',
+                'sourcetree-plain colored',
+                'bitbucket-plain colored',
+                'confluence-plain colored',
+
+                // Page 3 Row 2
+                'amazonwebservices-original colored',
+                'heroku-original colored',
+
+                'git-plain colored',
+                'gitlab-plain colored',
+                'github-plain',
+
                 'trello-plain colored',
-                'typescript-plain colored',
+                'slack-plain colored',
+
                 'ubuntu-plain colored',
                 'vim-plain colored',
-                'vuejs-plain colored',
-                'webpack-plain colored',
-                'webstorm-plain colored',
-                'wordpress-plain colored'
+
+
+
             ]
         };
 
@@ -186,12 +210,10 @@ export class Home extends Component {
         const { technologies } = this.state;
 
         const settings = {
-            dots: false,
+            dots: true,
             infinite: true,
             slidesToShow: 1,
-            speed: 2000,
-            autoplay: true,
-            autoplaySpeed: 6000,
+            speed: 500,
             rows: 2,
             slidesPerRow: 10,
             arrows: false,
@@ -208,13 +230,7 @@ export class Home extends Component {
                     settings: {
                         slidesPerRow: 5
                     }
-                },
-                // {
-                //     breakpoint: 480,
-                //     settings: {
-                //
-                //     }
-                // }
+                }
             ]
 
 

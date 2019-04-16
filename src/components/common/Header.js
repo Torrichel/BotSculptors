@@ -1,6 +1,7 @@
 import React, { Component, Fragment }  from 'react';
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-scroll';
+import { Link as ScrollTo } from 'react-scroll';
+import { NavHashLink } from 'react-router-hash-link';
 
 
 // Import Helmet to take care about page head section
@@ -40,31 +41,18 @@ export class Header extends Component {
 
     handleClick = () => {
         this.setState(state => {
+
             return {
-                open: !state.open,
+                open: !state.open
             };
         });
     };
 
     render(){
 
+        const { pathname } = window.location;
 
-        let nav;
 
-        if(window.location.pathname === '/'){
-
-            nav = <nav className="navBlock">
-
-            </nav>;
-
-        } else{
-            nav = <nav className="navBlock">
-                <Link duration={1000} delay={100} offset={-60} smooth={true} to="/services">Services</Link>
-                <a href="/#services">Services</a>
-                <a href="/#portfolio">Portfolio</a>
-                <NavLink to="/about">About</NavLink>
-            </nav>;
-        }
 
         return (
 
@@ -85,9 +73,23 @@ export class Header extends Component {
 
 
                         <nav className={`menu ${this.state.open ? 'show' : ''}`}>
-                            <Link onClick={this.handleClick} duration={1000} delay={100} offset={-60} smooth={true} to="services">Services</Link>
-                            <Link onClick={this.handleClick} duration={1000} delay={100} offset={-40} smooth={true} to="portfolio">Portfolio</Link>
-                            <NavLink onClick={this.handleClick} to="/about">About</NavLink>
+
+                            { pathname === '/' ?
+
+                                ( this.state.open ?
+                                    <ScrollTo onClick={this.handleClick} duration={1000} delay={100} offset={-60} smooth={true} to="services">Services</ScrollTo> :
+                                    <ScrollTo duration={1000} delay={100} offset={-60} smooth={true} to="services">Services</ScrollTo> )
+                                : <NavHashLink to="/#services">Services</NavHashLink>}
+
+                            { pathname === '/' ?
+
+                                ( this.state.open ?
+                                    <ScrollTo onClick={this.handleClick} duration={1000} delay={100} offset={-40} smooth={true} to="portfolio">Portfolio</ScrollTo> :
+                                    <ScrollTo duration={1000} delay={100} offset={-40} smooth={true} to="portfolio">Portfolio</ScrollTo> )
+                                : <NavHashLink to="/#portfolio">Portfolio</NavHashLink>}
+
+
+                            <NavLink to="/about">About</NavLink>
                         </nav>
 
 
@@ -114,12 +116,12 @@ export class Header extends Component {
                     </div>
 
 
-                    {/* <div className="navBlock">
+                    {/*<div className="navBlock">*/}
 
-                        <div className="fill_brief">Fill Brief</div>
-                        <div className="get_quote">Get Quote</div>
+                    {/*    <div className="fill_brief">Fill Brief</div>*/}
+                    {/*    <div className="get_quote">Get Quote</div>*/}
 
-                    </div> */}
+                    {/*</div>*/}
 
 
                 </div>

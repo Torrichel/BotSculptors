@@ -1,30 +1,13 @@
 import React from 'react';
 
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-scroll';
+import { Link as ScrollTo } from 'react-scroll';
+import {HashLink, NavHashLink} from 'react-router-hash-link';
 
 
 export const Footer = () => {
 
-    let nav;
-
-    if(window.location.pathname === '/'){
-
-        nav = <div className="nav_menu_top">
-            <Link offset={-60} smooth={true} to="services">Services</Link>
-            <Link offset={-40} smooth={true} to="portfolio">Portfolio</Link>
-            <NavLink to="/about">About</NavLink>
-        </div>;
-
-    } else{
-        nav = <div className="nav_menu_top">
-            <a href="/#services">Services</a>
-            <a href="/#portfolio">Portfolio</a>
-            <NavLink to="/about">About</NavLink>
-        </div>;
-    }
-
-
+    const { pathname } = window.location;
 
     return (
 
@@ -51,7 +34,20 @@ export const Footer = () => {
 
                 <nav className="navBlock">
 
-                    {nav}
+                    <div className="nav_menu_top">
+
+                        { pathname === '/' ? <ScrollTo duration={1000} delay={100} offset={-60} smooth={true} to="services">Services</ScrollTo> :
+                            <NavHashLink to="/#services">Services</NavHashLink> }
+
+
+                        { pathname === '/' ? <ScrollTo duration={1000} delay={100} offset={-40} smooth={true} to="portfolio">Portfolio</ScrollTo> :
+                            <NavHashLink to="/#portfolio">Portfolio</NavHashLink> }
+
+
+                        <NavLink to="/about">About</NavLink>
+
+
+                    </div>
 
                     <div className="nav_menu_bottom">
 

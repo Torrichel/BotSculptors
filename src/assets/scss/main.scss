@@ -237,25 +237,49 @@ main {
 
       .slick-slider{
         margin-top: 50px;
-        .devicon{
-          border: 0.5px solid #d5d9de;
-          font-size: 50px;
-          text-align: center;
-          padding: 10px 0;
 
-          @include mobile{
-            font-size: 40px;
+        .slick-slide{
+
+          > div{
+
+            .devicon:focus{
+              outline: none;
+            }
+
+            .devicon{
+              border-top: 0.5px solid #d5d9de;
+              border-left: 0.5px solid #d5d9de;
+              font-size: 50px;
+              text-align: center;
+              padding: 10px 0;
+
+              @include mobile{
+                font-size: 40px;
+              }
+
+              @include tablet{
+                font-size: 45px;
+              }
+
+
+
+            }
+
+            .devicon:last-child{
+              border-right: 0.5px solid #d5d9de;
+            }
+
           }
 
-          @include tablet{
-            font-size: 45px;
+          > div:last-child{
+            .devicon {
+              border-bottom: 0.5px solid #d5d9de;
+            }
           }
+
 
         }
 
-        .devicon:focus{
-          outline: none;
-        }
 
         .slick-slide > div{
           padding: 0 1px;
@@ -427,14 +451,14 @@ main {
 
 
 
-      a{
+      .project{
         display: flex;
         flex-flow: column;
         justify-content: space-between;
         text-decoration: none;
         color: inherit;
 
-        .project {
+        a {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -445,9 +469,7 @@ main {
           margin-bottom: 10px;
           color: #ffffff;
           border-radius: 5px;
-
           background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-
           position: relative;
 
           .category {
@@ -510,7 +532,7 @@ main {
 
 
 
-        .project .bg{
+        a .bg{
           position: absolute;
           top: 0;
           bottom: 0;

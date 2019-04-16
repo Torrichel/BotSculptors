@@ -99,8 +99,19 @@
             }
           }
 }
+
+
+
 .about{
 
+  .slider{
+
+
+    @include mobile{
+      height: 450px!important;
+    }
+
+  }
   .info {
 
     .info-about{
@@ -113,7 +124,16 @@
     }
   }
   .about-us {
-    padding: 70px 13%;
+    padding: 70px $content-padding-desktop;
+
+    @include tablet{
+      padding: 50px $content-padding-tablet;
+    }
+
+    @include mobile{
+      padding: 30px $content-padding-mobile;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,11 +155,15 @@
         position: absolute;
         width: 250px;
         white-space: nowrap;
+        font-family: MainFontUltralight;
+        text-transform: uppercase;
       }
 
       .front_text {
         z-index: 2;
         font-size: 2em;
+        font-family: MainFontThin;
+        text-transform: uppercase;
       }
     }
     .description{
@@ -176,10 +200,20 @@
     }
   }
   .dream-team {
-    padding: 70px 13%;
+    padding: 70px $content-padding-desktop;
     padding-top: 0;
     align-items: center;
     justify-content: center;
+
+    @include tablet{
+      padding: 50px $content-padding-tablet;
+      padding-top: 0;
+    }
+
+    @include mobile{
+      padding: 30px $content-padding-mobile;
+      padding-top: 0;
+    }
 
 
 

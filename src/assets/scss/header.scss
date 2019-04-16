@@ -27,6 +27,7 @@ header{
 
     @include mobile{
       padding: 0 $content-padding-mobile;
+      height: 60px;
     }
 
 
@@ -40,6 +41,7 @@ header{
         display: none;
         cursor: pointer;
         color: #000;
+        font-size: 35px;
 
         @include mobile{
           display: flex;
@@ -65,10 +67,9 @@ header{
           width: 100%;
           height: 100%;
           position: fixed;
-          top: 40px;
+          top: 60px;
           left: 0;
         }
-
 
 
         a{
@@ -84,9 +85,12 @@ header{
           margin-right: 0;
         }
       }
+
+
       .menu.show{
-        display: block;
+        display: grid!important;
       }
+
 
 
     }
@@ -97,9 +101,26 @@ header{
 
   }
   .header_first_line.fixed{
-    position: fixed;
-    top: 0;
-    left: 0;
+
+    @include mobile{
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      .menu.show{
+        display: block!important;
+      }
+
+    }
+
+    @include tablet{
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+
+
   }
   .header_second_line{
     z-index: 51;
@@ -107,7 +128,7 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 13%;
+    padding: 0 $content-padding-desktop;
 
 
     height: 90px;
@@ -137,10 +158,10 @@ header{
 
           @include mobile{
             position: absolute;
-            top: 4px;
+            top: 7px;
             left: $content-padding-mobile;
             margin: 0;
-            height: 30px;
+            height: 45px;
           }
 
           img{
@@ -175,7 +196,7 @@ header{
 
 
 
-    > .navBlock{
+    .navBlock{
 
       display: flex;
       justify-content: flex-end;
@@ -236,25 +257,6 @@ header{
 
   }
 
-  .header_second_line.fixed{
-
-    .logo_section{
-      .sub_section_1{
-        .logo{
-          position: fixed;
-          top: 4px;
-          left: $content-padding-mobile;
-
-
-          margin: 0;
-          height: 30px;
-
-        }
-      }
-    }
-
-
-  }
 
 
 }

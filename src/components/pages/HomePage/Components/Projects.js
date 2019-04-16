@@ -10,21 +10,23 @@ export const Projects = props => {
 
         <div className="projects">
 
-            {projects.length ? projects.map((project, i) =>
-                <NavLink target='_blank' to={"/projects/" + project.project.url} key={project._id}>
+            {projects.length ? projects.map(project =>
 
-                    <div className="project" >
 
-                        <div className="bg" style={{backgroundImage: `url(${project.project.gallery.cardImage})`}}></div>
+                    <div className="project" key={project._id}>
 
-                        <div className="category">{project.project.services.map((service, i) => <p
-                            key={i}> {service} </p>)}</div>
-                        <div className="title"><b>{project.project.title}</b><br/>
-                            <span>{project.project.meta_description}</span></div>
+                        <NavLink target='_blank' to={"/projects/" + project.project.url}>
 
-                    </div>
+                            <div className="bg" style={{backgroundImage: `url(${project.project.gallery.cardImage})`}}></div>
 
-                </NavLink>) : <div className='notFound'>No projects in this category yet :(</div>}
+                            <div className="category">{project.project.services.map((service, i) => <p
+                                key={i}> {service} </p>)}</div>
+                            <div className="title"><b>{project.project.title}</b><br/>
+                                <span>{project.project.meta_description}</span></div>
+
+                        </NavLink>
+
+                    </div>) : <div className='notFound'>No projects in this category yet :(</div>}
 
 
         </div>
