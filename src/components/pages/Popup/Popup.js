@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { Link } from "react-router-dom";
 
 
 export class Popup extends Component {
 
-  constructor(props, context) {
-    super(props, context);
-  }
+
 
 render() {
 
-  const { bio='', email='', firstName='', lastName='', photo='', title='', upwork='', github='', linkedIn='' } = this.props.user;
+  const { bio='', email='', firstName='', lastName='', photo='', title='', github='' } = this.props.user;
   return (
     <div>
       <Modal show={this.props.show} onHide={this.props.handleClose}>
@@ -26,13 +24,11 @@ render() {
             <img alt="person" src={photo} />
             <div className="media">
 
-              <a className="email" target='_top' href={`mailto:${email}`}>{email}</a>
+              <Link className="email" target='_top' to={`mailto:${email}`}>{email}</Link>
 
               <div className="social">
 
-                  <a href={github} target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
-
-                  {/*<a href={linkedIn} target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png` } }></a>*/}
+                  <Link to={github} target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }/>
 
 
 
@@ -42,6 +38,7 @@ render() {
           </div>
         </div>
         </Modal.Header>
+
       </Modal>
     </div>
   );

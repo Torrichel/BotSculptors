@@ -16,9 +16,6 @@ import Join from "./pages/Join/Join";
 
 export class App extends Component{
 
-    constructor(props){
-        super(props);
-    }
 
     render(){
 

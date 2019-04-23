@@ -1,15 +1,16 @@
-import React, { Component, Fragment }  from 'react';
+import React, { Component }  from 'react';
 import { NavLink } from 'react-router-dom';
 import { Link as ScrollTo } from 'react-scroll';
 import { NavHashLink } from 'react-router-hash-link';
 
 
+
+
 // Import Helmet to take care about page head section
 import { Helmet } from 'react-helmet';
 
-
-
-
+// Importing styles
+import { Wrapper, HeaderFirstLine, NavBlock, HeaderSecondLine } from './styles';
 
 export class Header extends Component {
 
@@ -19,7 +20,6 @@ export class Header extends Component {
         this.state = {
             open: false
         };
-
 
         this.container = React.createRef();
 
@@ -56,7 +56,7 @@ export class Header extends Component {
 
         return (
 
-            <header>
+            <Wrapper >
 
                 <Helmet>
                     <meta charSet="utf-8" />
@@ -65,9 +65,13 @@ export class Header extends Component {
 
                 </Helmet>
 
-                <div className={`header_first_line${this.state.open ? ' fixed' : ''}`}>
 
-                    <div className="navBlock" ref={this.container}>
+
+
+
+                <HeaderFirstLine className={`${this.state.open ? 'fixed' : ''}`}>
+
+                    <NavBlock className="navBlock" ref={this.container}>
 
                         <i onClick={this.handleClick} className="material-icons">{this.state.open ? 'clear' : 'menu'}</i>
 
@@ -94,11 +98,11 @@ export class Header extends Component {
 
 
 
-                    </div>
+                    </NavBlock>
 
-                </div>
+                </HeaderFirstLine>
 
-                <div className={`header_second_line${this.state.open ? ' fixed' : ''}`}>
+                <HeaderSecondLine className={`${this.state.open ? 'fixed' : ''}`}>
 
                     <div className="logo_section">
                         <div className="sub_section_1">
@@ -124,10 +128,10 @@ export class Header extends Component {
                     {/*</div>*/}
 
 
-                </div>
+                </HeaderSecondLine>
 
 
-            </header>
+            </Wrapper>
 
         );
 

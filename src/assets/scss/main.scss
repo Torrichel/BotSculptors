@@ -288,10 +288,6 @@ main {
       }
 
 
-
-
-
-
       > .title {
         display: flex;
         position: relative;
@@ -359,6 +355,8 @@ main {
           }
         }
       }
+
+
     }
 
     .our_portfolio {
@@ -372,40 +370,6 @@ main {
         padding: 50px $content-padding-mobile;
       }
 
-      > .title {
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 45px;
-
-        padding: 0 40px 10px 42px;
-        font-size: 20px;
-
-        @include tablet{
-          margin-bottom: 10px;
-        }
-
-        @include mobile{
-          margin-bottom: 10px;
-        }
-
-
-      }
-
-        .back_text {
-          font-size: 53px;
-          opacity: 0.1;
-          position: absolute;
-          font-family: MainFontUltralight;
-          text-transform: uppercase;
-        }
-
-        .front_text {
-          font-size: 26px;
-          font-family: MainFontThin;
-          text-transform: uppercase;
-        }
 
 
     .menu {
@@ -826,6 +790,33 @@ main {
           font-size: 12px;
         }
       }
+    }
+
+
+
+    .privacy-policy{
+
+
+      padding: 25px $content-padding-desktop;
+
+      @include mobile{
+        padding: 0 $content-padding-mobile;
+      }
+
+      @include tablet{
+        padding: 15px $content-padding-tablet;
+      }
+
+
+      span{
+        font-size: 25px;
+        font-weight: lighter;
+        color: #333;
+        text-shadow: 1px 1px 3px rgba(150, 150, 150, 0.24);
+        font-family: MainFontThin;
+      }
+
+
     }
 
 

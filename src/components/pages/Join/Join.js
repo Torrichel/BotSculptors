@@ -5,9 +5,7 @@ import {Skill_app} from './Skill-app/containers/Skill_app.js'
 
 export class Join extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+
     render() {
 
 

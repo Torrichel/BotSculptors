@@ -1,8 +1,303 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Link as ScrollTo } from 'react-scroll';
-import {HashLink, NavHashLink} from 'react-router-hash-link';
+import { NavHashLink} from 'react-router-hash-link';
+
+
+import styled from 'styled-components';
+
+const Wrapper = styled.footer`
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  .footer_first_line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px ${props => props.theme.contentPaddingDesktop};
+    height: 198px;
+
+        
+    ${({theme}) => theme.mobile`
+        padding: 20px ${props => props.theme.contentPaddingMobile};
+    `}
+    
+    ${({theme}) => theme.tablet`
+        padding: 20px ${props => props.theme.contentPaddingTablet};
+    `}
+    
+
+
+    background: ${props => props.theme.headerFirstLineColor};
+    border-bottom: 2px solid #eceff1;
+
+
+    .logo_section{
+      display: flex;
+
+      .sub_section_1{
+
+        .logo{
+          display: flex;
+
+          img{
+            height: 75px;
+          }
+
+        }
+
+      }
+      .sub_section_2{
+        flex-shrink: 0;
+        padding-left: 22px;
+        padding-top: 22px;
+        
+        
+            
+    ${({theme}) => theme.mobile`
+        display: none;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        display: none;
+    `}
+    
+
+
+        .title{
+        
+          margin-top: -17px;
+          height: 45px;
+          font-size: 28px;
+          color: ${props => props.theme.titleColor};
+          font-family: MainFontText;
+
+
+          span{
+            margin-left: -2px;
+          }
+        }
+        
+        .slogan{
+          font-size: 15px ;
+          font-family: MainFontThin;
+          color: ${props => props.theme.sloganColor};
+          white-space: nowrap;
+        }
+      }
+
+    }
+
+
+
+    .navBlock{
+      flex-flow: column nowrap;
+      border: 0;
+      flex-grow: 1;
+
+
+      .nav_menu_top{
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+        flex-flow: row nowrap;
+        margin-bottom: 10px;
+        margin-top: 25px;
+        
+
+
+    
+    ${({theme}) => theme.mobile`
+        flex-flow: column;
+        align-items: flex-end;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        flex-flow: column;
+        align-items: flex-end;
+    `}
+    
+
+
+
+        a{
+          margin-left: 50px;
+          color: #000;
+          font-family: MainFontThin;
+          font-size: 19px;
+          font-weight: lighter;
+
+
+    
+    ${({theme}) => theme.mobile`
+        margin-left: 0;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        margin-left: 0;
+    `}
+    
+
+        }
+
+        a:last-child{
+          margin-right: 0;
+        }
+
+
+
+      }
+
+      .nav_menu_bottom{
+
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+        margin-top: 15px;
+
+        .sub_menu_1{
+
+          display: flex;
+          margin-top: 10px;
+
+          .fill_brief, .get_quote{
+            padding: 7px 17px;
+            border: 2px solid #d5d9de;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2659b5;
+            cursor: pointer;
+            font-size: 19px;
+          }
+
+          .fill_brief{
+            margin-right: 10px;
+          }
+
+        }
+        .sub_menu_2{
+          margin-left: 50px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+
+    ${({theme}) => theme.mobile`
+        margin-left: 0;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        margin-left: 0;
+    `}
+
+          .circle{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #d5d9de;
+            margin-left: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+
+        }
+
+
+
+      }
+
+
+    }
+
+
+
+
+
+  }
+
+  .footer_second_line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px ${props => props.theme.contentPaddingDesktop};
+    height: 90px;
+    
+    
+        ${({theme}) => theme.mobile`
+        padding: 10px ${props => props.theme.contentPaddingMobile};
+    `}
+    
+    ${({theme}) => theme.tablet`
+        padding: 10px ${props => props.theme.contentPaddingTablet};
+    `}
+    
+
+
+    border-bottom: 0 solid #ccc;
+    font-size: 19px;
+
+
+    
+    ${({theme}) => theme.mobile`
+        flex-flow: column;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        flex-flow: column;
+    `}
+    
+
+
+
+    .sub_block_1{
+    
+    a{
+          color: ${({theme}) => theme.titleColor};
+        }
+
+    }
+
+    .sub_block_2{
+      display: flex;
+
+      .phone{
+        margin-right: 45px;
+      }
+
+      .phone, .email{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a{
+          color: #000;
+        }
+
+        i{
+          margin-right: 5px;
+          opacity: .3;
+        }
+      }
+
+    }
+   
+
+
+
+
+
+  }
+
+
+`;
 
 
 export const Footer = () => {
@@ -11,7 +306,7 @@ export const Footer = () => {
 
     return (
 
-        <footer>
+        <Wrapper>
 
 
             <div className="footer_first_line">
@@ -57,9 +352,9 @@ export const Footer = () => {
                         </div>
                         <div className="sub_menu_2">
 
-                            <a target="_blank" href="https://github.com/BotSculptors" target="_blank" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png` } }></a>
+                            <Link target="_blank" to="https://github.com/BotSculptors" className="circle" style={{backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/GIt.png`}}/>
 
-                            <a target="_blank" href="https://www.linkedin.com/company/botsculptors" className="circle" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)` } }></a>
+                            <Link target="_blank" to="https://www.linkedin.com/company/botsculptors" className="circle" style={{backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/LINKEDIN.png)`}}/>
 
                         </div>
 
@@ -85,15 +380,15 @@ export const Footer = () => {
 
 
                 <div className="sub_block_3">
-                    Copyright © 2019
+                    Copyright © 2018-{new Date().getFullYear()}
                 </div>
 
             </div>
 
 
-        </footer>
+        </Wrapper>
 
     );
 
-}
+};
 
