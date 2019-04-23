@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Torrichel/BotSculptors.git/issues"
   },
-  "homepage": "https://github.com/Torrichel/BotSculptors.git",
+  "homepage": "/",
   "dependencies": {
     "axios": "^0.16.2",
     "history": "^4.7.2",
