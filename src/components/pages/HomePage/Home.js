@@ -16,8 +16,6 @@ import ReactPaginate from "react-paginate";
 
 
 
-
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -209,7 +207,7 @@ export const Technologies = styled.div`
     `}
 
       .slick-slider{
-        margin-top: 50px;
+       
 
         .slick-slide{
 
@@ -344,6 +342,12 @@ export const Portfolio = styled.div`
         color: #1f4c9d;
       }
       .item {
+      
+        cursor: pointer;
+    text-transform: uppercase;
+    font-family: MainFontUltraLight;
+    padding: 5px 0;
+      
         cursor: pointer;
       }
     }
@@ -660,7 +664,7 @@ export class Home extends Component {
 
                         <Services>
 
-                            <Title id='services' backText='Services' frontText='Services' />
+                            <Title id='services' marginBottom={'30'} backText='Services' frontText='Services' />
 
                             <div className="services">
 
@@ -720,7 +724,7 @@ export class Home extends Component {
 
                         <Technologies className="techs">
 
-                            <Title id='technologies' backText='Technologies' frontText='Technologies' />
+                            <Title id='technologies' marginBottom={'30'} backText='Technologies' frontText='Technologies' />
 
                             <Slider {...settings}>
 
@@ -739,7 +743,7 @@ export class Home extends Component {
 
                         <Portfolio className="our_portfolio">
 
-                            <Title id='portfolio' backText='Portfolio' frontText='Portfolio' />
+                            <Title id='portfolio' marginTop={0} marginBottom={'30'} backText='Portfolio' frontText='Portfolio' />
 
                             <div className="menu">
 

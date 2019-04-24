@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
-import Gallery from 'react-photo-gallery';
 import { projectActions } from '../../../actions'
 import Lightbox from 'react-images';
 import Skills from './Skills';
@@ -33,6 +32,56 @@ const PortfolioPage = styled.div`
 `;
 
 
+const Gallery = styled.div`
+  
+  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    
+    
+    padding: 0 ${({theme}) => theme.contentPaddingDesktop};
+    padding-bottom: 30px;
+    
+    
+    ${({theme}) => theme.mobile`
+    
+          grid-template-columns: 1fr;
+          padding: 0 ${props => props.theme.contentPaddingMobile};
+          padding-bottom: 30px;
+    `}
+    
+  
+    ${({theme}) => theme.tablet`
+          grid-template-columns: 1fr;
+          padding: 0 ${props => props.theme.contentPaddingMobile};
+          padding-bottom: 30px;
+    `}
+
+  
+  div{
+    filter: grayscale(100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    cursor: pointer;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.09), 0px 1px 1px 0px rgba(0,0,0,0.09), 0px 2px 1px -1px rgba(0,0,0,0.09);
+ 
+    &::before {
+        content: "";
+        padding-bottom: 100%;
+        display: inline-block;
+      }
+      
+   &:hover{
+      filter: grayscale(20%);
+   }
+   
+  }
+
+`;
+
+
 const PortfolioItemWrapper = styled.div`
     
   display: flex;
@@ -52,7 +101,9 @@ const PortfolioItemWrapper = styled.div`
     h1{
       color: #fff;
       text-transform: capitalize;
-      font-family: MainFontThin;
+      font-size: 36px;
+      font-family: MainFontUltralight;
+      font-weight: normal;
     }
   }
   .projectDetails{
@@ -106,7 +157,19 @@ const PortfolioItemWrapper = styled.div`
     justify-content: center;
     align-items: center;
     
+     padding: 0 ${({theme}) => theme.contentPaddingDesktop};
+    
+    
+    ${({theme}) => theme.mobile`
+
+          padding: 0 ${props => props.theme.contentPaddingMobile};
+    `}
+    
   
+    ${({theme}) => theme.tablet`
+
+          padding: 0 ${props => props.theme.contentPaddingMobile};
+    `}
     
     
     span{
@@ -120,23 +183,35 @@ const PortfolioItemWrapper = styled.div`
       justify-content: center;
       margin-bottom: 30px;
       margin-top: 30px;
-      width: 50%;
+      width: 100%;
+      
+      
+      
+
+   
+      
       .usedTechnologyItem{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
         font-size: 18px;
-        font-weight: 600;
+
         border: 1px solid #d5d9de;
-        padding: 20px 10px;
-        width: 250px;
+        padding: 0 20px;
+  
+        height: 70px;
+        margin-left: -1px;
+        margin-bottom: -1px;
+        flex-grow: 1;
+        font-family: MainFontUltralight;
       }
       span{
           font-size: 28px;
           color: #2558b5;
-          font-weight: 800;
+       
           padding: 0 5px 0 0 ;
+          font-family: MainFontText;
       }
 
       }
@@ -165,12 +240,24 @@ const PortfolioItemWrapper = styled.div`
       margin-bottom: 20px;
       display: flex;
       align-items: center;
+      
+      
+      
       justify-content: center;
+      
+      
+          ${({theme}) => theme.mobile`
+
+         justify-content: space-between;
+    `}
+      
+      
+      
       flex-direction: row;
       flex-wrap: wrap;
       .developerForThisProject{
         height: 90px;
-        width: 265px;
+        
         display: flex;
         align-items: center;
         justify-content: center;
@@ -234,8 +321,10 @@ export class PortfolioItem extends Component {
       window.scrollTo(0, 0);
   }
 
-  openLightbox(event, obj) {
-    this.setState({currentImage: obj.index, lightboxIsOpen: true});
+  openLightbox({currentTarget}) {
+
+    this.setState({currentImage: parseInt( currentTarget.dataset.index ), lightboxIsOpen: true});
+
   }
   closeLightbox() {
     this.setState({currentImage: 0, lightboxIsOpen: false});
@@ -283,7 +372,7 @@ export class PortfolioItem extends Component {
 
   render() {
 
-    const { images=[], pageLoadError } = this.state;
+    const { images=[], pageLoadError, lightboxIsOpen, currentImage } = this.state;
 
     let photosData = [];
     if (images.length) {
@@ -315,44 +404,62 @@ export class PortfolioItem extends Component {
             </div>
             <div className="projectDetails">
 
-              <Title id='aboutProject' marginTop={'30'} marginBottom={'0'} backText='About the project' frontText='About the project' />
+              <Title id='aboutProject' marginTop={'30'} marginBottom={'0'} backText='About' frontText='About' />
 
               <div className="projectNameDescription" dangerouslySetInnerHTML={{ __html: this.state.project.text }}></div>
 
 
             </div>
             <div className="usedTechnology">
-              <Title marginTop={'45'} marginBottom={'10'} id='technologies' backText='Technologies' frontText='Technologies' />
+              <Title marginTop={'45'} marginBottom={'15'} id='technologies' backText='Technologies' frontText='Technologies' />
 
-              <span>Technologies used in this project</span>
+
               <Skills skills={this.state.project.skillsAndTechnologies}/>
             </div>
-            <div className="workedOnProject">
-              <Title marginTop={'45'} marginBottom={'10'} id='team' backText='Team' frontText='Team' />
 
-              <div className="Developers">
-                {  this.state.authors.map((author) =>(
-                    <div className="developerForThisProject" key={author._id}>
-                      <img src={author.photo}></img>
-                      <div className="DeveloperName">
-                        <span className="DeveloperName">{author.firstName} {author.lastName}</span>
-                        <span className="DeveloperRoleInProject">{author.title}</span>
 
-                      </div>
-                      {/*<button type="button" name="developerPage">&#8250;</button>*/}
-                    </div>
-                ))}
-              </div>
-            </div>
-            <div className="PortfolioImgGallery">
+            {/*<div className="workedOnProject">*/}
+            {/*  <Title marginTop={'45'} marginBottom={'30'} id='team' backText='Team' frontText='Team' />*/}
 
-              <Title marginTop={'45'} marginBottom={'10'} id='gallery' backText='Gallery' frontText='Gallery' />
+            {/*  <div className="Developers">*/}
+            {/*    {  this.state.authors.map((author) =>(*/}
+            {/*        <div className="developerForThisProject" key={author._id}>*/}
+            {/*          <img src={author.photo}></img>*/}
+            {/*          <div className="DeveloperName">*/}
+            {/*            <span className="DeveloperName">{author.firstName} {author.lastName}</span>*/}
+            {/*            <span className="DeveloperRoleInProject">{author.title}</span>*/}
 
-            </div>
+            {/*          </div>*/}
+            {/*          /!*<button type="button" name="developerPage">&#8250;</button>*!/*/}
+            {/*        </div>*/}
+            {/*    ))}*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+
 
           </PortfolioItemWrapper>
-          <Gallery photos={photosData !== [] ? photosData : {}} onClick={this.openLightbox}/>
-          <Lightbox images={photosData !== [] ? photosData : {}} onClose={this.closeLightbox} onClickPrev={this.gotoPrevious} onClickNext={this.gotoNext} currentImage={this.state.currentImage} isOpen={this.state.lightboxIsOpen}/>
+
+
+          <div className="PortfolioImgGallery">
+
+            <Title marginTop={'30'} marginBottom={'35'} id='gallery' backText='Gallery' frontText='Gallery' />
+
+            <Gallery>
+
+              {images.map((image, i) =>
+
+                  <div key={i} data-index={i} onClick={this.openLightbox} style={{backgroundImage: `url(${image})`}}/>
+
+              )}
+
+            </Gallery>
+
+          </div>
+
+
+
+          <Lightbox images={photosData !== [] ? photosData : {}} onClose={this.closeLightbox} onClickPrev={this.gotoPrevious} onClickNext={this.gotoNext} currentImage={currentImage} isOpen={lightboxIsOpen} />
+
 
         </PortfolioPage>
 

@@ -77,9 +77,11 @@ const Wrapper = styled.div`
 
 
             span{
-              font-size: 24px;
-              color: #fff;
-              font-family: MainFontUltralight;
+              font-size: 15px;
+                color: #fff;
+                font-family: MainFontUltralight;
+                line-height: 1.5;
+                font-style: italic;
               
               
           ${({theme}) => theme.mobile`

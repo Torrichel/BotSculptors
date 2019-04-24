@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
+import { HashLink } from 'react-router-hash-link';
+
 import { userActions } from '../../../actions';
 
-
-import Popup from '../Popup/Popup';
+//
+// import Popup from '../Popup/Popup';
 
 import { Header, Main, Title, Footer } from "../../common";
 
@@ -165,7 +167,6 @@ export const Wrapper = styled.div`
     }
     .description{
 
-        margin-bottom: 20px;
 
       p{
         font-family: MainFontThin;
@@ -173,6 +174,10 @@ export const Wrapper = styled.div`
         color: #7d8794;
         font-size: 24px;
         line-height: 1.5;
+      }
+      
+      p:last-child{
+      margin-bottom: 0;
       }
     }
     .call_to_action:hover{
@@ -197,14 +202,14 @@ export const Wrapper = styled.div`
     }
   }
   .dream-team {
-    padding-top: 0;
+    
     align-items: center;
     justify-content: center;
     
     
     
-         padding: 70px ${({theme}) => theme.contentPaddingDesktop};
-      
+      padding: 30px ${({theme}) => theme.contentPaddingDesktop};
+      padding-top: 0;
       
       ${({theme}) => theme.mobile`
             padding-top: 0;
@@ -214,7 +219,7 @@ export const Wrapper = styled.div`
     
       ${({theme}) => theme.tablet`
             padding-top: 0;
-            padding: 50px ${props => props.theme.contentPaddingTablet};
+            padding: 30px ${props => props.theme.contentPaddingTablet};
       `}
 
 
@@ -233,7 +238,7 @@ export const Wrapper = styled.div`
       
     
       ${({theme}) => theme.tablet`
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr;
       `}
 
 
@@ -259,10 +264,10 @@ export const Wrapper = styled.div`
 
       .grid-item:hover {
 
-        .bg{
-          opacity: .9;
-          cursor: pointer;
-        }
+        //.bg{
+        //  opacity: .9;
+        //  cursor: pointer;
+        //}
 
 
       }
@@ -343,7 +348,8 @@ export class About extends Component {
                 key={i}
                 className="grid-item"
                 id={user._id}
-                onClick={() => {this.showModal(user)}}>
+                // onClick={() => {this.showModal(user)}}
+            >
                 <div className='bg' style={ { backgroundImage: `url(${user.photo})` } }></div>
             </div>
 
@@ -369,7 +375,7 @@ export class About extends Component {
 
                     <Wrapper className="about">
 
-                        <Popup show={this.state.show} handleClose={this.handleClose} user={this.state.popupUser}/>
+                        {/*<Popup show={this.state.show} handleClose={this.handleClose} user={this.state.popupUser}/>*/}
 
                         <div className="slider" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/about-page-bg.jpg)` } }>
 
@@ -388,12 +394,12 @@ export class About extends Component {
 
                         <div className="about-us">
 
-                            <Title id='aboutUs' backText='ABOUT US' frontText='ABOUT US' />
+                            <Title id='aboutUs' marginBottom={'10'} backText='ABOUT US' frontText='ABOUT US' />
 
 
                             <div className="description">
 
-                                <p><b>BotSculptors</b> was born in spring 2018. We are the team of professional Software Developers (SD), Designers and UX specialists with huge experience in programming. Some of us worked in social networks with <b><i>Audience > 1 Million Active Users</i></b>, startups specialized on ChatBot development and CryptoCurrency projects. For more details about our projects, please, visit <a href='/#portfolio'>portfolio</a> section!</p>
+                                <p><b>BotSculptors</b> was born in spring 2018. We are the team of professional Software Developers (SD), Designers and UX specialists with huge experience in programming. Some of us worked in social networks with <b><i>Audience > 1 Million Active Users</i></b>, startups specialized on ChatBot development and CryptoCurrency projects. For more details about our projects, please, visit <HashLink to='/#portfolio'>portfolio</HashLink> section!</p>
 
                                 <p>Our team combined that various set of skills all together. We really believe that synergy of Crypto Currencies and automated systems can change the world and make it the better place to live.</p>
 
