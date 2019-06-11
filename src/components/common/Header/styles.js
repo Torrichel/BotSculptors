@@ -30,7 +30,7 @@ export const HeaderFirstLine = styled.div`
     align-items: center;
     width: 100%;
     padding: 0 ${props => props.theme.contentPaddingDesktop};
-    height: 40px;
+    height: 41px;
     background: ${props => props.theme.headerFirstLineColor};
     z-index: 50;
     
@@ -123,12 +123,14 @@ export const NavBlock = styled.div`
 
 
         a{
-          color: #000;
-          font-family: MainFontThin;
-          font-size: 19px;
-          font-weight: lighter;
-          margin: 20px ${props => props.theme.contentPaddingMobile};
-          display: block;
+          
+            margin: 20px ${props => props.theme.contentPaddingMobile};
+            display: block;
+            color: #000000;
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.35px;
         }
 
         a:last-child{
@@ -172,7 +174,7 @@ export const HeaderSecondLine = styled.div`
           margin-top: -30px;
 
 
-          
+        
           
               ${({theme}) => theme.mobile`
                     position: absolute;
@@ -192,7 +194,7 @@ export const HeaderSecondLine = styled.div`
       .sub_section_2{
         text-decoration: none;
         padding-left: 30px;
-        padding-top: 16px;
+        padding-top: 13px;
         
 
         
@@ -201,14 +203,27 @@ export const HeaderSecondLine = styled.div`
       `}
 
         .title{
-          font-size: 28px;
-          color: ${props => props.theme.titleColor};
-          width: 200px;
-          padding-bottom: 8px;
+            width: 200px;
+            color: ${props => props.theme.titleColor};
+            font-family: "Open Sans";
+            font-weight: 300;
+            letter-spacing: -0.75px;
+            font-size: 30px;
+            margin-left: -1.5px;
+            
+            b{
+              font-family: inherit;
+                font-weight: 600;
+                letter-spacing: -0.75px;
+            }
+          
         }
         .slogan{
-          font-size: 14px;
-          color: ${props => props.theme.sloganColor};
+            font-size: 14px;
+            color: ${props => props.theme.sloganColor};
+            font-family: "Open Sans";
+            font-weight: 400;
+            letter-spacing: -0.35px;
         }
       }
 

@@ -31,7 +31,7 @@ export const SliderBlock = styled.div`
       display: flex;
       align-items: center;
       
-      height: 656px;
+      height: 654px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -56,23 +56,30 @@ export const SliderBlock = styled.div`
         justify-content: space-around;
         flex-direction: column;
         color: #fff;
+        font-size: 36px;
+        font-family: "Open Sans";
 
         .title {
-          font-size: 36px;
-          font-family: MainFontUltralight;
-
+            font-family: inherit;
+            font-weight: 400;
+            font-size: inherit;
         }
 
         .slogan {
-          font-size: 32px;
-          font-family: MainFontThin;
+          
+       
+            color: #ffffff;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: 300;
+            line-height: 60px;
           
             ${({theme}) => theme.mobile`
                 display: none;
             `}
 
           span {
-            color: ${props => props.theme.sloganColor2};
+            color: ${props => props.theme.titleColor};
             font-size: 1.5em;
             line-height: 24px;
           }
@@ -81,26 +88,29 @@ export const SliderBlock = styled.div`
           background-color: #0C3376;
         }
         .call_to_action {
-          margin-top: 25px;
-          display: flex;
-          text-align: center;
-          align-items: center;
-          justify-content: center;
-          width: 180px;
-          height: 45px;
-          background-color: #265ab5;
-          border-radius: 50px;
+ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 167px;
+            height: 45px;
+            border-radius: 23px;
+            background-image: linear-gradient(-259deg, #486cae 0%, #2458b6 100%);
 
           a {
             text-decoration: none;
-            font-size: 22px;
             color: #fff;
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.35px;
+            cursor: pointer;
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            cursor: pointer;
+            justify-content: center;
+            
           }
         }
       }
@@ -146,9 +156,18 @@ export const Services = styled(Element)`
           .title {
             margin-top: 45px;
             margin-left: 45px;
-            font-size: 20px;
-            font-family: MainFontThin;
 
+            
+            color: #050505;
+            font-family: "Open Sans";
+            font-size: 26px;
+            font-weight: 300;
+            line-height: 39px;
+            
+            b{
+              font-family: inherit;
+              font-weight: 400;
+            }
 
           }
         }
@@ -205,6 +224,21 @@ export const Technologies = styled.div`
     ${({theme}) => theme.tablet`
          padding: 50px ${({theme}) => theme.contentPaddingTablet};
     `}
+    
+   
+    .sub_title{
+        opacity: 0.6;
+        color: #6a717c;
+        font-family: "Open Sans";
+        font-size: 15px;
+        font-style: italic;
+        line-height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 34px;
+        text-align: center;
+    }
 
       .slick-slider{
        
@@ -236,16 +270,41 @@ export const Technologies = styled.div`
 
 
             }
+            
+            .devicon:not(.colored){
+              color: #7d8793;
+            }
+           
 
             .devicon:last-child{
               border-right: 0.5px solid #d5d9de;
+              
             }
 
+          }
+          
+          > div:first-child{
+          
+            .devicon:first-child{
+              border-radius: 6px 0 0 0;
+            }
+            .devicon:last-child{
+              border-radius: 0 6px 0 0;
+            }
+          
+          
           }
 
           > div:last-child{
             .devicon {
               border-bottom: 0.5px solid #d5d9de;
+             
+            }
+            .devicon:first-child{
+              border-radius: 0 0 0 6px;
+            }
+            .devicon:last-child{
+              border-radius: 0 0 6px 0;
             }
           }
 
@@ -303,20 +362,23 @@ export const Technologies = styled.div`
 export const Portfolio = styled.div`
 
       padding: 70px ${props => props.theme.contentPaddingDesktop};
+      padding-bottom: 0;
       
       
           ${({theme}) => theme.mobile`
         padding: 50px ${({theme}) => theme.contentPaddingMobile};
+        padding-bottom: 0;
     `}
     
     ${({theme}) => theme.tablet`
          padding: 50px ${({theme}) => theme.contentPaddingTablet};
+         padding-bottom: 0;
     `}
 
 
 
     .menu {
-      font-size: 16px;
+     
       display: flex;
       align-items:flex-start;
       text-align: left;
@@ -338,22 +400,284 @@ export const Portfolio = styled.div`
     `}
 
 
-      .active {
+      .item.active {
+        
         color: #1f4c9d;
+        font-family: "Open Sans";
+        font-weight: 400;
+
+        
       }
       .item {
       
         cursor: pointer;
-    text-transform: uppercase;
-    font-family: MainFontUltraLight;
-    padding: 5px 0;
-      
-        cursor: pointer;
+        padding: 5px 0;
+        
+ 
+        color: #7d8794;
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 39px;
+
+
+        
       }
     }
 
 
 
+`;
+
+export const PeopleAboutUs = styled.div`
+
+
+ 
+    
+      padding: 50px ${props => props.theme.contentPaddingDesktop};
+      
+      
+        ${({theme}) => theme.mobile`
+            padding: 50px ${({theme}) => theme.contentPaddingMobile};
+        `}
+        
+        ${({theme}) => theme.tablet`
+             padding: 50px ${({theme}) => theme.contentPaddingTablet};
+        `}
+
+      .slick-active:first-child{
+      
+          display: flex!important;
+          //justify-content: ;
+      
+        > div{
+          
+        }
+        
+      }
+   
+    .persons{
+      display: grid!important;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 19px;
+      outline: none;
+    }
+    
+    
+     
+
+      .person {
+      
+          
+          height: 388px;
+          border: 0 solid red;
+          outline: none;
+          background-color: #f2f4f5;
+          //background-color: red;
+          border-radius: 5px;
+          background-repeat: no-repeat;
+          background-size: 200px;
+          background-position-x: right;
+          background-position-y: bottom;
+          width: 100%!important;
+          padding: 39px 37px;
+          margin: 0 auto;
+          
+          .personInfo {
+          display: flex;
+          align-items: center;
+          text-align: right;
+          justify-content: space-between;
+          flex-direction: row;
+          width: 100%;
+          
+          
+          
+          
+
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }
+    
+          div {
+          
+          position: relative;
+          
+            .personName {
+              font-weight: 600;
+              font-size: 15px;
+              letter-spacing: 0.15px;
+              line-height: 24px;
+              font-family: "Open Sans";
+              
+                
+              
+            }
+    
+            .personPosition {
+              font-family: "Open Sans";
+              line-height: 24px;
+              font-size: 15px;
+              color: #1F4C9D;
+              font-style: italic;
+              
+            }
+    
+            .personCompany {
+              font-weight: 600;
+              font-family: "Open Sans";
+              font-size: 20px;
+            }
+          }
+          
+          div:before{
+               content: "\\201D";
+                opacity: 0.1;
+                color: #7d8794;
+                font-size: 230px;
+                font-weight: 400;
+                position: absolute;
+                top: -55px;
+                right: -10px;
+            }
+          }
+    }
+          .personReview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 34px;
+            color: #7d8794;
+            font-family: "Open Sans";
+            font-size: 15px;
+            font-style: italic;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+    
+          
+          }
+
+          .title {
+            margin-top: 45px;
+            margin-left: 45px;
+            font-size: 20px;
+          }
+        }
+    
+
+  
+`;
+
+export const SupportForm = styled.div`
+
+
+    
+      padding: 50px ${props => props.theme.contentPaddingDesktop};
+      
+      
+        ${({theme}) => theme.mobile`
+            padding: 50px ${({theme}) => theme.contentPaddingMobile};
+        `}
+        
+        ${({theme}) => theme.tablet`
+             padding: 50px ${({theme}) => theme.contentPaddingTablet};
+        `}
+
+
+    .subscription {
+      padding: 40px 55px;
+      border: 7px solid #f2f4f5;
+     
+      border-radius: 10px;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 300px;
+
+      > .title {
+        color: #000000;
+        font-family: "Open Sans";
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        font-weight: 400;
+        margin-bottom: 45px;
+        font-size: 26px;
+        line-height: 39px;
+
+        b {
+            font-family: inherit;
+            font-weight: 600;
+        
+        }
+
+        i {
+        font-family: inherit;
+          font-style: normal;
+          font-weight: 300;
+        }
+      }
+
+      > .form form {
+        display: flex;
+
+        input {
+          font-size: 14px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          outline: none;
+          height: 45px;
+          border: 1px solid #d5d9de;
+          border-right: 0;
+          border-top-left-radius: 30px;
+          border-bottom-left-radius: 30px;
+          padding-left: 25px;
+          padding-right: 25px;
+          width: 240px;
+          
+
+            opacity: 0.6;
+            color: #000000;
+            font-family: "Open Sans";
+            
+            font-weight: 400;
+            
+            letter-spacing: -0.35px;
+          
+        }
+
+        button {
+          height: 45px;
+          background-image: -moz-linear-gradient(-11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          background-image: -webkit-linear-gradient(-11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          background-image: -ms-linear-gradient(-11deg, rgb(72,108,174) 0%, rgb(36,88,182) 100%);
+          color: #fff;
+          font-size: 14px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          outline: none;
+          padding: 0 25px;
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+          border: none;
+          
+
+            font-family: "Open Sans";
+            
+            font-weight: 400;
+            
+            letter-spacing: -0.35px;
+          
+          
+        }
+      }
+    }
+
+
+  
 `;
 
 export const Pagination = styled.div`
@@ -392,7 +716,7 @@ export const Pagination = styled.div`
   li{
     display: flex;
     height: 40px;
-
+    font-family: 'Open Sans';
 
     a{
       display: flex;
@@ -401,7 +725,7 @@ export const Pagination = styled.div`
       padding: 15px;
       outline: none;
       cursor: pointer;
-      font-family: MainFontThin;
+      font-family: inherit;
       border: 1px solid #ddd;
       background-color: #fff;
       margin-left: -1px;
@@ -416,6 +740,8 @@ export const Pagination = styled.div`
       background: #265ab5;
       border-color: #265ab5;
       cursor: inherit;
+      font-family: inherit;
+      font-weight: 600;
     }
     a:hover{
       background: #0C3376;
@@ -453,11 +779,11 @@ export class Home extends Component {
 
                 'webpack-plain colored',
                 'grunt-plain colored',
-                'gulp-plain colored',
-                'babel-plain colored',
+                'gulp-plain colored colored',
+                'babel-plain',
 
                 // Page 1 Row 2
-                'php-plain colored',
+                'php-plain',
                 'laravel-plain colored',
                 'wordpress-plain colored',
                 'mocha-plain colored',
@@ -630,6 +956,13 @@ export class Home extends Component {
 
         };
 
+        const settingsForReviewsSlider = {
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+
         const { activeCategory, projects, pageCount=0, forcePage } = this.state;
 
 
@@ -673,7 +1006,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebDesign.png)` } }
                                     onClick={() => {this.setCategory('Web Design', true)}}>
 
-                                    <div className="title">Web <br/>Design</div>
+                                    <div className="title">Web <br/><b>Design</b></div>
                                 </div>
 
                                 <div
@@ -681,7 +1014,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/WebsiteDevelopment.png)` } }
                                     onClick={() => {this.setCategory('Website Development', true)}}>
 
-                                    <div className="title">Website <br/>Development</div>
+                                    <div className="title">Website <br/><b>Development</b></div>
                                 </div>
 
                                 <div
@@ -689,7 +1022,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/BotDevelopment.png)` } }
                                     onClick={() => {this.setCategory('Bot Development', true)}}>
 
-                                    <div className="title">Bot <br/>Development</div>
+                                    <div className="title">Bot <br/><b>Development</b></div>
                                 </div>
 
                                 <div
@@ -697,7 +1030,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/ChromeExtensions.png)` } }
                                     onClick={() => {this.setCategory('Chrome Extensions', true)}}>
 
-                                    <div className="title">Chrome <br/>Extensions</div>
+                                    <div className="title">Chrome <br/><b>Extensions</b></div>
                                 </div>
 
                                 <div
@@ -705,7 +1038,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/SoftwareDevelopment.png)` } }
                                     onClick={() => {this.setCategory('Software Development', true)}}>
 
-                                    <div className="title">Software <br/>Development</div>
+                                    <div className="title">Software <br/><b>Development</b></div>
                                 </div>
 
                                 <div
@@ -713,7 +1046,7 @@ export class Home extends Component {
                                     style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/Maintenance.png)` } }
                                     onClick={() => {this.setCategory('Maintenance', true)}}>
 
-                                    <div className="title">Maintenance</div>
+                                    <div className="title">Product<br/><b>Maintenance</b></div>
                                 </div>
 
 
@@ -725,6 +1058,8 @@ export class Home extends Component {
                         <Technologies className="techs">
 
                             <Title id='technologies' marginBottom={'30'} backText='Technologies' frontText='Technologies' />
+
+                            <div className='sub_title'>We drive most popular technologies<br/> and frameworks</div>
 
                             <Slider {...settings}>
 
@@ -766,9 +1101,6 @@ export class Home extends Component {
                                     className={`item ${activeCategory === 'Software Development' ? 'active' : ''}`}
                                     onClick={() => {this.setCategory('Software Development')}}>Software Development</div>
 
-                                <div
-                                    className={`item ${activeCategory === 'Maintenance' ? 'active' : ''}`}
-                                    onClick={() => {this.setCategory('Maintenance')}}>Maintenance</div>
 
                             </div>
 
@@ -790,6 +1122,77 @@ export class Home extends Component {
                             /></Pagination> : ''}
 
                         </Portfolio>
+
+
+                        <PeopleAboutUs>
+                            <Title id='portfolio' marginTop={0} marginBottom={'30'} backText='People about us' frontText='People about us' />
+
+                            <Slider {...settingsForReviewsSlider} >
+
+                                <div className="persons">
+                                    <div className="person">
+                                        <div className="personInfo">
+                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
+                                            <div>
+                                                <span className="personName">Литвинов Евгений<br/></span>
+                                                <span className="personPosition">арт-директор компании<br/></span>
+                                                <span className="personCompany">P&B</span>
+                                            </div>
+                                        </div>
+                                        <div className="personReview">
+                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                        </div>
+                                    </div>
+                                    <div className="person">
+                                        <div className="personInfo">
+                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
+                                            <div>
+                                                <span className="personName">Литвинов Евгений<br/></span>
+                                                <span className="personPosition">Арт-директор компании<br/></span>
+                                                <span className="personCompany">P&B</span>
+                                            </div>
+                                        </div>
+                                        <div className="personReview">
+                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="persons">
+                                    <div className="person">
+                                        <div className="personInfo">
+                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
+                                            <div>
+                                                <span className="personName">Литвинов Евгений<br/></span>
+                                                <span className="personPosition">Арт-директор компании<br/></span>
+                                                <span className="personCompany">P&B</span>
+                                            </div>
+                                        </div>
+                                        <div className="personReview">
+                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                        </div>
+                                    </div>
+                                    <div className="person">
+                                        <div className="personInfo">
+                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
+                                            <div>
+                                                <span className="personName">Литвинов Евгений<br/></span>
+                                                <span className="personPosition">Арт-директор компании<br/></span>
+                                                <span className="personCompany">P&B</span>
+                                            </div>
+                                        </div>
+                                        <div className="personReview">
+                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </Slider>
+
+                        </PeopleAboutUs>
+
 
                         {/* We're trusted by
                 <div className="we_are_trusted_by">
@@ -871,7 +1274,7 @@ export class Home extends Component {
 
 
                 </div>
-                */}
+
 
                         {/* We're featured by
                 <div className="we_are_featured_by">
@@ -952,22 +1355,31 @@ export class Home extends Component {
 
                 </div>
 */}
+
+
                         {/* Subscribe */}
 
-                        {/*<div className="subscription" style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>*/}
+                    <SupportForm>
 
-                        {/*<div className="title">*/}
-                        {/*<b>Still have questions?</b>*/}
-                        {/*<i>We're ready to support you 24/7!</i>*/}
-                        {/*</div>*/}
-                        {/*<div className="form">*/}
-                        {/*<form action="" method="POST">*/}
-                        {/*<input type="text" placeholder="E-mail"/>*/}
-                        {/*<button>Send Request</button>*/}
-                        {/*</form>*/}
-                        {/*</div>*/}
+                        <div className="subscription"  style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>
 
-                        {/*</div>*/}
+                            <div className="title">
+                                <b>Still have questions?</b>
+                                <i>We're ready to support you 24/7!</i>
+                            </div>
+
+                            <div className="form" >
+                                <form action="" method="POST">
+                                    <input type="text" placeholder="E-mail"/>
+                                    <button>Send Request</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </SupportForm>
+
+
 
 
                 </Main>

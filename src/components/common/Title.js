@@ -13,20 +13,34 @@ const Wrapper = styled.div`
     width: 100%;
     height: 50px;
     white-space: nowrap;
+    font-family: "Open Sans";
 
 
     .back_text {
-        font-size: 53px;
         opacity: .1;
-        font-family: MainFontUltralight;
+        font-family: inherit;
         text-transform: uppercase;
+        color: #7d8794;
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 106.42px;
+
+        
     }
 
     .front_text {
-        font-size: 26px;
+
         position: absolute;
-        font-family: MainFontThin;
+        font-family: inherit;
         text-transform: uppercase;
+        
+        color: #0d0d0d;
+
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 48px;
+        
+        
     }
 
 `;

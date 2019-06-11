@@ -69,24 +69,34 @@ const Wrapper = styled.footer`
 
 
         .title{
-        
-          margin-top: -17px;
-          height: 45px;
-          font-size: 28px;
-          color: ${props => props.theme.titleColor};
-          font-family: MainFontText;
+       
+            margin-left: -1.5px;
+            margin-top: -17px;
+            height: 45px;
+            width: 200px;
+            color: ${props => props.theme.titleColor};
+            font-family: "Open Sans";
+            font-weight: 300;
+            letter-spacing: -0.75px;
+            font-size: 30px;
 
 
-          span{
-            margin-left: -2px;
-          }
+            b{
+              font-family: inherit;
+                font-weight: 600;
+                letter-spacing: -0.75px;
+            }
+            
         }
         
         .slogan{
-          font-size: 15px ;
-          font-family: MainFontThin;
-          color: ${props => props.theme.sloganColor};
-          white-space: nowrap;
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.35px;
+          
+            color: ${props => props.theme.sloganColor};
+            white-space: nowrap;
         }
       }
 
@@ -125,21 +135,22 @@ const Wrapper = styled.footer`
 
 
         a{
-          margin-left: 50px;
-          color: #000;
-          font-family: MainFontThin;
-          font-size: 19px;
-          font-weight: lighter;
+            margin-left: 50px;
+            color: #000;
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.35px;
 
 
     
-    ${({theme}) => theme.mobile`
-        margin-left: 0;
-    `}
-    
-    ${({theme}) => theme.tablet`
-        margin-left: 0;
-    `}
+            ${({theme}) => theme.mobile`
+                margin-left: 0;
+            `}
+            
+            ${({theme}) => theme.tablet`
+                margin-left: 0;
+            `}
     
 
         }
@@ -259,14 +270,32 @@ const Wrapper = styled.footer`
 
     .sub_block_1{
     
-    a{
-          color: ${({theme}) => theme.titleColor};
+        a{
+            color: ${({theme}) => theme.titleColor};
+          
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-weight: 400;
+            
+            letter-spacing: -0.35px;
+          
         }
+        
+        
 
     }
 
     .sub_block_2{
       display: flex;
+      margin-left: 35px;
+      
+      ${({theme}) => theme.mobile`
+       margin-left: 0;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        margin-left: 0;
+    `}
 
       .phone{
         margin-right: 45px;
@@ -278,7 +307,11 @@ const Wrapper = styled.footer`
         align-items: center;
 
         a{
-          color: #000;
+            color: #000000;
+            font-family: "Open Sans";
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: -0.38px;
         }
 
         i{
@@ -287,6 +320,15 @@ const Wrapper = styled.footer`
         }
       }
 
+    }
+    
+    .sub_block_3{
+
+        color: #8a8f96;
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: -0.35px;
     }
    
 
@@ -380,7 +422,7 @@ export const Footer = () => {
 
 
                 <div className="sub_block_3">
-                    Copyright © 2018-{new Date().getFullYear()}
+                    Bot Sculptors © 2018-{new Date().getFullYear()}
                 </div>
 
             </div>

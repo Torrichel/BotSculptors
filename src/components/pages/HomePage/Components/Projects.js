@@ -17,7 +17,9 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: MainFontUltralight;
+        font-family: 'Open Sans';
+        color: #7d8794;
+        font-weight: 300;
         font-size: 23px;
       }
 
@@ -41,25 +43,34 @@ const Wrapper = styled.div`
           margin-bottom: 10px;
           color: #ffffff;
           border-radius: 5px;
-          background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+          background-image: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .3));
           position: relative;
 
           .category {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            color: #ffffff;
+           
             padding: 0 0 0 40px;
-            margin-bottom: 10px;
+            
 
             p{
-              padding: 1px 5px 1px 5px;
-              margin-left: 4px;
-              font-size: 12px;
-              border: 1px solid #ffffff;;
-              max-width: 160px;
-              border-radius: 3px;
-              white-space: nowrap;
+                padding: 0 10px 0 10px;
+                margin-left: 4px;
+                font-size: 12px;
+                border: 1px solid rgba(256, 256, 256, .3);
+                border-radius: 3px;
+                white-space: nowrap;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                font-family: "Open Sans";
+                font-weight: 300;
+                line-height: 39px;
+                letter-spacing: 0.3px;
+
             }
 
           ${({theme}) => theme.mobile`
@@ -74,36 +85,20 @@ const Wrapper = styled.div`
 
           .title {
             padding: 0 40px 10px 42px;
-
-
-            span{
-              font-size: 15px;
-                color: #fff;
-                font-family: MainFontUltralight;
-                line-height: 1.5;
-                font-style: italic;
-              
-              
-          ${({theme}) => theme.mobile`
-        display: none;
-    `}
-    
-        ${({theme}) => theme.tablet`
-             display: none;
-        `}
-
-       
-            }
-
-
+            
+            font-weight: 300;
+            font-family: "Open Sans";
+            color: #fff; 
+            font-size: 26px;
+            line-height: 39px;
+            
             b{
-              font-size: 24px;
-              font-family: MainFontThin;
-              font-weight: normal;
-              margin-top: 10px;
-              display: inline-block;
-              margin-bottom: 8px;
+              font-weight: 400;
+              line-height: inherit;
+              font-family: inherit;
+              font-size: inherit;
             }
+          
           }
 
 
@@ -129,12 +124,34 @@ const Wrapper = styled.div`
 `;
 
 
+const halfSplit = text => {
 
+
+    let middle = Math.floor(text.length / 2);
+    const before = text.lastIndexOf(' ', middle);
+    const after = text.indexOf(' ', middle + 1);
+
+    if (middle - before < after - middle) {
+        middle = before;
+    } else {
+        middle = after;
+    }
+
+    const s1 = text.substr(0, middle);
+    const s2 = text.substr(middle + 1);
+
+    return `<b>${s1}</b><br/>${s2}`;
+
+
+
+};
 
 export const Projects = props => {
 
 
     const { projects } = props;
+
+
 
     return (
 
@@ -151,8 +168,8 @@ export const Projects = props => {
 
                             <div className="category">{project.project.services.map((service, i) => <p
                                 key={i}> {service} </p>)}</div>
-                            <div className="title"><b>{project.project.title}</b><br/>
-                                <span>{project.project.meta_description}</span></div>
+                            <div className="title" dangerouslySetInnerHTML={{ __html: halfSplit(project.project.title) }}></div>
+
 
                         </NavLink>
 

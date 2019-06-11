@@ -11,41 +11,86 @@ import MainFontUltralight from '../assets/fonts/MainFontUltralight.woff2';
 
 export const GlobalStyles = createGlobalStyle`
   
-    /* MainFontBold */
-    @font-face {
-      font-family: MainFontBold;
-      src: url(${MainFontBold});
-    }
-    
    
-    /* MainFontMedium */
-    @font-face {
-      font-family: MainFontMedium;
-      src: url(${MainFontMedium});
+   //slick arrows
+    .slick-next:before
+    {
+        content: ' ' !important;
+    }
+    [dir='rtl'] .slick-next:before
+    {
+        content: ' ' !important;
+    }
+    .slick-prev:before
+    {
+        content: ' ' !important;
+    }
+    [dir='rtl'] .slick-prev:before
+    {
+        content: ' ' !important;
+    }
+    .slick-dots li button:before{
+      content: '•' !important;
     }
     
-    /* MainFontSemibold */
-    @font-face {
-      font-family: MainFontSemibold;
-      src: url(${MainFontSemibold});
+    .slick-slider {
+    
+    .slick-prev{
+      left: -17px!important;
+    }
+    .slick-next{
+      right: -18px!important;
     }
     
-    /* MainFontText */
-    @font-face {
-      font-family: MainFontText;
-      src: url(${MainFontText});
+    .slick-next, .slick-prev{
+        width: 34px;
+        height: 34px;
+        border: 2px solid #1F4C9D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; 
+        z-index: 10;
     }
     
-    /* MainFontThin */
-    @font-face {
-      font-family: MainFontThin;
-      src: url(${MainFontThin});
-    }
-    
-    /* MainFontUltralight */
-    @font-face {
-      font-family: MainFontUltralight;
-      src: url(${MainFontUltralight});
+
+      .slick-next:before {
+
+        color: #1F4C9D;
+        
+        
+        display: block;
+
+        border-right: 4px solid #1F4C9D; 
+        border-bottom: 4px solid #1F4C9D;
+        
+
+        transform: rotate(-45deg);
+        
+            margin-left: 7px;
+    border-right: 3px solid #1F4C9D;
+    border-bottom: 3px solid #1F4C9D;
+    height: 8px;
+    width: 8px;
+        
+      }
+
+      .slick-prev:before {
+ 
+        margin-left: 12px;
+            color: #1F4C9D;
+        
+        
+        display: block;
+
+        border-right: 3px solid #1F4C9D; 
+        border-bottom: 3px solid #1F4C9D;
+        
+        height: 8px;
+        width: 8px;
+        transform: rotate(135deg);
+        
+      }
     }
     
     
