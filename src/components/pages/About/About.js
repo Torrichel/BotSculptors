@@ -21,7 +21,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
 
   .slider{
-  
+ 
   
       display: flex;
       align-items: center;
@@ -49,53 +49,26 @@ export const Wrapper = styled.div`
         display: flex;
         justify-content: space-around;
         flex-direction: column;
+
+      p{
         color: #fff;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 48px;
+        font-family: "Open Sans";
+      }
+      
+      a{
+      font-family: "Open Sans";
+      }
+        
+        
 
-        .title {
-          font-size: 36px;
-          font-family: MainFontUltralight;
+        
+        
+        
 
-        }
-
-        .slogan {
-          font-size: 32px;
-          font-family: MainFontThin;
-          @include mobile{
-            display: none;
-          }
-
-          span {
-            color: $slogan_color2;
-            font-size: 1.5em;
-            line-height: 24px;
-          }
-        }
-        .call_to_action:hover{
-          background-color: #0C3376;
-        }
-        .call_to_action {
-          margin-top: 25px;
-          display: flex;
-          text-align: center;
-          align-items: center;
-          justify-content: center;
-          width: 180px;
-          height: 45px;
-          background-color: #265ab5;
-          border-radius: 50px;
-
-          a {
-            text-decoration: none;
-            font-size: 22px;
-            color: #fff;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-          }
-        }
+   
       }
 
     
@@ -105,17 +78,7 @@ export const Wrapper = styled.div`
       `}
 
   }
-  .info {
 
-    .info-about{
-
-      p{
-        font-size: 43px;
-        line-height: 1.5;
-        font-family: MainFontUltralight;
-      }
-    }
-  }
   .about-us {
 
     
@@ -137,43 +100,27 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
-    .title {
-      display: flex;
-      position: relative;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 25px;
 
-      .back_text {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: gray;
-        font-size: 4em;
-        opacity: 0.1;
-        position: absolute;
-        width: 250px;
-        white-space: nowrap;
-        font-family: MainFontUltralight;
-        text-transform: uppercase;
-      }
-
-      .front_text {
-        z-index: 2;
-        font-size: 2em;
-        font-family: MainFontThin;
-        text-transform: uppercase;
-      }
-    }
     .description{
 
+      width: 600px;
+      
+    ${({theme}) => theme.mobile`
+        width: 100%;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        width: 100%;
+    `}
 
+      
       p{
-        font-family: MainFontThin;
-        text-align: left;
         color: #7d8794;
-        font-size: 24px;
-        line-height: 1.5;
+        font-family: "Open Sans";
+        font-size: 15px;
+        font-style: italic;
+        line-height: 24px;
+        letter-spacing: 0.15px;
       }
       
       p:last-child{

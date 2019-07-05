@@ -14,6 +14,10 @@ const Wrapper = styled.div`
     height: 50px;
     white-space: nowrap;
     font-family: "Open Sans";
+    
+    
+    
+    
 
 
     .back_text {
@@ -24,6 +28,10 @@ const Wrapper = styled.div`
         font-size: 60px;
         font-weight: 400;
         line-height: 106.42px;
+        
+        ${({theme}) => theme.mobile`
+            font-size: 45px;
+        `}
 
         
     }
@@ -39,6 +47,10 @@ const Wrapper = styled.div`
         font-size: 30px;
         font-weight: 400;
         line-height: 48px;
+        
+        ${({theme}) => theme.mobile`
+            font-size: 22.5px;
+        `}
         
         
     }

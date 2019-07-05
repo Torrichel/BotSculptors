@@ -12,6 +12,7 @@ const Wrapper = styled.footer`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  margin-top: 25px;
 
   .footer_first_line{
     display: flex;

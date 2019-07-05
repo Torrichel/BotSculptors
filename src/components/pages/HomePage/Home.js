@@ -467,9 +467,9 @@ export const PeopleAboutUs = styled.div`
      
 
       .person {
-      
-          
-          height: 388px;
+
+          display: block!important;
+          //height: 388px;
           border: 0 solid red;
           outline: none;
           background-color: #f2f4f5;
@@ -479,9 +479,9 @@ export const PeopleAboutUs = styled.div`
           background-size: 200px;
           background-position-x: right;
           background-position-y: bottom;
-          width: 100%!important;
+          width: calc(100% - 10px)!important;
           padding: 39px 37px;
-          margin: 0 auto;
+          margin: 5px;
           
           .personInfo {
           display: flex;
@@ -556,6 +556,9 @@ export const PeopleAboutUs = styled.div`
             line-height: 24px;
             letter-spacing: 0.15px;
     
+          p{
+          font-family: "Open Sans";
+          }
           
           }
 
@@ -564,11 +567,7 @@ export const PeopleAboutUs = styled.div`
             margin-left: 45px;
             font-size: 20px;
           }
-        }
-    
-
-  
-`;
+        }`;
 
 export const SupportForm = styled.div`
 
@@ -959,8 +958,23 @@ export class Home extends Component {
         const settingsForReviewsSlider = {
             infinite: true,
             speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            responsive: [
+
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
         };
 
         const { activeCategory, projects, pageCount=0, forcePage } = this.state;
@@ -1124,74 +1138,58 @@ export class Home extends Component {
                         </Portfolio>
 
 
-                        <PeopleAboutUs>
-                            <Title id='portfolio' marginTop={0} marginBottom={'30'} backText='People about us' frontText='People about us' />
+                        {/*<PeopleAboutUs>*/}
+                        {/*    <Title id='portfolio' marginTop={0} marginBottom={'30'} backText='People about us' frontText='People about us' />*/}
 
-                            <Slider {...settingsForReviewsSlider} >
+                        {/*    <Slider {...settingsForReviewsSlider} >*/}
 
-                                <div className="persons">
-                                    <div className="person">
-                                        <div className="personInfo">
-                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
-                                            <div>
-                                                <span className="personName">Литвинов Евгений<br/></span>
-                                                <span className="personPosition">арт-директор компании<br/></span>
-                                                <span className="personCompany">P&B</span>
-                                            </div>
-                                        </div>
-                                        <div className="personReview">
-                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
-                                        </div>
-                                    </div>
-                                    <div className="person">
-                                        <div className="personInfo">
-                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
-                                            <div>
-                                                <span className="personName">Литвинов Евгений<br/></span>
-                                                <span className="personPosition">Арт-директор компании<br/></span>
-                                                <span className="personCompany">P&B</span>
-                                            </div>
-                                        </div>
-                                        <div className="personReview">
-                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        {/*        <div className="person">*/}
+                        {/*            <div className="personInfo">*/}
+                        {/*                <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>*/}
+                        {/*                <div>*/}
+                        {/*                    <span className="personName">Литвинов Евгений<br/></span>*/}
+                        {/*                    <span className="personPosition">арт-директор компании<br/></span>*/}
+                        {/*                    <span className="personCompany">P&B</span>*/}
+                        {/*                </div>*/}
+                        {/*            </div>*/}
+                        {/*            <div className="personReview">*/}
+                        {/*                <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>*/}
+                        {/*            </div>*/}
+                        {/*        </div>*/}
 
-                                <div className="persons">
-                                    <div className="person">
-                                        <div className="personInfo">
-                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
-                                            <div>
-                                                <span className="personName">Литвинов Евгений<br/></span>
-                                                <span className="personPosition">Арт-директор компании<br/></span>
-                                                <span className="personCompany">P&B</span>
-                                            </div>
-                                        </div>
-                                        <div className="personReview">
-                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
-                                        </div>
-                                    </div>
-                                    <div className="person">
-                                        <div className="personInfo">
-                                            <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>
-                                            <div>
-                                                <span className="personName">Литвинов Евгений<br/></span>
-                                                <span className="personPosition">Арт-директор компании<br/></span>
-                                                <span className="personCompany">P&B</span>
-                                            </div>
-                                        </div>
-                                        <div className="personReview">
-                                            <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        {/*        <div className="person">*/}
+                        {/*            <div className="personInfo">*/}
+                        {/*                <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>*/}
+                        {/*                <div>*/}
+                        {/*                    <span className="personName">Литвинов Евгений<br/></span>*/}
+                        {/*                    <span className="personPosition">Арт-директор компании<br/></span>*/}
+                        {/*                    <span className="personCompany">P&B</span>*/}
+                        {/*                </div>*/}
+                        {/*            </div>*/}
+                        {/*            <div className="personReview">*/}
+                        {/*                <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>*/}
+                        {/*            </div>*/}
+                        {/*        </div>*/}
+
+                        {/*        <div className="person">*/}
+                        {/*            <div className="personInfo">*/}
+                        {/*                <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>*/}
+                        {/*                <div>*/}
+                        {/*                    <span className="personName">Литвинов Евгений<br/></span>*/}
+                        {/*                    <span className="personPosition">Арт-директор компании<br/></span>*/}
+                        {/*                    <span className="personCompany">P&B</span>*/}
+                        {/*                </div>*/}
+                        {/*            </div>*/}
+                        {/*            <div className="personReview">*/}
+                        {/*                <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>*/}
+                        {/*            </div>*/}
+                        {/*        </div>*/}
 
 
 
-                            </Slider>
+                        {/*    </Slider>*/}
 
-                        </PeopleAboutUs>
+                        {/*</PeopleAboutUs>*/}
 
 
                         {/* We're trusted by
@@ -1359,25 +1357,25 @@ export class Home extends Component {
 
                         {/* Subscribe */}
 
-                    <SupportForm>
+                    {/*<SupportForm>*/}
 
-                        <div className="subscription"  style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>
+                    {/*    <div className="subscription"  style={{backgroundImage: "url(https://s3.amazonaws.com/botsculptors/website/phone.png)"}}>*/}
 
-                            <div className="title">
-                                <b>Still have questions?</b>
-                                <i>We're ready to support you 24/7!</i>
-                            </div>
+                    {/*        <div className="title">*/}
+                    {/*            <b>Still have questions?</b>*/}
+                    {/*            <i>We're ready to support you 24/7!</i>*/}
+                    {/*        </div>*/}
 
-                            <div className="form" >
-                                <form action="" method="POST">
-                                    <input type="text" placeholder="E-mail"/>
-                                    <button>Send Request</button>
-                                </form>
-                            </div>
+                    {/*        <div className="form" >*/}
+                    {/*            <form action="" method="POST">*/}
+                    {/*                <input type="text" placeholder="E-mail"/>*/}
+                    {/*                <button>Send Request</button>*/}
+                    {/*            </form>*/}
+                    {/*        </div>*/}
 
-                        </div>
+                    {/*    </div>*/}
 
-                    </SupportForm>
+                    {/*</SupportForm>*/}
 
 
 

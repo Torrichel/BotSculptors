@@ -32,54 +32,6 @@ const PortfolioPage = styled.div`
 `;
 
 
-const Gallery = styled.div`
-  
-  
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
-    
-    
-    padding: 0 ${({theme}) => theme.contentPaddingDesktop};
-    padding-bottom: 30px;
-    
-    
-    ${({theme}) => theme.mobile`
-    
-          grid-template-columns: 1fr;
-          padding: 0 ${props => props.theme.contentPaddingMobile};
-          padding-bottom: 30px;
-    `}
-    
-  
-    ${({theme}) => theme.tablet`
-          grid-template-columns: 1fr;
-          padding: 0 ${props => props.theme.contentPaddingMobile};
-          padding-bottom: 30px;
-    `}
-
-  
-  div{
-    filter: grayscale(100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    cursor: pointer;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.09), 0px 1px 1px 0px rgba(0,0,0,0.09), 0px 2px 1px -1px rgba(0,0,0,0.09);
- 
-    &::before {
-        content: "";
-        padding-bottom: 100%;
-        display: inline-block;
-      }
-      
-   &:hover{
-      filter: grayscale(20%);
-   }
-   
-  }
-
-`;
 
 
 const PortfolioItemWrapper = styled.div`
@@ -100,10 +52,11 @@ const PortfolioItemWrapper = styled.div`
     
     h1{
       color: #fff;
-      text-transform: capitalize;
       font-size: 36px;
-      font-family: MainFontUltralight;
-      font-weight: normal;
+      font-weight: 600;
+      line-height: 48px;
+      font-family: "Open Sans";
+      
     }
   }
   .projectDetails{
@@ -135,14 +88,24 @@ const PortfolioItemWrapper = styled.div`
      
       margin-bottom: 20px;
       
+      width: 600px;
       
-      text-align: left;
-      color: #7d8794;
-      font-size: 24px;
-      line-height: 1.5;
+    ${({theme}) => theme.mobile`
+        width: 100%;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        width: 100%;
+    `}
       
-      > * {
-        font-family: MainFontThin;
+ 
+      *:not(h1){
+        color: #7d8794;
+        font-family: "Open Sans";
+        font-size: 15px;
+        font-style: italic;
+        line-height: 24px;
+        letter-spacing: 0.15px;
       }
       
     }
@@ -168,34 +131,43 @@ const PortfolioItemWrapper = styled.div`
   
     ${({theme}) => theme.tablet`
 
-          padding: 0 ${props => props.theme.contentPaddingMobile};
+          padding: 0 ${props => props.theme.contentPaddingTablet};
     `}
     
+    
+    .back_text{
+      opacity: 0.4;
+      color: #ffffff;
+    }
     
     span{
       font-size: 16px;
       color: gray;
     }
-    div.usedSkillsTable{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+    .usedSkillsTable{
+
       justify-content: center;
       margin-bottom: 30px;
       margin-top: 30px;
-      width: 100%;
+      width: 600px;
       
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       
-      
-
-   
-      
+          ${({theme}) => theme.mobile`
+        width: 100%;
+    `}
+    
+    ${({theme}) => theme.tablet`
+        width: 100%;
+    `}
+     
       .usedTechnologyItem{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: row;
-        font-size: 18px;
+     
 
         border: 1px solid #d5d9de;
         padding: 0 20px;
@@ -204,15 +176,43 @@ const PortfolioItemWrapper = styled.div`
         margin-left: -1px;
         margin-bottom: -1px;
         flex-grow: 1;
-        font-family: MainFontUltralight;
+
+        
+        color: #0d0d0d;
+        font-family: "Open Sans";
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        
       }
-      span{
-          font-size: 28px;
+      
+      
+      .usedTechnologyItem:first-child{
+        border-radius: 6px 0 0 0;
+      }
+      
+      .usedTechnologyItem:nth-child(2){
+        border-radius: 0 6px 0 0;
+      }
+      
+      .usedTechnologyItem:last-child{
+        
+        border-radius: 0 0 6px 0;
+      }
+      
+      .usedTechnologyItem:nth-last-child(2){
+        border-radius: 0 0 0 6px;
+      }
+      
+        span{
+          display: inline-block;
           color: #2558b5;
-       
-          padding: 0 5px 0 0 ;
-          font-family: MainFontText;
-      }
+          font-family: "Open Sans";
+          font-size: 30px;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-right: 29px;
+        }
 
       }
   }
@@ -229,6 +229,7 @@ const PortfolioItemWrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    
     >span{
       margin-top: 30px;
       margin-bottom: 20px;
@@ -240,21 +241,20 @@ const PortfolioItemWrapper = styled.div`
       margin-bottom: 20px;
       display: flex;
       align-items: center;
-      
-      
+     
+      flex-direction: row;
+      flex-wrap: wrap;
       
       justify-content: center;
       
       
-          ${({theme}) => theme.mobile`
-
+      ${({theme}) => theme.mobile`
          justify-content: space-between;
     `}
       
       
       
-      flex-direction: row;
-      flex-wrap: wrap;
+      
       .developerForThisProject{
         height: 90px;
         
@@ -272,8 +272,12 @@ const PortfolioItemWrapper = styled.div`
           height: 40px;
           display: flex;
           flex-direction:column;
+          font-family: "Open Sans";
+    font-style: italic;
+    
           .DeveloperRoleInProject{
             font-style: italic;
+            font-family: "Open Sans";
             color: #1f4c9d;
           }
         }
@@ -418,43 +422,28 @@ export class PortfolioItem extends Component {
             </div>
 
 
-            {/*<div className="workedOnProject">*/}
-            {/*  <Title marginTop={'45'} marginBottom={'30'} id='team' backText='Team' frontText='Team' />*/}
+            <div className="workedOnProject">
+              <Title marginTop={'45'} marginBottom={'30'} id='team' backText='Worked On' frontText='Worked On' />
 
-            {/*  <div className="Developers">*/}
-            {/*    {  this.state.authors.map((author) =>(*/}
-            {/*        <div className="developerForThisProject" key={author._id}>*/}
-            {/*          <img src={author.photo}></img>*/}
-            {/*          <div className="DeveloperName">*/}
-            {/*            <span className="DeveloperName">{author.firstName} {author.lastName}</span>*/}
-            {/*            <span className="DeveloperRoleInProject">{author.title}</span>*/}
+              <div className="Developers">
+                {  this.state.authors.map(author => (
+                    <div className="developerForThisProject" key={author._id}>
+                      <img src={author.photo} />
+                      <div className="DeveloperName">
+                        <span className="DeveloperName">{author.firstName} {author.lastName}</span>
+                        <span className="DeveloperRoleInProject">{author.title}</span>
 
-            {/*          </div>*/}
-            {/*          /!*<button type="button" name="developerPage">&#8250;</button>*!/*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-            {/*  </div>*/}
-            {/*</div>*/}
+                      </div>
+                      {/*<button type="button" name="developerPage">&#8250;</button>*/}
+                    </div>
+                ))}
+              </div>
+            </div>
 
 
           </PortfolioItemWrapper>
 
 
-          <div className="PortfolioImgGallery">
-
-            <Title marginTop={'30'} marginBottom={'35'} id='gallery' backText='Gallery' frontText='Gallery' />
-
-            <Gallery>
-
-              {images.map((image, i) =>
-
-                  <div key={i} data-index={i} onClick={this.openLightbox} style={{backgroundImage: `url(${image})`}}/>
-
-              )}
-
-            </Gallery>
-
-          </div>
 
 
 

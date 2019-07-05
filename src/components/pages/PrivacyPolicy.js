@@ -1,41 +1,55 @@
 import React, { Fragment }  from 'react'
-import {Header, Main, Footer } from "../common";
+import {Header, Main, Footer, Title } from "../common";
 import styled from "styled-components";
 
 
 const Wrapper = styled.div`
 
-    padding: 25px ${props => props.theme.contentPaddingDesktop};
+     padding: 0 ${props => props.theme.contentPaddingDesktop};
       
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+     
+    
+      
+      width: 100%;
       
     ${({theme}) => theme.mobile`
-        padding: 0px ${({theme}) => theme.contentPaddingMobile};
+        width: 100%;
+         padding: 50px ${({theme}) => theme.contentPaddingMobile};
     `}
     
     ${({theme}) => theme.tablet`
-         padding: 15px ${({theme}) => theme.contentPaddingTablet};
+        width: 100%;
+        padding: 50px ${({theme}) => theme.contentPaddingTablet};
     `}
-
-
-  p{
-    font-family: MainFontThin;
+      
+ 
+  *:not(h1):not(span):not(.back_text):not(.front_text):not(#aboutProject){
     color: #7d8794;
-    font-size: 24px;
-    line-height: 1.5;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: italic;
+    line-height: 24px;
+    letter-spacing: 0.15px;
     
     
-  }
-
-  span, h1{
-    font-size: 35px;
-    font-weight: lighter;
-    color: #000;
-    font-family: MainFontThin;
   }
   
-  h1{
-  font-size: 40px;
+
+  
+
+  span{
+    font-size: 30px;
+    color: #000;
+    font-family: "Open Sans";
+    margin-top: 15px;
   }
+  
+
   
 
 `;
@@ -55,7 +69,8 @@ export const PrivacyPolicy = props => {
 
                 <Wrapper>
 
-                    <h1>Your privacy is critically important to Bot Sculptors.</h1>
+                    <Title id='aboutProject' marginTop={'30'} marginBottom={'0'} backText='Privacy Policy' frontText='Privacy Policy' />
+
 
                     <p>It is Bot Sculptors’s policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <a href="https://botsculptors.com">https://botsculptors.com</a> (hereinafter, "us", "we", or "https://botsculptors.com"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.</p>
                     <p>This Privacy Policy, together with the Terms and conditions posted on our Website, set forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms and conditions.</p>

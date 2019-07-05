@@ -126,7 +126,7 @@ export const GlobalStyles = createGlobalStyle`
     *{
         box-sizing: border-box;
         text-decoration: none;
-        font-family: MainFontText;
+        font-family: "Open Sans";
     }
 
   
