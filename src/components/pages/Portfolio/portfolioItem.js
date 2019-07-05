@@ -257,7 +257,7 @@ const PortfolioItemWrapper = styled.div`
       
       .developerForThisProject{
         height: 90px;
-        
+        margin: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
