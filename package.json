@@ -19,7 +19,7 @@
   },
   "homepage": "/",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.19.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
