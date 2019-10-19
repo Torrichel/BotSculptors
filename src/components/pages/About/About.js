@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { HashLink } from 'react-router-hash-link';
 
-import { userActions } from '../../../actions';
+import {fireAction, userActions} from '../../../actions';
 
 //
 // import Popup from '../Popup/Popup';
@@ -13,8 +13,9 @@ import { Header, Main, Title, Footer } from "../../common";
 
 
 import styled from 'styled-components';
+import {userConstants} from "../../../constants";
 
-
+const baseURL = 'https://api.botsculptors.com';
 
 
 
@@ -251,9 +252,10 @@ export class About extends Component {
           users: []
         };
 
-        props.dispatch( userActions.getUsersWebsite() );
+        // props.dispatch( userActions.getUsersWebsite() );
 
         this.handleClose = this.handleClose.bind(this);
+        this.fetchTeam = this.fetchTeam.bind(this);
 
     }
 
@@ -271,39 +273,52 @@ export class About extends Component {
       this.setState({ show: false });
     }
 
-    componentWillReceiveProps(nextProps) {
 
-        this.setState({
-            users: nextProps.users
-        });
-
-    }
 
 
     componentDidMount(){
         window.scrollTo(0, 0);
     }
 
+    async componentWillMount() {
 
-    getTeam = users => {
+        const users = await this.fetchTeam();
+        this.setState({ users });
+
+    }
+
+    fetchTeam(){
+        
+        return new Promise(async (resolve, reject) => {
+
+            fetch( `${baseURL}/get-public-users` )
+
+                .then(response => {
+                    const contentType = response.headers.get("content-type");
+
+                    if(contentType && contentType.includes("application/json")) {
+                        return response.json();
+                    }
+                    throw new TypeError("Oops, we haven't got JSON!");
+                })
+                .then(users => {
 
 
-        return users.map((user, i) =>
+                    if( users && users.length > 0 ){
+                        return resolve(users);
+                    } else{
+                        return reject('Users not found');
+                    }
 
-
-            <div
-                key={i}
-                className="grid-item"
-                id={user._id}
-                // onClick={() => {this.showModal(user)}}
-            >
-                <div className='bg' style={ { backgroundImage: `url(${user.photo})` } }></div>
-            </div>
-
-
-        );
-
-    };
+                })
+                .catch(e => {
+                    return reject(e);
+                });
+            
+            
+        });
+        
+    }
 
 
 
@@ -362,7 +377,13 @@ export class About extends Component {
 
                         <div className="dream-team">
                             <div className="grid-container">
-                                {this.getTeam(users)}
+
+                                {users.length && users.map((user, i) => (<div key={i} className="grid-item" id={user.username}
+                                    // onClick={() => {this.showModal(user)}}
+                                    >
+                                    <div className='bg' style={ { backgroundImage: `url(${user.photo})` } }/>
+                                </div>) )}
+
                             </div>
                         </div>
 
@@ -383,16 +404,4 @@ export class About extends Component {
 }
 
 
-const mapStateToProps = (state, ownProps) => {
-
-    return Object.assign({}, ownProps, {
-        users: state.userReducer,
-    });
-
-
-
-
-};
-
-
-export default connect(mapStateToProps)(About);
+export default connect(null)(About);

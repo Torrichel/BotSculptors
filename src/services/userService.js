@@ -1,15 +1,14 @@
-import { baseURL } from '../config';
-
 import { userConstants } from "../constants";
 import { fireAction } from "../actions";
 
+const baseURL = 'https://api.botsculptors.com';
 
 // Lists all events
 export const listAllWebsite = (dispatch) => {
 
     fireAction(dispatch, userConstants.LIST_ALL_USERS_WEBSITE_REQUEST, {});
 
-    fetch( `${baseURL}/users/list` )
+    fetch( `${baseURL}/get-public-users` )
 
         .then(response => {
             const contentType = response.headers.get("content-type");
@@ -26,7 +25,6 @@ export const listAllWebsite = (dispatch) => {
             } else{
                 fireAction(dispatch, userConstants.LIST_ALL_USERS_WEBSITE_FAILURE, json.message);
             }
-
 
         })
         .catch(error => {
