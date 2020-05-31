@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 
 import { Link, Element, scroller } from 'react-scroll';
 
@@ -11,6 +12,7 @@ import { Projects } from './Components/Projects.js';
 import { Header, Main, Title, Footer } from "../../common";
 
 import { projectActions } from '../../../actions';
+import { ReviewService } from '../../../services';
 
 import ReactPaginate from "react-paginate";
 
@@ -765,6 +767,7 @@ export class Home extends Component {
             perPage: 2,
             pageCount: 0,
             forcePage: 0,
+            reviews: [],
             technologies: [
 
                 // Page 1 Row 1
@@ -855,7 +858,11 @@ export class Home extends Component {
 
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+
+        const reviews = await ReviewService.list();
+        this.setState({ reviews });
+
         this.props.dispatch( projectActions.listAllProjectsWebsite() );
     }
 
@@ -923,10 +930,31 @@ export class Home extends Component {
 
     };
 
+    generateReviewView(review){
+        const photo = _.get(review, "client.photo");
+        const name = _.get(review, "client.name");
+        const title = _.get(review, "client.title");
+        const company = _.get(review, "client.company");
+        const reviewText = _.get(review, "review");
+
+        return (
+            <div key={_.get(review, "id")} className="person">
+                <div className="personInfo">
+                    <img src={photo} alt="Client Photo"/>
+                    <div>
+                        <span className="personName">{name}<br/></span>
+                        <span className="personPosition">{title}<br/></span>
+                        <span className="personCompany">{company}</span>
+                    </div>
+                </div>
+                <div className="personReview" dangerouslySetInnerHTML={ { __html: reviewText }} />
+            </div>
+        );
+    }
 
     render() {
 
-        const { technologies } = this.state;
+        const { technologies, reviews } = this.state;
 
         const settings = {
             dots: true,
@@ -978,6 +1006,7 @@ export class Home extends Component {
         };
 
         const { activeCategory, projects, pageCount=0, forcePage } = this.state;
+
 
 
         return (
@@ -1089,7 +1118,7 @@ export class Home extends Component {
 
                         </Technologies>
 
-
+                    {/*
                         <Portfolio className="our_portfolio">
 
                             <Title id='portfolio' marginTop={0} marginBottom={'30'} backText='Portfolio' frontText='Portfolio' />
@@ -1136,60 +1165,16 @@ export class Home extends Component {
                             /></Pagination> : ''}
 
                         </Portfolio>
+                    */}
 
+                        <PeopleAboutUs>
+                            <Title id='portfolio' marginTop={0} marginBottom={'30'} backText='People about us' frontText='People about us' />
 
-                        {/*<PeopleAboutUs>*/}
-                        {/*    <Title id='portfolio' marginTop={0} marginBottom={'30'} backText='People about us' frontText='People about us' />*/}
+                            <Slider {...settingsForReviewsSlider}>
+                                {reviews.map(review => this.generateReviewView(review))}
+                            </Slider>
 
-                        {/*    <Slider {...settingsForReviewsSlider} >*/}
-
-                        {/*        <div className="person">*/}
-                        {/*            <div className="personInfo">*/}
-                        {/*                <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>*/}
-                        {/*                <div>*/}
-                        {/*                    <span className="personName">Литвинов Евгений<br/></span>*/}
-                        {/*                    <span className="personPosition">арт-директор компании<br/></span>*/}
-                        {/*                    <span className="personCompany">P&B</span>*/}
-                        {/*                </div>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="personReview">*/}
-                        {/*                <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>*/}
-                        {/*            </div>*/}
-                        {/*        </div>*/}
-
-                        {/*        <div className="person">*/}
-                        {/*            <div className="personInfo">*/}
-                        {/*                <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>*/}
-                        {/*                <div>*/}
-                        {/*                    <span className="personName">Литвинов Евгений<br/></span>*/}
-                        {/*                    <span className="personPosition">Арт-директор компании<br/></span>*/}
-                        {/*                    <span className="personCompany">P&B</span>*/}
-                        {/*                </div>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="personReview">*/}
-                        {/*                <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>*/}
-                        {/*            </div>*/}
-                        {/*        </div>*/}
-
-                        {/*        <div className="person">*/}
-                        {/*            <div className="personInfo">*/}
-                        {/*                <img src="https://s3.amazonaws.com/botsculptors/website/person.png"alt="person" ></img>*/}
-                        {/*                <div>*/}
-                        {/*                    <span className="personName">Литвинов Евгений<br/></span>*/}
-                        {/*                    <span className="personPosition">Арт-директор компании<br/></span>*/}
-                        {/*                    <span className="personCompany">P&B</span>*/}
-                        {/*                </div>*/}
-                        {/*            </div>*/}
-                        {/*            <div className="personReview">*/}
-                        {/*                <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров играет важную роль в формировании направлений прогрессивного развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации систем массового участия.</p>*/}
-                        {/*            </div>*/}
-                        {/*        </div>*/}
-
-
-
-                        {/*    </Slider>*/}
-
-                        {/*</PeopleAboutUs>*/}
+                        </PeopleAboutUs>
 
 
                         {/* We're trusted by
