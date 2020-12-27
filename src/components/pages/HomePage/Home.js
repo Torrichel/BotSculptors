@@ -457,6 +457,22 @@ export const PeopleAboutUs = styled.div`
         }
         
       }
+      
+                .slick-track{
+    display: flex;
+
+    .slick-slide{
+        display: flex;
+        height: auto;
+        align-items: center; //optional
+        justify-content: center; //optional
+        
+        >div{
+          height: 100%;
+          width: 100%;
+        }
+    }
+}
    
     .persons{
       display: grid!important;
@@ -471,7 +487,7 @@ export const PeopleAboutUs = styled.div`
       .person {
 
           display: block!important;
-          //height: 388px;
+          height: 100%;
           border: 0 solid red;
           outline: none;
           background-color: #f2f4f5;
@@ -486,22 +502,25 @@ export const PeopleAboutUs = styled.div`
           margin: 5px;
           
           .personInfo {
-          display: flex;
-          align-items: center;
-          text-align: right;
-          justify-content: space-between;
-          flex-direction: row;
-          width: 100%;
+              display: flex;
+              align-items: flex-start;
+              text-align: right;
+              justify-content: space-between;
+              flex-direction: row;
+              width: 100%;
+            
+            .client_photo, .client_meta{
+              height: 100%;
+             }
           
-          
-          
-          
-
-          img {
+          .client_photo{
             width: 100px;
             height: 100px;
             border-radius: 50%;
+            background-size: cover;
+            background-position: center;
           }
+
     
           div {
           
@@ -534,7 +553,7 @@ export const PeopleAboutUs = styled.div`
             }
           }
           
-          div:before{
+          .client_meta:before{
                content: "\\201D";
                 opacity: 0.1;
                 color: #7d8794;
@@ -544,11 +563,12 @@ export const PeopleAboutUs = styled.div`
                 top: -55px;
                 right: -10px;
             }
+            
           }
     }
           .personReview {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             margin-top: 34px;
             color: #7d8794;
@@ -569,6 +589,10 @@ export const PeopleAboutUs = styled.div`
             margin-left: 45px;
             font-size: 20px;
           }
+          
+          
+
+
         }`;
 
 export const SupportForm = styled.div`
@@ -931,7 +955,7 @@ export class Home extends Component {
     };
 
     generateReviewView(review){
-        const photo = _.get(review, "client.photo");
+        const photo = _.get(review, "client.photo") || "https://botsculptors.s3.amazonaws.com/website/avatar_128x128.png";
         const name = _.get(review, "client.name");
         const title = _.get(review, "client.title");
         const company = _.get(review, "client.company");
@@ -940,8 +964,8 @@ export class Home extends Component {
         return (
             <div key={_.get(review, "id")} className="person">
                 <div className="personInfo">
-                    <img src={photo} alt="Client Photo"/>
-                    <div>
+                    <div className="client_photo" style={ { backgroundImage: `url("${photo}")`} }/>
+                    <div className="client_meta">
                         <span className="personName">{name}<br/></span>
                         <span className="personPosition">{title}<br/></span>
                         <span className="personCompany">{company}</span>
@@ -985,6 +1009,7 @@ export class Home extends Component {
 
         const settingsForReviewsSlider = {
             infinite: true,
+            adaptiveHeight: false,
             speed: 500,
             slidesToShow: 2,
             slidesToScroll: 1,

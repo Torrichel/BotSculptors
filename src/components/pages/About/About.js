@@ -9,13 +9,13 @@ import {fireAction, userActions} from '../../../actions';
 // import Popup from '../Popup/Popup';
 
 import { Header, Main, Title, Footer } from "../../common";
-
+import axios from 'axios';
 
 
 import styled from 'styled-components';
-import {userConstants} from "../../../constants";
+import _ from "lodash";
 
-const baseURL = 'https://api.botsculptors.com';
+const baseURL = 'https://dev.botsculptors.com';
 
 
 
@@ -241,6 +241,7 @@ export const Wrapper = styled.div`
 
 `;
 
+
 export class About extends Component {
 
     constructor(props) {
@@ -282,6 +283,7 @@ export class About extends Component {
 
     async componentWillMount() {
 
+
         const users = await this.fetchTeam();
         this.setState({ users });
 
@@ -291,29 +293,14 @@ export class About extends Component {
         
         return new Promise(async (resolve, reject) => {
 
-            fetch( `${baseURL}/get-public-users` )
+            axios.get(`${baseURL}/users/list-public`)
+                .then(res => {
 
-                .then(response => {
-                    const contentType = response.headers.get("content-type");
-
-                    if(contentType && contentType.includes("application/json")) {
-                        return response.json();
-                    }
-                    throw new TypeError("Oops, we haven't got JSON!");
-                })
-                .then(users => {
-
-
-                    if( users && users.length > 0 ){
-                        return resolve(users);
-                    } else{
-                        return reject('Users not found');
-                    }
+                    const publicUsers = _.get(res, "data") || [];
+                    return !publicUsers.length ? reject('Users not found') : resolve(publicUsers);
 
                 })
-                .catch(e => {
-                    return reject(e);
-                });
+                .catch(err => reject(err));
             
             
         });
@@ -337,7 +324,6 @@ export class About extends Component {
 
                     <Wrapper className="about">
 
-                        {/*<Popup show={this.state.show} handleClose={this.handleClose} user={this.state.popupUser}/>*/}
 
                         <div className="slider" style={ { backgroundImage: `url(https://s3.amazonaws.com/botsculptors/website/about-page-bg.jpg)` } }>
 
@@ -378,10 +364,8 @@ export class About extends Component {
                         <div className="dream-team">
                             <div className="grid-container">
 
-                                {users.length && users.map((user, i) => (<div key={i} className="grid-item" id={user.username}
-                                    // onClick={() => {this.showModal(user)}}
-                                    >
-                                    <div className='bg' style={ { backgroundImage: `url(${user.photo})` } }/>
+                                {users.length && users.map((user, i) => (<div key={i} className="grid-item" id="{user.sub}">
+                                    <div className='bg' style={ { backgroundImage: `url(${user.picture})` } }/>
                                 </div>) )}
 
                             </div>
